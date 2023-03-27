@@ -11,3 +11,13 @@
 
   min-height: 100vh;
 }
+
+.page-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.page {
+  flex-grow: 1;
+  padding: 20px;
+}
