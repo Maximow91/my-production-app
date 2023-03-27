@@ -1,0 +1,15 @@
+.navbar {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  height: var(--navbar-height);
+  background: var(--inverted-bg-color);
+}
+
+.appLinks {
+  margin-left: auto;
+}
+
+.mainLink {
+  margin-right: 20px;
+}

@@ -1,6 +1,6 @@
 type mods = Record<string, string | boolean>;
 
-export function className(
+export function classNames(
   cls: string,
   mods: mods,
   additionals: Array<string>,
