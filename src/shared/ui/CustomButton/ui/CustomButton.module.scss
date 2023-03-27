@@ -1,11 +1,11 @@
 .CustomButton {
   cursor: pointer;
+  color: var(--primary-color);
 }
 
 .clear {
   border: none;
   background: none;
-  margin: 0;
   padding: 0;
   outline: none;
 }

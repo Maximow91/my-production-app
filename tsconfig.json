@@ -11,13 +11,15 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "sourceMap": true,
+    "strictNullChecks": true,
     "moduleResolution": "node",
     "esModuleInterop": true, // позволяет использовать импроты es6
     "allowSyntheticDefaultImports": true // позволяет использовать импроты es6
   },
   "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS"
+      "module": "CommonJS",
+      "strictNullChecks": true
     }
   }
 }

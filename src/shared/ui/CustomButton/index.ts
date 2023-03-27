@@ -1,4 +1,3 @@
-import {CustomButton} from './ui/CustomButton';
-import {ButtonTheme} from './ui/CustomButton';
+import { CustomButton, ButtonTheme } from './ui/CustomButton'
 
-export {CustomButton, ButtonTheme};
+export { CustomButton, ButtonTheme }
