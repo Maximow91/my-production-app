@@ -6,17 +6,17 @@ import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext'
 import { ButtonTheme, CustomButton } from 'shared/ui/CustomButton'
 
 interface ThemeSwitcherProps {
-  className?: string
+    className?: string
 }
 
 export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
-  const { theme, toggleTheme } = useTheme()
-  return (
-    <CustomButton
-      theme={ButtonTheme.CLEAR}
-      className={classNames('', {}, [className as string])}
-      onClick={toggleTheme}>
-      {theme === Theme.DARK ? <LightIcon /> : <DarkIcon />}
-    </CustomButton>
-  )
+    const { theme, toggleTheme } = useTheme()
+    return (
+        <CustomButton
+            theme={ButtonTheme.CLEAR}
+            className={classNames('', {}, [className as string])}
+            onClick={toggleTheme}>
+            {theme === Theme.DARK ? <LightIcon /> : <DarkIcon />}
+        </CustomButton>
+    )
 }

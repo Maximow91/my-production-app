@@ -3,22 +3,22 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import { CustomButton, ButtonTheme } from 'shared/ui/CustomButton'
 
 interface LangSwitcherProps {
-  className?: string
+    className?: string
 }
 
 export const LangSwitcher = ({ className }: LangSwitcherProps) => {
-  const { t, i18n } = useTranslation()
+    const { t, i18n } = useTranslation()
 
-  const changeLangHandler = () => {
-    i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
-  }
+    const changeLangHandler = () => {
+        i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
+    }
 
-  return (
-    <CustomButton
-      className={classNames('', {}, [className as string])}
-      theme={ButtonTheme.CLEAR}
-      onClick={changeLangHandler}>
-      {t('Язык')}
-    </CustomButton>
-  )
+    return (
+        <CustomButton
+            className={classNames('', {}, [className as string])}
+            theme={ButtonTheme.CLEAR}
+            onClick={changeLangHandler}>
+            {t('Язык')}
+        </CustomButton>
+    )
 }

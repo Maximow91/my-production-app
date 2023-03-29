@@ -26,6 +26,9 @@ module.exports = {
     '@typescript-eslint/naming-convention': 'off',
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',
-    '@typescript-eslint/no-floating-promises': 'warn'
+    '@typescript-eslint/no-floating-promises': 'warn',
+    'indent': 'off',
+    "@typescript-eslint/indent": [2,4],
+    "@typescript-eslint/ban-ts-comment": "off"
   }
 }
