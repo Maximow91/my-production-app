@@ -29,6 +29,7 @@ module.exports = {
     '@typescript-eslint/no-floating-promises': 'warn',
     'indent': 'off',
     "@typescript-eslint/indent": [2,4],
-    "@typescript-eslint/ban-ts-comment": "off"
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-misused-promises": "warn"
   }
 }
