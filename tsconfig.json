@@ -19,7 +19,6 @@
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS",
-      "strictNullChecks": true
     }
   },
   "include": [
