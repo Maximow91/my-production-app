@@ -1,7 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react'
 import { componentRender } from 'shared/lib/test/componentRender/componentRender'
 import { Sidebar } from 'wigets/Sidebar'
-import { renderWithTranslation } from '../../../../shared/lib/test/renderWithTranslation/renderWithTranslation'
 
 describe('CustomButton', () => {
     test('render test', () => {
