@@ -1,15 +1,16 @@
 import { fireEvent, screen } from '@testing-library/react'
+import { componentRender } from 'shared/lib/test/componentRender/componentRender'
 import { Sidebar } from 'wigets/Sidebar'
-import { renderWithTranslation } from '../../../../shared/lib/classNames/test/renderWithTranslation/renderWithTranslation'
+import { renderWithTranslation } from '../../../../shared/lib/test/renderWithTranslation/renderWithTranslation'
 
 describe('CustomButton', () => {
     test('render test', () => {
-        renderWithTranslation(<Sidebar />)
+        componentRender(<Sidebar />)
         expect(screen.getByTestId('sidebar')).toBeInTheDocument()
     })
 
     test('collaps sidebar', () => {
-        renderWithTranslation(<Sidebar />)
+        componentRender(<Sidebar />)
         const btn = screen.getByTestId('toggle-sidebar')
         fireEvent.click(btn)
         expect(screen.getByTestId('sidebar')).toHaveClass('collapsed')
