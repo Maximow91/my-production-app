@@ -9,6 +9,15 @@
   background: none;
   padding: 0;
   outline: none;
+  color: var(--primary-color);
+}
+
+.clearInverted {
+  border: none;
+  background: none;
+  padding: 0;
+  outline: none;
+  color: var(--inverted-primary-color);
 }
 
 .outline {

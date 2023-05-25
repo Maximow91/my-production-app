@@ -1,11 +1,10 @@
-import { Suspense } from 'react'
+import { Suspense, useState } from 'react'
 import { useTheme } from './providers/ThemeProvider'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { AppRouter } from './providers/router'
 import { Navbar } from 'wigets/Navbar'
 import { Sidebar } from 'wigets/Sidebar'
-
-import './styles/index.scss'
+import { Modal } from 'shared/ui/Modal'
 
 export const App = () => {
     const { theme } = useTheme()

@@ -14,9 +14,10 @@ module.exports = {
     sourceType: 'module',
     project: ['./tsconfig.json'],
   },
-  plugins: ['react'],
+  plugins: ['react','react-hooks'],
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
+    "@typescript-eslint/prefer-nullish-coalescing": 'off',
     'react/react-in-jsx-scope': 'off',
     'no-tabs': 'off',
     'no-mixed-spaces-and-tabs': 'off',
@@ -29,5 +30,7 @@ module.exports = {
     '@typescript-eslint/indent': [2, 4],
     '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/no-misused-promises': 'warn',
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps":"error" // Checks effect dependencies
   },
 };
