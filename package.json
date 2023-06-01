@@ -16,7 +16,7 @@
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook",
-    "test:ui:ci": "concurrently -s first -k \"npm run storybook\" \"npm run npx loki update\"",
+    "test:ui:ci": "concurrently -s first -k \"npm run storybook\" \"npx loki update\"",
     "test:ui": "npx loki test",
     "test:ui:ok": "npx loki approve",
     "test:ui:json": "node scripts/generate-visual-json-report.js",
