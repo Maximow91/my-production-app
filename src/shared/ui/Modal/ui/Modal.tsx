@@ -15,7 +15,6 @@ const ANIMATION_DELAY = 300
 
 export const Modal = ({ className, children, isOpen = false, onClose }: ModalProps) => {
     const [isClosing, setIsClosing] = useState(false)
-    const { theme } = useTheme()
 
     const timerRef = useRef<ReturnType<typeof setTimeout>>()
 
@@ -56,7 +55,7 @@ export const Modal = ({ className, children, isOpen = false, onClose }: ModalPro
 
     return (
         <Portal>
-            <div className={classNames(cls.Modal, mods, [className as string, theme as string])}>
+            <div className={classNames(cls.Modal, mods, [className as string, 'app_modal'])}>
                 <div className={cls.overlay} onClick={onCloseHandler}>
                     <div className={cls.content} onClick={onContentClick}>{children}</div>
                 </div>
