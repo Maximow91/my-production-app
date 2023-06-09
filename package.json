@@ -22,7 +22,8 @@
     "test:ui:ok": "npx loki approve",
     "test:ui:json": "node scripts/generate-visual-json-report.js",
     "test:ui:html": "npx reg-cli --from .loki/report.json --report .loki/report.html",
-    "test:ui:report": "npm run test:ui:json && npm run test:ui:html"
+    "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -83,7 +84,8 @@
     "webpack": "^5.76.1",
     "webpack-bundle-analyzer": "^4.8.0",
     "webpack-cli": "^5.0.1",
-    "webpack-dev-server": "^4.11.1"
+    "webpack-dev-server": "^4.11.1",
+    "husky": "^8.0.0"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.0",
