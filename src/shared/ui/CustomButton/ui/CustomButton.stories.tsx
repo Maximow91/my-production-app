@@ -60,4 +60,8 @@ export const SquareSizeXL: Story = {
     render: () => <CustomButton theme={ButtonTheme.BACKGROUND_INVERTED} size={ButtonSize.XL} square >{'>'}</CustomButton>
 }
 
+export const Disabled: Story = {
+    render: () => <CustomButton disabled={true} theme={ButtonTheme.OUTLINE} >{'Text'}</CustomButton>
+}
+
 OutlineDark.decorators = [ThemeDecorator(Theme.DARK)]

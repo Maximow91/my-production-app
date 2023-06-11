@@ -2,7 +2,7 @@ import { type BuildPaths } from '../build/types/types'
 import { type WebpackConfiguration } from 'webpack-dev-server'
 import path from 'path'
 import { buildCssLoaders } from '../build/loaders/buildCssLoaders'
-import { type RuleSetRule } from 'webpack'
+import { DefinePlugin, webpack, type RuleSetRule } from 'webpack'
 
 export default ({ config }: { config: WebpackConfiguration }) => {
     const paths: BuildPaths = {
@@ -11,9 +11,11 @@ export default ({ config }: { config: WebpackConfiguration }) => {
         html: '',
         src: path.resolve(__dirname, '..', '..', 'src')
     }
-
     config.resolve?.modules?.push(paths.src)
     config.resolve?.extensions?.push('.ts', '.tsx')
+    // @ts-expect-error
+    config.resolve.modules.unshift(paths.src)
+
     // @ts-expect-error
     config.module.rules = config.module.rules.map((rule: RuleSetRule) => {
         // eslint-disable-next-line @typescript-eslint/prefer-includes
@@ -30,6 +32,10 @@ export default ({ config }: { config: WebpackConfiguration }) => {
     })
 
     config.module?.rules?.push(buildCssLoaders(true))
+
+    config.plugins?.push(new DefinePlugin({
+        __IS_DEV__: true
+    }))
 
     return config
 }

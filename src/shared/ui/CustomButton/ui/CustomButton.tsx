@@ -21,19 +21,22 @@ interface CustomButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     theme?: ButtonTheme
     square?: boolean
     size?: ButtonSize
+    disabled?: boolean
 }
 
 export const CustomButton = (props: CustomButtonProps) => {
-    const { className, square, theme, onClick, children, size = ButtonSize.M, ...otherProps } = props
+    const { className, square, theme, onClick, children, disabled = false, size = ButtonSize.M, ...otherProps } = props
 
     const mods: Record<string, boolean> = {
-        [cls.square]: !!square
+        [cls.square]: !!square,
+        [cls.disabled]: disabled
     }
 
     return (
         <button
             className={classNames(cls.CustomButton, mods, [className as string, cls[theme as string], cls[size]])}
             onClick={onClick}
+            disabled={disabled}
             {...otherProps}>
             {children}
         </button>

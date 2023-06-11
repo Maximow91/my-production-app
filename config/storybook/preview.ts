@@ -4,9 +4,15 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from 'app/providers/ThemeProvider'
 import { RouteDecorator } from 'shared/config/storybook/RouteDecorator/RouteDecodator'
 import 'loki/configure-react'
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
 
 const preview: Preview = {
-    decorators: [StyleDecorator, ThemeDecorator(Theme.LIGHT), RouteDecorator],
+    decorators: [StyleDecorator, ThemeDecorator(Theme.LIGHT), RouteDecorator, StoreDecorator({
+        loginForm: {
+            username: 'admin',
+            password: '123'
+        }
+    })],
     parameters: {
         actions: { argTypesRegex: '^on[A-Z].*' },
         controls: {

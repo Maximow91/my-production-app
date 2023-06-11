@@ -10,5 +10,8 @@
   "Coркащенный язык":"En",
   "Имя пользователя": "User name",
   "Пароль": "Password",
-  "Войти": "Login" 
+  "Войти": "Login" ,
+  "Форма авторизации": "Login form",
+  "Вы ввели неверный логин или пароль": "You entered an incorrect login or password",
+  "Выйти": "Logout"
 }
