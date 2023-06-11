@@ -32,6 +32,8 @@ module.exports = {
     '@typescript-eslint/no-misused-promises': 'warn',
     "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
     "react-hooks/exhaustive-deps":"error", // Checks effect dependencies
-    'react/display-name': 'off'
+    'react/display-name': 'off',
+    "no-unused-expressions": "off",
+    "@typescript-eslint/no-unused-expressions": "off"
   },
 };

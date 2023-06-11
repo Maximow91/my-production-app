@@ -2,7 +2,7 @@ import { type BuildPaths } from '../build/types/types'
 import { type WebpackConfiguration } from 'webpack-dev-server'
 import path from 'path'
 import { buildCssLoaders } from '../build/loaders/buildCssLoaders'
-import { DefinePlugin, webpack, type RuleSetRule } from 'webpack'
+import { DefinePlugin, type RuleSetRule } from 'webpack'
 
 export default ({ config }: { config: WebpackConfiguration }) => {
     const paths: BuildPaths = {

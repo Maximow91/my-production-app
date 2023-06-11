@@ -1,4 +1,4 @@
-import { type ChangeEvent, memo, type InputHTMLAttributes, useState } from 'react'
+import { type ChangeEvent, type InputHTMLAttributes } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Input.module.scss'
 
