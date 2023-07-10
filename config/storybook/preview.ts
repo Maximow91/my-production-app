@@ -10,7 +10,8 @@ const preview: Preview = {
     decorators: [StyleDecorator, ThemeDecorator(Theme.LIGHT), RouteDecorator, StoreDecorator({
         loginForm: {
             username: 'admin',
-            password: '123'
+            password: '123',
+            isLoading: false
         }
     })],
     parameters: {

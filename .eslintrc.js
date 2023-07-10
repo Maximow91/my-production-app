@@ -34,6 +34,7 @@ module.exports = {
     "react-hooks/exhaustive-deps":"error", // Checks effect dependencies
     'react/display-name': 'off',
     "no-unused-expressions": "off",
-    "@typescript-eslint/no-unused-expressions": "off"
+    "@typescript-eslint/no-unused-expressions": "off",
+    "@typescript-eslint/no-dynamic-delete":"off"
   },
 };

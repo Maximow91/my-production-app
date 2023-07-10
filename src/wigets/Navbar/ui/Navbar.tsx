@@ -32,6 +32,8 @@ export const Navbar = ({ className }: NavbarProps) => {
         dispatch(userActions.logout())
     }, [dispatch])
 
+    console.log('isModal', isAuthModal)
+
     if (authData) {
         return (
             <div className={classNames(cls.navbar, {}, [className as string])}>
@@ -47,10 +49,12 @@ export const Navbar = ({ className }: NavbarProps) => {
             <CustomButton onClick={onOpenModal} theme={ButtonTheme.CLEAR_INVERTED} className={cls.appLinks}>
                 {t('Войти')}
             </CustomButton>
-            <LoginModal
-                isOpen={isAuthModal}
-                onClose={onCloseModal}
-            />
+            {isAuthModal && (
+                <LoginModal
+                    isOpen={isAuthModal}
+                    onClose={onCloseModal}
+                />
+            )}
         </div>
     )
 }
