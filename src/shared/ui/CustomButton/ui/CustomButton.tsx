@@ -1,4 +1,4 @@
-import { type ButtonHTMLAttributes } from 'react'
+import { memo, type ButtonHTMLAttributes } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './CustomButton.module.scss'
 
@@ -24,7 +24,7 @@ interface CustomButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     disabled?: boolean
 }
 
-export const CustomButton = (props: CustomButtonProps) => {
+export const CustomButton = memo((props: CustomButtonProps) => {
     const { className, square, theme, onClick, children, disabled = false, size = ButtonSize.M, ...otherProps } = props
 
     const mods: Record<string, boolean> = {
@@ -41,4 +41,4 @@ export const CustomButton = (props: CustomButtonProps) => {
             {children}
         </button>
     )
-}
+})

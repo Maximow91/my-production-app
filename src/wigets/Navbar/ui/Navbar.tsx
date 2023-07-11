@@ -1,6 +1,6 @@
 import { getUserAuthData, userActions } from 'entities/User'
 import { LoginModal } from 'features/authByUserName'
-import { useCallback, useState } from 'react'
+import { memo, useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 import { classNames } from 'shared/lib/classNames/classNames'
@@ -12,7 +12,7 @@ interface NavbarProps {
     className?: string
 }
 
-export const Navbar = ({ className }: NavbarProps) => {
+export const Navbar = memo(({ className }: NavbarProps) => {
     const dispatch = useDispatch()
 
     const authData = useSelector(getUserAuthData)
@@ -30,9 +30,8 @@ export const Navbar = ({ className }: NavbarProps) => {
 
     const onLogout = useCallback(() => {
         dispatch(userActions.logout())
+        setIsAuthModal(false)
     }, [dispatch])
-
-    console.log('isModal', isAuthModal)
 
     if (authData) {
         return (
@@ -57,4 +56,4 @@ export const Navbar = ({ className }: NavbarProps) => {
             )}
         </div>
     )
-}
+})

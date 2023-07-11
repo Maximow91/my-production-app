@@ -10,6 +10,7 @@ import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector, useStore } from 'react-redux'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { DynamicModuleLoader, type ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { ButtonTheme, CustomButton } from 'shared/ui/CustomButton'
 import { Input } from 'shared/ui/Input/Input'
 import { Text, TextTheme } from 'shared/ui/Text/Text'
@@ -27,7 +28,7 @@ const LoginForm = memo((props: LoginFormProps) => {
     const { className } = props
     const { t } = useTranslation()
 
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
 
     const username = useSelector(getLoginUsername)
     const password = useSelector(getLoginPassword)
@@ -42,9 +43,9 @@ const LoginForm = memo((props: LoginFormProps) => {
         dispatch(loginActions.setPassword(password))
     }, [dispatch])
 
-    const onLoginClick = useCallback(() => {
+    const onLoginClick = useCallback(async () => {
         if (username && password) {
-            dispatch(loginByUsername({ username, password }))
+            await dispatch(loginByUsername({ username, password }))
         }
     }, [dispatch, username, password])
 

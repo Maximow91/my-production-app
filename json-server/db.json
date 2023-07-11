@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "firstname": "Василий",
+    "secondname": "Уткин",
+    "age": 3,
+    "currency": "EUR",
+    "country": "Spain",
+    "city": "Madrid",
+    "username": "admin",
+    "avatar": "/"
+  }
 }

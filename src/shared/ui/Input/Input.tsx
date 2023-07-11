@@ -1,4 +1,4 @@
-import { type ChangeEvent, type InputHTMLAttributes } from 'react'
+import { memo, type ChangeEvent, type InputHTMLAttributes } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Input.module.scss'
 
@@ -10,7 +10,7 @@ interface InputProps extends HTMLInputProps {
     onChange?: (v: string) => void
 }
 
-export const Input = (props: InputProps) => {
+export const Input = memo((props: InputProps) => {
     const { value, onChange, className, type = 'text', ...otherProps } = props
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -28,4 +28,4 @@ export const Input = (props: InputProps) => {
             />
         </div>
     )
-}
+})
