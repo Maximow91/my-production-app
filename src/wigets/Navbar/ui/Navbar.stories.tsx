@@ -29,6 +29,6 @@ Dark.decorators = [ThemeDecorator(Theme.DARK)]
 
 UserLogined.decorators = [StoreDecorator({
     user: {
-        authData: { id: 1, username: 'sdsf' }
+        authData: { id: '1', username: 'sdsf' }
     }
 })]
