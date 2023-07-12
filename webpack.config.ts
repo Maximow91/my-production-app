@@ -7,6 +7,7 @@ export default (env: BuildEnvs) => {
     const mode: Mode = env.mode || 'development'
     const isDev = mode === 'development'
     const port = env.port || 3000
+    const apiUrl = env.apiUrl || 'http://localhost:8000'
 
     const paths: BuildPaths = {
         entry: path.resolve(__dirname, 'src', 'index.tsx'),
@@ -15,6 +16,6 @@ export default (env: BuildEnvs) => {
         src: path.resolve(__dirname, 'src')
     }
 
-    const config: Configuration = buildWebpackConfig({ mode, paths, isDev, port })
+    const config: Configuration = buildWebpackConfig({ mode, paths, isDev, port, apiUrl })
     return config
 }

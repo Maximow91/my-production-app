@@ -34,7 +34,8 @@ export default ({ config }: { config: WebpackConfiguration }) => {
     config.module?.rules?.push(buildCssLoaders(true))
 
     config.plugins?.push(new DefinePlugin({
-        __IS_DEV__: true
+        __IS_DEV__: true,
+        __API__: ''
     }))
 
     return config

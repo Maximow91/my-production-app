@@ -17,7 +17,7 @@ export const Modal = ({ className, children, isOpen = false, onClose, lazy }: Mo
     const [isClosing, setIsClosing] = useState(false)
     const [isMounted, setIsMounted] = useState(false)
 
-    const timerRef = useRef<ReturnType<typeof setTimeout>>()
+    const timerRef = useRef<ReturnType<typeof setTimeout> >()
 
     const mods: Record<string, boolean> = {
         [cls.opened]: isOpen,
