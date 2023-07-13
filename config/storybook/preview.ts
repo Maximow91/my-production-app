@@ -7,13 +7,13 @@ import 'loki/configure-react'
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
 
 const preview: Preview = {
-    decorators: [StyleDecorator, ThemeDecorator(Theme.LIGHT), RouteDecorator, StoreDecorator({
+    decorators: [StyleDecorator, ThemeDecorator(Theme.LIGHT), StoreDecorator({
         loginForm: {
             username: 'admin',
             password: '123',
             isLoading: false
         }
-    })],
+    }), RouteDecorator],
     parameters: {
         actions: { argTypesRegex: '^on[A-Z].*' },
         controls: {
