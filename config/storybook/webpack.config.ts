@@ -15,12 +15,12 @@ export default ({ config }: { config: WebpackConfiguration }) => {
     config.resolve?.extensions?.push('.ts', '.tsx')
 
     config.resolve!.modules!.unshift(paths.src)
+    // eslint-disable-next-line no-param-reassign
     // @ts-expect-error
     config.module!.rules = config.module!.rules!.map((rule: RuleSetRule) => {
-        if ((rule?.test as string)?.includes) {
-            if ((rule.test as string).includes('svg')) {
-                return { ...rule, exclude: /\.svg$/i }
-            }
+        // eslint-disable-next-line @typescript-eslint/prefer-includes
+        if (/svg/.test(rule.test as string)) {
+            return { ...rule, exclude: /\.svg$/i }
         }
 
         return rule

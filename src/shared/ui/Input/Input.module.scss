@@ -2,12 +2,37 @@
    display: flex;
 }
 
+.item {
+    display: flex;
+    align-items: center
+}
+
+.vertical{
+    flex-direction: column;
+}
+
 .input {
     width: 100%;
-    border-radius: 8px;
     outline: none;
-    border-color: var(--primary-color) ;
     background-color: transparent;
     color: var(--primary-color);
     padding: 5px;    
+    border: none; 
+    opacity: 0.8;
 }
+
+.label{
+    margin-right: 10px;
+
+}
+
+.focused {
+    color: red;
+ } 
+
+.readonly{
+    opacity: 1;
+}
+
+
+
