@@ -16,6 +16,6 @@ export default (env: BuildEnvs) => {
         src: path.resolve(__dirname, 'src')
     }
 
-    const config: Configuration = buildWebpackConfig({ mode, paths, isDev, port, apiUrl })
+    const config: Configuration = buildWebpackConfig({ mode, paths, isDev, port, apiUrl, project: 'frontend' })
     return config
 }

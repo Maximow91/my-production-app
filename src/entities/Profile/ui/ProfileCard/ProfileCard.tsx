@@ -28,7 +28,7 @@ interface ProfileCardProps {
 }
 
 export const ProfileCard = (props: ProfileCardProps) => {
-    const { t } = useTranslation()
+    const { t } = useTranslation('profile')
 
     const { onChangeFirstname, onChangeLastname, onChangeAge, onChangeCity, onChangeUsername, onChangeAvatar, onChangeCurrency, onChangeCountry, readonly, className, data, isLoading, error } = props
 
@@ -65,15 +65,14 @@ export const ProfileCard = (props: ProfileCardProps) => {
                         <Avatar src={data.avatar}/>
                     </div>
                 )}
-                <Input onChange={onChangeFirstname} readonly={readonly} className={cls.input} label={'Имя'} value={data?.firstname}/>
-                <Input onChange={onChangeLastname} readonly={readonly} className={cls.input} label={'Фамилия'} value={data?.secondname}/>
+                <Input onChange={onChangeFirstname} readonly={readonly} className={cls.input} label={t('Имя')} value={data?.firstname}/>
+                <Input onChange={onChangeLastname} readonly={readonly} className={cls.input} label={t('Фамилия')} value={data?.lastname}/>
                 <Input onChange={onChangeAge} readonly={readonly} className={cls.input} label={t('Возраст')}value={data?.age} />
                 <Input onChange={onChangeCity} readonly={readonly} className={cls.input} label={t('Город')}value={data?.city} />
                 <Input onChange={onChangeUsername} readonly={readonly} className={cls.input} label={t('Username')}value={data?.username} />
                 <CurrencySelect className={cls.input} readonly={readonly} value={data?.currency} onChange={onChangeCurrency}/>
                 <CountrySelect className={cls.input} readonly={readonly} value={data?.country} onChange={onChangeCountry}/>
                 {!readonly && <Input onChange={onChangeAvatar} readonly={readonly} className={cls.input} label={t('Введите ссылку на аватар')}value={data?.avatar} />}
-
             </div>
         </div>
     )

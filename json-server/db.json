@@ -26,9 +26,9 @@
     }
   ],
   "profile": {
-    "firstname": "Вася",
-    "secondname": "Уткин",
-    "age": 3,
+    "firstname": "Олег",
+    "lastname": "Уткин",
+    "age": 1122,
     "currency": "EUR",
     "country": "Belarus",
     "city": "Madrid",

@@ -4,14 +4,16 @@
   "Главная": "Main",
   "О сайте": "About",
   "Язык": "English",
-  "Страница не найдена":"Page not found",
+  "Страница не найдена": "Page not found",
   "Что то пошло не так": "Something went wrong",
   "Перезагрузить страницу": "Reload the page",
-  "Coркащенный язык":"En",
+  "Coркащенный язык": "En",
   "Имя пользователя": "User name",
   "Пароль": "Password",
-  "Войти": "Login" ,
+  "Войти": "Login",
   "Форма авторизации": "Login form",
   "Вы ввели неверный логин или пароль": "You entered an incorrect login or password",
-  "Выйти": "Logout"
+  "Выйти": "Logout",
+  "Укажите валюту": "Select currency",
+  "Укажите страну": "Select country"
 }
