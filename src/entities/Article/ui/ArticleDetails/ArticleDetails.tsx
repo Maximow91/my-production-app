@@ -24,6 +24,7 @@ import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text'
 import cls from './ArticleDetails.module.scss'
 
 import { TextBlockComponent } from '../TextBlockComponent/TextBlockComponent'
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect'
 
 interface ArticleDetailsProps {
     id: string
@@ -42,12 +43,10 @@ export const ArticleDetails = memo(({ id, className }: ArticleDetailsProps) => {
     const error = useSelector(getArticleDetailsError)
     const article = useSelector(getArticleDetailsData)
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            // eslint-disable-next-line @typescript-eslint/no-floating-promises
-            dispatch(fetchArticleById(id))
-        }
-    }, [dispatch, id])
+    useInitialEffect(() => {
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
+        dispatch(fetchArticleById(id))
+    })
 
     const renderBlock = useCallback((block: ArticleBlock) => {
         switch (block.type) {

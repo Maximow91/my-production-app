@@ -107,13 +107,15 @@
       "id": "5",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://images.techinsider.ru/upload/img_cache/028/028272720043b07b91b0a7a1f77361a5_ce_1000x664x0x0.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "1234",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://images.techinsider.ru/upload/img_cache/028/028272720043b07b91b0a7a1f77361a5_ce_1000x664x0x0.jpg"
     }
   ],
   "profile": {
