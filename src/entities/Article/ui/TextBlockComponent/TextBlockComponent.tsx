@@ -1,6 +1,5 @@
 import { type TextArticleBlock } from 'entities/Article/model/types/article'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { CustomButton } from 'shared/ui/CustomButton'
 import { Text } from 'shared/ui/Text/Text'
 import cls from './TextBlockComponent.module.scss'
 

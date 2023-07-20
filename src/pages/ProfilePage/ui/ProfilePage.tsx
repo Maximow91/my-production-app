@@ -34,6 +34,7 @@ const ProfilePage = () => {
 
     useEffect(() => {
         if (__PROJECT__ !== 'storybook') {
+            // eslint-disable-next-line @typescript-eslint/no-floating-promises
             dispatch(fetchProfileData())
         }
     }, [dispatch])

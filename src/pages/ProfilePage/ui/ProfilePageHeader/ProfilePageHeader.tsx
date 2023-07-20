@@ -27,6 +27,7 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
     }, [dispatch])
 
     const onSave = useCallback(() => {
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         dispatch(updateProfileData())
         dispatch(profileActions.setReadonly(true))
     }, [dispatch])

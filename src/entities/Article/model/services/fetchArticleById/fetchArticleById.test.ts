@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { type Dispatch } from '@reduxjs/toolkit'
 import { type StateSchema } from 'app/providers/StoreProvider'
 

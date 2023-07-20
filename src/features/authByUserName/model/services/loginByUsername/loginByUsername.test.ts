@@ -6,7 +6,9 @@ import { TestAsyncThunk } from 'shared/lib/test/TestAsyncThunk/TestAsyncThunk'
 import { loginByUsername } from './loginByUsername'
 
 describe('getLoginByUSername', () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     let dispatch: Dispatch
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     let getState: () => StateSchema
 
     beforeEach(() => {

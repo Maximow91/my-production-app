@@ -1,4 +1,3 @@
-import { type ReducersMapObject } from '@reduxjs/toolkit'
 import { type Decorator } from '@storybook/react'
 import { StoreProvider } from 'app/providers/StoreProvider'
 import { type StateSchema } from 'app/providers/StoreProvider/config/StateSchema'

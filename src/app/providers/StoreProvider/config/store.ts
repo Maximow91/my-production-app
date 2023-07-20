@@ -1,4 +1,4 @@
-import { type CombinedState, configureStore, getDefaultMiddleware, type Reducer, type ReducersMapObject } from '@reduxjs/toolkit'
+import { type CombinedState, configureStore, type Reducer, type ReducersMapObject } from '@reduxjs/toolkit'
 import { counterReducer } from 'entities/Counter'
 import { userReducer } from 'entities/User'
 import { type NavigateOptions, type To } from 'react-router-dom'

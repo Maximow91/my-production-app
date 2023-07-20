@@ -7,7 +7,9 @@ import { ValidateProfileError } from '../../types/profile'
 import { updateProfileData } from './updateProfileData'
 
 describe('fetchProfileData', () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     let dispatch: Dispatch
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     let getState: () => StateSchema
     const profileData = {
         firstname: 'firstname',
