@@ -6,7 +6,7 @@ import { ProfileCard } from './ProfileCard'
 import avatar from 'shared/assets/test/image.jpg'
 
 const meta: Meta<typeof ProfileCard> = {
-    title: 'enteties/ProfileCard',
+    title: 'entities/ProfileCard',
     component: ProfileCard
 }
 

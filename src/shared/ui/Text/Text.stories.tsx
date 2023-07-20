@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Theme } from 'app/providers/ThemeProvider'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorators'
 
-import { Text, TextTheme } from './Text'
+import { Text, TextSize, TextTheme } from './Text'
 
 const meta: Meta<typeof Text> = {
     title: 'shared/Text',
@@ -39,6 +39,14 @@ export const OnlyTitleDark: Story = {
 
 export const OnlyTextDark: Story = {
     render: () => <Text text='Only text' />
+}
+
+export const SizeM: Story = {
+    render: () => <Text title='Title' text='test text' />
+}
+
+export const SizeL: Story = {
+    render: () => <Text size={TextSize.L} title='Title' text='test text' />
 }
 
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)]

@@ -14,7 +14,7 @@ export interface SidebarItemType {
 export const SidebarItemsList: SidebarItemType[] = [
     {
         path: RoutePaths.main,
-        text: 'main',
+        text: 'Главная',
         Icon: MainIcon
     },
     {
