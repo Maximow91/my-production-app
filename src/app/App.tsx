@@ -6,7 +6,10 @@ import { Sidebar } from 'wigets/Sidebar'
 import { useDispatch, useSelector } from 'react-redux'
 import { getInitedAuthData, userActions } from 'entities/User'
 
+const fakeData = '1'
+
 export const App = () => {
+    console.log(fakeData)
     const dispatch = useDispatch()
     const isInited = useSelector(getInitedAuthData)
 
