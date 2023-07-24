@@ -4,11 +4,13 @@ import { AddCommentForm } from 'features/addCommentForm'
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+import { RoutePaths } from 'shared/config/routerConfig/routeConfig'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { DynamicModuleLoader, type ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect'
+import { ButtonTheme, CustomButton } from 'shared/ui/CustomButton'
 import { Text } from 'shared/ui/Text/Text'
 import { getArticleCommentsIsLoading } from '../model/selectors/comments'
 import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle'
@@ -35,6 +37,8 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const comments = useSelector(getArticleComments.selectAll)
     const isLoading = useSelector(getArticleCommentsIsLoading)
 
+    const navigate = useNavigate()
+
     useInitialEffect(() => {
         if (id) {
             void dispatch(fetchCommentsByArticleId(id))
@@ -44,6 +48,10 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const sendComment = useCallback((text: string) => {
         dispatch(addCommentForArticle(text))
     }, [dispatch])
+
+    const onBackToList = useCallback(() => {
+        navigate(RoutePaths.articles)
+    }, [navigate])
 
     if (!id) {
         return (
@@ -56,6 +64,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     return (
         <DynamicModuleLoader reducers={reducers}>
             <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+                <CustomButton theme={ButtonTheme.OUTLINE} onClick={onBackToList}>{t('Назад к списку')}</CustomButton>
                 <ArticleDetails id={id}/>
                 <Text className={cls.title} title={t('Комментарии')} />
                 <AddCommentForm onSendCommentSendPress={sendComment} />

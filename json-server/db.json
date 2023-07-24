@@ -109,6 +109,7 @@
     {
       "id": "1",
       "title": "Javascript news",
+      "userId": "5",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
@@ -204,7 +205,7 @@
       "country": "Belarus",
       "city": "Madrid",
       "username": "admin",
-      "avatar": "https://images.techinsider.ru/upload/img_cache/028/028272720043b07b91b0a7a1f77361a5_ce_1000x664x0x0.jpg"
+      "avatar": "≈"
     },
     {
       "id": "2",
