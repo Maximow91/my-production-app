@@ -1,38 +1,36 @@
 .InputWrapper {
-   display: flex;
+  display: flex;
 }
 
 .item {
-    display: flex;
-    align-items: center
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
-.vertical{
-    flex-direction: column;
+.vertical {
+  flex-direction: column;
 }
 
 .input {
-    width: 100%;
-    outline: none;
-    background-color: transparent;
-    color: var(--primary-color);
-    padding: 5px;    
-    border: none; 
-    opacity: 0.8;
+  width: 100%;
+  outline: none;
+  background-color: transparent;
+  color: var(--primary-color);
+  padding: 5px;
+  border: none;
+  opacity: 0.8;
 }
 
-.label{
-    margin-right: 10px;
+.label {
+  margin-right: 10px;
 
 }
 
 .focused {
-    color: red;
- } 
-
-.readonly{
-    opacity: 1;
+  color: red;
 }
 
-
-
+.readonly {
+  opacity: 1;
+}

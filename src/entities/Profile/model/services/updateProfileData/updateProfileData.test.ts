@@ -12,6 +12,7 @@ describe('fetchProfileData', () => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     let getState: () => StateSchema
     const profileData = {
+        id: '2',
         firstname: 'firstname',
         lastname: 'lastname',
         age: 10,

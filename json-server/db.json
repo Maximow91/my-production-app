@@ -29,9 +29,83 @@
       "text": "commentsss",
       "articleId": "1",
       "userId": "5"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "5",
+        "text": "1"
+      },
+      "id": "rF6OIkM"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "5",
+        "text": "1"
+      },
+      "id": "gxKP6Ff"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "5",
+        "text": "111"
+      },
+      "id": "ix0QEAb"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "5",
+        "text": "121"
+      },
+      "id": "2GfmbI7"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "5",
+        "text": "qwqwqw"
+      },
+      "id": "GT0P_D8"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "5",
+        "text": "qwqwqw"
+      },
+      "id": "vA4Cob8"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "5",
+        "text": "qwqwqw"
+      },
+      "id": "pb9Hcc7"
+    },
+    {
+      "articleId": "1",
+      "userId": "5",
+      "text": "qwqwqw",
+      "id": "brDha1_"
+    },
+    {
+      "articleId": "1",
+      "userId": "5",
+      "text": "hello",
+      "id": "sguI9oM"
+    },
+    {
+      "articleId": "1",
+      "userId": "5",
+      "text": "volvo",
+      "id": "NiVi31J"
     }
   ],
-  "articles":[
+  "articles": [
     {
       "id": "1",
       "title": "Javascript news",
@@ -39,7 +113,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -115,17 +191,31 @@
       "username": "user",
       "password": "1234",
       "role": "USER",
-      "avatar": "https://images.techinsider.ru/upload/img_cache/028/028272720043b07b91b0a7a1f77361a5_ce_1000x664x0x0.jpg"
+      "avatar": "https://w0.peakpx.com/wallpaper/210/583/HD-wallpaper-haker-fun-skull-gothic-super.jpg"
     }
   ],
-  "profile": {
-    "firstname": "Олег",
-    "lastname": "Уткин",
-    "age": 1122,
-    "currency": "EUR",
-    "country": "Belarus",
-    "city": "Madrid",
-    "username": "admin",
-    "avatar": "https://images.techinsider.ru/upload/img_cache/028/028272720043b07b91b0a7a1f77361a5_ce_1000x664x0x0.jpg"
-  }
+  "profile": [
+    {
+      "id": "5",
+      "firstname": "Кир",
+      "lastname": "Максимов",
+      "age": 32,
+      "currency": "EUR",
+      "country": "Belarus",
+      "city": "Madrid",
+      "username": "admin",
+      "avatar": "https://images.techinsider.ru/upload/img_cache/028/028272720043b07b91b0a7a1f77361a5_ce_1000x664x0x0.jpg"
+    },
+    {
+      "id": "2",
+      "firstname": "Олег",
+      "lastname": "Уткин",
+      "age": 11,
+      "currency": "RUR",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "user",
+      "avatar": "https://w0.peakpx.com/wallpaper/210/583/HD-wallpaper-haker-fun-skull-gothic-super.jpg"
+    }
+  ]
 }

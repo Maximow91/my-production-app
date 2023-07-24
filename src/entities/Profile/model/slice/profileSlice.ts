@@ -4,6 +4,7 @@ import { updateProfileData } from '../services/updateProfileData/updateProfileDa
 import { type Profile, type ProfileSchema } from '../types/profile'
 
 const initialState: ProfileSchema = {
+    id: undefined,
     isLoading: false,
     readonly: true,
     error: undefined,
