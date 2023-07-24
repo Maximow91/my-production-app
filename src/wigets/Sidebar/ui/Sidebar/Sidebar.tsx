@@ -5,8 +5,9 @@ import { ButtonSize } from 'shared/ui/CustomButton/ui/CustomButton'
 import { LangSwitcher } from 'wigets/LangSwitcher/ui/LangSwitcher'
 import { ThemeSwitcher } from 'wigets/ThemeSwitcher'
 import cls from './Sidebar.module.scss'
-import { SidebarItemsList } from 'wigets/Sidebar/model/items'
 import { SidebarItem } from '../SidebarItem/SidebarItem'
+import { useSelector } from 'react-redux'
+import { getSidebarItems } from '../../model/selectors/getSidebarItems/getSidebarItems'
 
 interface SidebarProps {
     className?: string
@@ -14,6 +15,8 @@ interface SidebarProps {
 
 export const Sidebar = memo(({ className }: SidebarProps) => {
     const [collapsed, setCollapsed] = useState(false)
+
+    const SidebarItemsList = useSelector(getSidebarItems)
 
     const onToggle = () => {
         setCollapsed(prev => !prev)

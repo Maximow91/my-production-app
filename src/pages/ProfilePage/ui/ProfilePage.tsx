@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react'
+import { useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import { fetchProfileData, getProfileError, getProfileForm, getProfileIsLoading, getProfileReadOnly, getValidateProfileErrors, profileActions, ProfileCard, profileReducer } from 'entities/Profile'

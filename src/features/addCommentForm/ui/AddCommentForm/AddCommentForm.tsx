@@ -1,4 +1,3 @@
-import { getAddCommentFormError } from 'features/addCommentForm/model/selectors/getAddCommentFormError/getAddCommentFormError'
 import { getAddCommentFormText } from 'features/addCommentForm/model/selectors/getAddCommentFormText/getAddCommentFormText'
 import { addCommentFormActions, addCommentFormReducer } from 'features/addCommentForm/model/slice/addCommentFormSlice'
 import { useCallback } from 'react'
