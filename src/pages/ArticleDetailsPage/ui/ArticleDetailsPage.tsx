@@ -11,6 +11,7 @@ import { DynamicModuleLoader, type ReducerList } from 'shared/lib/components/Dyn
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect'
 import { ButtonTheme, CustomButton } from 'shared/ui/CustomButton'
+import { Page } from 'shared/ui/Page/Page'
 import { Text } from 'shared/ui/Text/Text'
 import { getArticleCommentsIsLoading } from '../model/selectors/comments'
 import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle'
@@ -40,8 +41,10 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const navigate = useNavigate()
 
     useInitialEffect(() => {
-        if (id) {
-            void dispatch(fetchCommentsByArticleId(id))
+        if (__PROJECT__ !== 'storybook') {
+            if (id) {
+                void dispatch(fetchCommentsByArticleId(id))
+            }
         }
     })
 
@@ -63,13 +66,13 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 <CustomButton theme={ButtonTheme.OUTLINE} onClick={onBackToList}>{t('Назад к списку')}</CustomButton>
                 <ArticleDetails id={id}/>
                 <Text className={cls.title} title={t('Комментарии')} />
                 <AddCommentForm onSendCommentSendPress={sendComment} />
                 <CommentList className={cls.commentList} comments ={comments} isLoading={isLoading}/>
-            </div>
+            </Page>
         </DynamicModuleLoader>
     )
 }

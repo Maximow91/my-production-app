@@ -3,10 +3,10 @@ import {
     createSlice, type PayloadAction
 } from '@reduxjs/toolkit'
 import { type StateSchema } from 'app/providers/StoreProvider'
-import { type ArticlesPageSchema } from '../types/ArticlePageSchema'
-import { ArticleView, type Article } from 'entities/Article'
-import { fetchArticles } from '../services/fetchArticles'
 import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localStorage'
+import { ArticleView, type Article } from 'entities/Article'
+import { type ArticlesPageSchema } from '../types/ArticlePageSchema'
+import { fetchArticles } from '../services/fetchArticles/fetchArticles'
 
 const articlesAdapter = createEntityAdapter<Article>({
     selectId: (article) => article.id
@@ -23,7 +23,11 @@ const articlePageSlice = createSlice({
         error: undefined,
         ids: [],
         entities: {},
-        view: ArticleView.TILE
+        view: ArticleView.TILE,
+        limit: undefined,
+        page: 1,
+        hasMore: true
+
     }),
     reducers: {
         setView: (state, action: PayloadAction<ArticleView>) => {
@@ -31,7 +35,18 @@ const articlePageSlice = createSlice({
             localStorage.setItem(ARTICLES_VIEW_LOCALSTORAGE_KEY, action.payload)
         },
         initState: state => {
-            state.view = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleView
+            const view = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleView
+            state.limit = view === ArticleView.TILE ? 9 : 4
+            state.view = view
+        },
+        setLimit: (state, action: PayloadAction<number>) => {
+            state.limit = action.payload
+        },
+        setPage: (state, action: PayloadAction<number>) => {
+            state.page = action.payload
+        },
+        setHasMore: (state, action: PayloadAction<boolean>) => {
+            state.hasMore = action.payload
         }
     },
     extraReducers: (builder) => {
@@ -45,7 +60,8 @@ const articlePageSlice = createSlice({
                 action: PayloadAction<Article[]>
             ) => {
                 state.isLoading = false
-                articlesAdapter.setAll(state, action.payload)
+                articlesAdapter.setMany(state, action.payload)
+                state.hasMore = action.payload.length > 0
             })
             .addCase(fetchArticles.rejected, (state, action) => {
                 state.isLoading = false

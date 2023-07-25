@@ -21,7 +21,7 @@ export const App = () => {
         <div className={classNames('app', {}, [])}>
             <Suspense fallback=''>
                 <Navbar />
-                <div className='page-content'>
+                <div className='content-page'>
                     <Sidebar />
                     {isInited && <AppRouter />}
                 </div>

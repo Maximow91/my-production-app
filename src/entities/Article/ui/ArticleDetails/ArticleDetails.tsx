@@ -45,7 +45,7 @@ export const ArticleDetails = memo(({ id, className }: ArticleDetailsProps) => {
 
     useInitialEffect(() => {
         // eslint-disable-next-line @typescript-eslint/no-floating-promises
-        dispatch(fetchArticleById(id))
+        if (__PROJECT__ !== 'storybook') { dispatch(fetchArticleById(id)) }
     })
 
     const renderBlock = useCallback((block: ArticleBlock) => {

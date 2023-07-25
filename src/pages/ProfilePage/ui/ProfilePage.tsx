@@ -11,6 +11,7 @@ import { Text, TextTheme } from 'shared/ui/Text/Text'
 import { ValidateProfileError } from 'entities/Profile/model/types/profile'
 import { useParams } from 'react-router-dom'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect'
+import { Page } from 'shared/ui/Page/Page'
 
 const reducers: ReducerList = {
     profile: profileReducer
@@ -76,25 +77,27 @@ const ProfilePage = () => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <ProfilePageHeader />
-            {validateErrors?.length && validateErrors.map((err: any) => (
+            <Page >
+                <ProfilePageHeader />
+                {validateErrors?.length && validateErrors.map((err: any) => (
                 // @ts-expect-error
-                <Text theme={TextTheme.ERROR} key={validateErrors[err]} text={validateErrorsTranslate[err]} />
-            ))}
-            <ProfileCard
-                data={formData}
-                error={error}
-                isLoading={isLoading}
-                onChangeFirstname={onChangeFirstname}
-                onChangeLastname={onChangeLastname}
-                onChangeAge={onChangeAge}
-                onChangeCity={onChangeCity}
-                onChangeAvatar={onChangeAvatar}
-                onChangeUsername={onChangeUsername}
-                onChangeCurrency={onChangeCurrency}
-                onChangeCountry={onChangeCountry}
-                readonly={readonly}
-            />
+                    <Text theme={TextTheme.ERROR} key={validateErrors[err]} text={validateErrorsTranslate[err]} />
+                ))}
+                <ProfileCard
+                    data={formData}
+                    error={error}
+                    isLoading={isLoading}
+                    onChangeFirstname={onChangeFirstname}
+                    onChangeLastname={onChangeLastname}
+                    onChangeAge={onChangeAge}
+                    onChangeCity={onChangeCity}
+                    onChangeAvatar={onChangeAvatar}
+                    onChangeUsername={onChangeUsername}
+                    onChangeCurrency={onChangeCurrency}
+                    onChangeCountry={onChangeCountry}
+                    readonly={readonly}
+                />
+            </Page>
         </DynamicModuleLoader>
     )
 }

@@ -3,6 +3,7 @@ import { type Article } from 'entities/Article'
 import { ArticleType, ArticleBlockType } from 'entities/Article'
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
 import ArticleDetailsPage from './ArticleDetailsPage'
+import image from 'shared/assets/test/image.jpg'
 
 const article: Article = {
     id: '1',
@@ -12,7 +13,7 @@ const article: Article = {
         id: '5',
         username: 'kir'
     },
-    img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
+    img: image,
     views: 1022,
     createdAt: '26.02.2022',
     type: [ArticleType.IT],
@@ -44,7 +45,7 @@ const article: Article = {
         {
             id: '2',
             type: ArticleBlockType.IMAGE,
-            src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
+            src: image,
             title: 'Рисунок 1 - скриншот сайта'
         },
         {
@@ -64,7 +65,7 @@ const article: Article = {
         {
             id: '8',
             type: ArticleBlockType.IMAGE,
-            src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
+            src: image,
             title: 'Рисунок 1 - скриншот сайта'
         },
         {
