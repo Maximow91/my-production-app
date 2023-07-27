@@ -8,9 +8,9 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect'
 import { Page } from 'shared/ui/Page/Page'
 import { getArticlesListView } from '../model/selectors/getArticlesLIstView/getArticlesListView'
 import { getArticlesPageIsLoading } from '../model/selectors/getArticlesPageIsLoading/getArticlesPageIsLoading'
-import { fetchArticles } from '../model/services/fetchArticles/fetchArticles'
 import { articlePageActions, articlePageReducer, getArticles } from '../model/slice/articlePageSlice'
 import { fetchMoreArticles } from '../model/services/fetchMoreArticles/fetchMoreArticles'
+import { initArticlesPage } from '../model/services/initArticlesPage/initArticlesPage'
 
 const reducers: ReducerList = {
     articlesPage: articlePageReducer
@@ -24,10 +24,7 @@ const ArticlesPage = () => {
     const articles = useSelector(getArticles.selectAll)
 
     useInitialEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(articlePageActions.initState())
-            void dispatch(fetchArticles({ page: 1 }))
-        }
+        void dispatch(initArticlesPage())
     })
 
     const handleListViewChange = useCallback((view: ArticleView) => {
@@ -36,13 +33,12 @@ const ArticlesPage = () => {
 
     const onLoadNextPart = useCallback(() => {
         if (__PROJECT__ !== 'storybook') {
-            console.log('load next')
             void dispatch(fetchMoreArticles())
         }
     }, [dispatch])
 
     return (
-        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+        <DynamicModuleLoader reducers={reducers} >
             <Page onScrollEnd={onLoadNextPart} >
                 <ArticleViewSelector currentView={view} onViewClick={handleListViewChange} />
                 <ArticleList view={view} articles={articles} isLoading={isLoading} />

@@ -14,8 +14,6 @@ ThunkConfig<string>
     async (commentText, thunkApi) => {
         const { extra, rejectWithValue, getState, dispatch } = thunkApi
 
-        console.log('addComment')
-
         const userData = getUserAuthData(getState())
         const articleData = getArticleDetailsData(getState())
 

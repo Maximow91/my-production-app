@@ -29,8 +29,6 @@ export const Input = memo((props: InputProps) => {
         setFocused(false)
     }
 
-    console.log('focused', focused)
-
     return (
         <div className={classNames(cls.InputWrapper, {}, [className as string])}>
             <div className={classNames(cls.item, { [cls.vertical]: !!vertical }, []) }>
