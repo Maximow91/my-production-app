@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { useCallback } from 'react'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
+import { Text } from 'shared/ui/Text/Text'
 import cls from './ArticleList.module.scss'
 
 interface ArticleListProps {
@@ -21,6 +22,13 @@ export const ArticleList = (props: ArticleListProps) => {
     }, [view])
 
     const { t } = useTranslation()
+    if (!isLoading && !articles.length) {
+        return (
+            <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+                <Text title='Статьи не найдены' />
+            </div>
+        )
+    }
 
     return (
         <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>

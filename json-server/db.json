@@ -130,7 +130,7 @@
       "userId": "5",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1022,
+      "views": 107,
       "createdAt": "26.02.2022",
       "type": [
         "IT"
@@ -203,7 +203,7 @@
       "subtitle": "Что нового в Kotlin за 2022 год?",
       "img": "https://developer.okta.com/assets-jekyll/blog/tutorial-kotlin-beginners-guide/kotlin-logo-social-21c8518b19eb96d96f35e0057bb92b7e1281a24820e0fa09e39c42f184bd7faa.png",
       "views": 10,
-      "createdAt": "25.07.2023",
+      "createdAt": "25.07.2022",
       "type": [
         "IT"
       ],
@@ -272,10 +272,10 @@
       "id": "3",
       "title": "Java news",
       "userId": "2",
-      "subtitle": "Что нового в Java за 2022 год?",
+      "subtitle": "Что нового в Java за 2021 год?",
       "img": "https://andreyex.ru/wp-content/uploads/2021/06/CHemu-programmisty-na-Java-dolzhny-nauchitsya-v-2021-godu.png",
-      "views": 198,
-      "createdAt": "25.07.2023",
+      "views": 128,
+      "createdAt": "05.10.2021",
       "type": [
         "IT"
       ],
@@ -347,7 +347,7 @@
       "subtitle": "Что нового в Python за 2022 год?",
       "img": "https://miro.medium.com/v2/resize:fit:1400/1*m0H6-tUbW6grMlezlb52yw.png",
       "views": 1228,
-      "createdAt": "01.02.2023",
+      "createdAt": "01.05.2023",
       "type": [
         "IT"
       ],
@@ -418,8 +418,8 @@
       "userId": "2",
       "subtitle": "Что нового в React за 2022 год?",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhln4-ygosRcYC8XLmLPuh_bxZXFH8xpD48w&usqp=CAU",
-      "views": 1228,
-      "createdAt": "01.02.2023",
+      "views": 1,
+      "createdAt": "01.01.2023",
       "type": [
         "IT"
       ],
@@ -442,8 +442,8 @@
       "userId": "2",
       "subtitle": "Что нового в React-native за 2022 год?",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhln4-ygosRcYC8XLmLPuh_bxZXFH8xpD48w&usqp=CAU",
-      "views": 1228,
-      "createdAt": "01.02.2023",
+      "views": 220,
+      "createdAt": "31.02.2022",
       "type": [
         "IT"
       ],
@@ -466,8 +466,8 @@
       "userId": "2",
       "subtitle": "Что нового в Redux за 2022 год?",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQfQmr9HuV2zwe4z76xWrHIYN9FJXWgsX8xAqI_HwLmMQVZZ7OlTihT6kyuPHFb1nBM5I&usqp=CAU",
-      "views": 1228,
-      "createdAt": "01.02.2023",
+      "views": 345,
+      "createdAt": "01.05.2021",
       "type": [
         "IT"
       ],
@@ -488,10 +488,10 @@
       "id": "8",
       "title": "Angular news",
       "userId": "2",
-      "subtitle": "Что нового в Redux за 2022 год?",
+      "subtitle": "Что нового в Redux за 2020 год?",
       "img": "https://www.searchenginejournal.com/wp-content/uploads/2019/04/the-seo-guide-to-angular.png",
-      "views": 1228,
-      "createdAt": "01.02.2023",
+      "views": 16,
+      "createdAt": "01.02.2020",
       "type": [
         "IT"
       ],
@@ -514,8 +514,8 @@
       "userId": "2",
       "subtitle": "Новости из мира фронтенда?",
       "img": "https://www.searchenginejournal.com/wp-content/uploads/2019/04/the-seo-guide-to-angular.png",
-      "views": 1228,
-      "createdAt": "01.02.2023",
+      "views": 99,
+      "createdAt": "06.02.2020",
       "type": [
         "IT"
       ],
@@ -538,8 +538,8 @@
       "userId": "2",
       "subtitle": "Что нужно знать новичку",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS-4UiS4edUBxG9tR0KJ1iKsEDN3xY1yxsHtGCOiAamCzSXzyxA8SqmRX3m-vgXGiu3tA&usqp=CAU",
-      "views": 1228,
-      "createdAt": "01.02.2023",
+      "views": 124,
+      "createdAt": "01.05.2022",
       "type": [
         "IT"
       ],
@@ -562,8 +562,8 @@
       "userId": "2",
       "subtitle": "Что нужно знать новичку",
       "img": "https://static.ebayinc.com/static/assets/Uploads/Stories/Articles/node.js.jpg",
-      "views": 1228,
-      "createdAt": "01.02.2023",
+      "views": 300,
+      "createdAt": "01.01.2022",
       "type": [
         "IT"
       ],
@@ -586,8 +586,8 @@
       "userId": "2",
       "subtitle": "Что нового в Mobx за 2022 год?",
       "img": "https://miro.medium.com/v2/resize:fit:1200/1*RAPSFZoRKs_gKRcBkdyB1A.jpeg",
-      "views": 1228,
-      "createdAt": "01.02.2023",
+      "views": 159,
+      "createdAt": "12.12.2023",
       "type": [
         "IT"
       ],
@@ -608,10 +608,10 @@
       "id": "13",
       "title": "C# news",
       "userId": "2",
-      "subtitle": "Что нового в c# за 2022 год?",
+      "subtitle": "Что нового в c# за 2021 год?",
       "img": "https://media.tproger.ru/uploads/2015/11/sharp-things.jpg",
-      "views": 1228,
-      "createdAt": "01.02.2023",
+      "views": 109,
+      "createdAt": "08.06.2022",
       "type": [
         "IT"
       ],
@@ -634,8 +634,8 @@
       "userId": "2",
       "subtitle": "Что нового в c# за 2022 год?",
       "img": "https://media.tproger.ru/uploads/2015/11/sharp-things.jpg",
-      "views": 1228,
-      "createdAt": "01.02.2023",
+      "views": 139,
+      "createdAt": "21.02.2023",
       "type": [
         "IT"
       ],
@@ -658,8 +658,8 @@
       "userId": "2",
       "subtitle": "Что нового в c# за 2022 год?",
       "img": "https://media.tproger.ru/uploads/2015/11/sharp-things.jpg",
-      "views": 1228,
-      "createdAt": "01.02.2023",
+      "views": 263,
+      "createdAt": "21.01.2021",
       "type": [
         "IT"
       ],
@@ -682,10 +682,10 @@
       "userId": "2",
       "subtitle": "Что нужно знать новичку",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS-4UiS4edUBxG9tR0KJ1iKsEDN3xY1yxsHtGCOiAamCzSXzyxA8SqmRX3m-vgXGiu3tA&usqp=CAU",
-      "views": 1228,
-      "createdAt": "01.02.2023",
+      "views": 18,
+      "createdAt": "23.07.2023",
       "type": [
-        "IT"
+        "IT","SCIENCE"
       ],
       "blocks": [
         {
@@ -706,8 +706,8 @@
       "userId": "2",
       "subtitle": "Что нового в c# за 2022 год?",
       "img": "https://media.tproger.ru/uploads/2015/11/sharp-things.jpg",
-      "views": 1228,
-      "createdAt": "01.02.2023",
+      "views": 11238,
+      "createdAt": "01.05.2020",
       "type": [
         "IT"
       ],
@@ -730,10 +730,10 @@
       "userId": "2",
       "subtitle": "Что нужно знать новичку",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS-4UiS4edUBxG9tR0KJ1iKsEDN3xY1yxsHtGCOiAamCzSXzyxA8SqmRX3m-vgXGiu3tA&usqp=CAU",
-      "views": 1228,
-      "createdAt": "01.02.2023",
+      "views": 11,
+      "createdAt": "01.11.2023",
       "type": [
-        "IT"
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -754,8 +754,8 @@
       "userId": "2",
       "subtitle": "Что нужно знать новичку",
       "img": "https://static.ebayinc.com/static/assets/Uploads/Stories/Articles/node.js.jpg",
-      "views": 1228,
-      "createdAt": "01.02.2023",
+      "views": 1118,
+      "createdAt": "01.02.2020",
       "type": [
         "IT"
       ],
@@ -773,7 +773,6 @@
       ]
     }
   ],
-  
   "users": [
     {
       "id": "5",
@@ -797,10 +796,10 @@
       "lastname": "Максимов",
       "age": 32,
       "currency": "EUR",
-      "country": "Belarus",
+      "country": "Kazahstan",
       "city": "Madrid",
       "username": "admin",
-      "avatar": "≈"
+      "avatar": "https://thumbs.dreamstime.com/b/haker-guy-hoodie-crypto-currency-concept-dark-background-d-rendering-mixed-media-161555772.jpg"
     },
     {
       "id": "2",

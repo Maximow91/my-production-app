@@ -22,9 +22,7 @@ ThunkConfig<string>
             if (hasMore && !isLoading) {
                 if (hasMore && !isLoading) {
                     dispatch(articlePageActions.setPage(page + 1))
-                    void dispatch(fetchArticles({
-                        page: page + 1
-                    }))
+                    void dispatch(fetchArticles({}))
                 }
             }
         } catch (e) {

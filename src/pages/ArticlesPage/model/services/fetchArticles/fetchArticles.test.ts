@@ -101,7 +101,7 @@ describe('fetchProfileData', () => {
             data: articlesPageData
         }))
 
-        const result = await thunk.callThunk({ page: 1 })
+        const result = await thunk.callThunk({ })
         console.log('result', result)
         expect(result.meta.requestStatus).toBe('fulfilled')
         expect(result.payload).toEqual(articlesPageData)
@@ -112,7 +112,7 @@ describe('fetchProfileData', () => {
         thunk.api.get.mockReturnValue(Promise.resolve({
             status: 403
         }))
-        const result = await thunk.callThunk({ page: 1 })
+        const result = await thunk.callThunk({ })
         expect(result.meta.requestStatus).toBe('rejected')
     })
 })

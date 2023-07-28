@@ -1,32 +1,33 @@
-import { type ChangeEvent, memo, useMemo } from 'react'
+import { type ChangeEvent, useMemo } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Select.module.scss'
 
-export interface SelectOption {
-    value: string
+export interface SelectOption<T> {
+    value: T
     content: string
 }
 
-interface SelectProps {
+interface SelectProps <T extends string> {
     className?: string
     label?: string
     readonly?: boolean
-    options?: SelectOption[]
-    value?: string
-    onChange?: (value: string) => void
+    options?: Array<SelectOption<T>>
+    value?: T
+    onChange?: (value: T) => void
 }
 
-export const Select = memo(({ className, label, options, value, onChange, readonly }: SelectProps) => {
+export const Select = <T extends string> ({ className, label, options, value, onChange, readonly }: SelectProps<T>) => {
     const mods = {}
 
     const optionList = useMemo(() => {
         return options?.map((opt) => {
-            return (<option key={opt.value} className={cls.option} >{opt.content}</option>)
+            return (<option value={opt.value} key={opt.value} className={cls.option} >{opt.content}</option>)
         })
     }, [options])
 
     const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
-        onChange?.(e.target.value)
+        console.log('onChange', e.target.value)
+        onChange?.(e.target.value as T)
     }
 
     return (
@@ -37,4 +38,4 @@ export const Select = memo(({ className, label, options, value, onChange, readon
             </select>
         </div>
     )
-})
+}

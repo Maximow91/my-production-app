@@ -1,3 +1,4 @@
+export { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs'
 export { ArticleView } from './model/types/article'
 export type { ArticleDetailsSchema } from './model/types/ArticleDetailsSchema'
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails'
@@ -7,3 +8,5 @@ export { getArticleDetailsData } from './model/selectors/getArticleDetailsData/g
 export { getArticleDetailsError } from './model/selectors/getArticleDetailsError/getArticleDetailsError'
 export { getArticleDetailsIsLoading } from './model/selectors/getArticleDetailsIsLoading/getArticleDetailsIsLoading'
 export { ArticleList } from './ui/ArticleList/ArticleList'
+export { ArticleSortField } from './model/types/article'
+export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector'
