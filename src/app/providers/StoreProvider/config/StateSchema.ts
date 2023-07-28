@@ -7,13 +7,14 @@ import { type UserSchema } from 'entities/User'
 import { type AddCommentFormSchema } from 'features/addCommentForm'
 
 import { type LoginSchema } from 'features/authByUserName'
+import { type UISchema } from 'features/UI'
 import { type ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage'
 import { type ArticlesPageSchema } from 'pages/ArticlesPage'
-import { type NavigateOptions, type To } from 'react-router-dom'
 
 export interface StateSchema {
     counter: CounterSchema
     user: UserSchema
+    ui: UISchema
     // async
     loginForm?: LoginSchema
     profile?: ProfileSchema

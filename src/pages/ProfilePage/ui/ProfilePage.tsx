@@ -11,7 +11,7 @@ import { Text, TextTheme } from 'shared/ui/Text/Text'
 import { ValidateProfileError } from 'entities/Profile/model/types/profile'
 import { useParams } from 'react-router-dom'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect'
-import { Page } from 'shared/ui/Page/Page'
+import { Page } from 'wigets/Page'
 
 const reducers: ReducerList = {
     profile: profileReducer

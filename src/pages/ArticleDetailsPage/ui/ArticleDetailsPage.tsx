@@ -11,7 +11,7 @@ import { DynamicModuleLoader, type ReducerList } from 'shared/lib/components/Dyn
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect'
 import { ButtonTheme, CustomButton } from 'shared/ui/CustomButton'
-import { Page } from 'shared/ui/Page/Page'
+import { Page } from 'wigets/Page'
 import { Text } from 'shared/ui/Text/Text'
 import { getArticleCommentsIsLoading } from '../model/selectors/comments'
 import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle'
@@ -49,7 +49,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     })
 
     const sendComment = useCallback((text: string) => {
-        dispatch(addCommentForArticle(text))
+        void dispatch(addCommentForArticle(text))
     }, [dispatch])
 
     const onBackToList = useCallback(() => {
