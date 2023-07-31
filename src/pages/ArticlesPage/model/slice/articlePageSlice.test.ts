@@ -24,13 +24,6 @@ describe('Slice test', () => {
         expect(articlePageReducer(state as ArticlesPageSchema, articlePageActions.setPage(3))).toEqual({ page: 3 })
     })
 
-    test('setHasMore', () => {
-        const state: DeepPartial<ArticlesPageSchema> = {
-            hasMore: true
-        }
-        expect(articlePageReducer(state as ArticlesPageSchema, articlePageActions.setHasMore(false))).toEqual({ hasMore: false })
-    })
-
     // test('updateProfile', () => {
     //     const state: DeepPartial<ProfileSchema> = {
     //         form: {

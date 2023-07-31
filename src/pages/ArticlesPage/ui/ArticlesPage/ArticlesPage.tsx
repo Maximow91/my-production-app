@@ -36,6 +36,7 @@ const ArticlesPage = () => {
 
     const onLoadNextPart = useCallback(() => {
         if (__PROJECT__ !== 'storybook') {
+            console.log('onLoadNextPart')
             void dispatch(fetchMoreArticles())
         }
     }, [dispatch])
