@@ -5,7 +5,7 @@ import { articleDetailsReduser } from 'entities/Article/model/slice/articleDetai
 import { profileReducer } from 'entities/Profile'
 import { addCommentFormReducer } from 'features/addCommentForm'
 import { loginReducer } from 'features/authByUserName/model/slice/loginSlice'
-import { articleDetailsCommentsReducer } from 'pages/ArticleDetailsPage/model/slice/articleDetailsCommentsSlice'
+import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slice'
 import { type ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 
 const defaultReducers: ReducerList = {
@@ -13,7 +13,7 @@ const defaultReducers: ReducerList = {
     profile: profileReducer,
     articleDetails: articleDetailsReduser,
     addCommentForm: addCommentFormReducer,
-    articleDetailsComments: articleDetailsCommentsReducer
+    articleDetailsPage: articleDetailsPageReducer
 }
 
 export const StoreDecorator = (initialState: DeepPartial<StateSchema>, asyncReducers?: ReducerList) => {

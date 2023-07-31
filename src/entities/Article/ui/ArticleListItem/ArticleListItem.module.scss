@@ -1,103 +1,104 @@
 .TILE {
-    width: 230px;
-    transition: 0.2s;
+  width: 230px;
+  transition: 0.2s;
+  margin: 2px;
 
-    &:hover {
-        opacity: 0.8;
-        transform: scale(1.01);
-        cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+    transform: scale(1.01);
+    cursor: pointer;
 
-        .date {
-        display: block;
-        }
-    }
-
-    .imageWrapper {
-        width: 200px;
-        height: 200px;
-        position: relative;
-    }
-
-
-    .image {
-        width: 200px;
-        height: 200px;
-        object-fit: cover;
-    }
-
-    /* stylelint-disable-next-line no-descending-specificity */
     .date {
-        position: absolute;
-        top: 0;
-        right: 0;
-        display: none;
+      display: block;
     }
+  }
 
-    .infoWrapper {
-        display: flex;
-        align-items: center;
-        margin-top: 8px;
-    }
+  .imageWrapper {
+    width: 200px;
+    height: 200px;
+    position: relative;
+  }
 
 
-    .types p {
-      width: 115px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    
-    .views {
-        margin-left: auto;
-        margin-right: 8px;
-    }
+  .image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
 
-    .title p {
-        width: 200px;
-        margin-top: 8px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+  /* stylelint-disable-next-line no-descending-specificity */
+  .date {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+  }
+
+  .infoWrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+  }
+
+
+  .types p {
+    width: 115px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .views {
+    margin-left: auto;
+    margin-right: 8px;
+  }
+
+  .title p {
+    width: 200px;
+    margin-top: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 .LIST {
-    .views {
-        margin-left: auto;
-    }
+  .views {
+    margin-left: auto;
+  }
 
-    .header{
-       display: flex;
-       align-items: center;
-    }
+  .header {
+    display: flex;
+    align-items: center;
+  }
 
-   .username{
-     margin-left: 8px;
-   }
+  .username {
+    margin-left: 8px;
+  }
 
-    /* stylelint-disable-next-line no-descending-specificity */
-    .date {
-       margin-left: auto;
-    }
+  /* stylelint-disable-next-line no-descending-specificity */
+  .date {
+    margin-left: auto;
+  }
 
-    .title {
-       margin-top: 8px;
-    }
-                        
-    .img {
-     width: 100%;
-     max-height: 250px;
-     object-fit: cover;
-     margin: 16px 0;
-    }
+  .title {
+    margin-top: 8px;
+  }
 
-    .footer {
-      display: flex;
-      align-items: center;
-    }
+  .img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    margin: 16px 0;
+  }
 
-    .textBlock{
-        max-height: 200px;
-        overflow-y: hidden;
-    }
-}    
+  .footer {
+    display: flex;
+    align-items: center;
+  }
+
+  .textBlock {
+    max-height: 200px;
+    overflow-y: hidden;
+  }
+}

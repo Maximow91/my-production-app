@@ -1,25 +1,26 @@
 import { ArticleView, type Article } from '../../model/types/article'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
-import { useCallback } from 'react'
+import { type HTMLAttributeAnchorTarget, useCallback } from 'react'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
 import { Text } from 'shared/ui/Text/Text'
 import cls from './ArticleList.module.scss'
 
 interface ArticleListProps {
-    className?: string
     articles: Article[]
+    target?: HTMLAttributeAnchorTarget
+    className?: string
     isLoading?: boolean
     view?: ArticleView
 }
 
 export const ArticleList = (props: ArticleListProps) => {
-    const { articles, isLoading, view = ArticleView.TILE, className } = props
+    const { articles, target, isLoading, view = ArticleView.TILE, className } = props
 
     const renderArticles = useCallback((article: Article) => {
-        return <ArticleListItem className={cls.card} key={article.id} article={article} view={view} />
-    }, [view])
+        return <ArticleListItem className={cls.card} key={article.id} article={article} view={view} target={target} />
+    }, [view, target])
 
     const { t } = useTranslation()
     if (!isLoading && !articles.length) {

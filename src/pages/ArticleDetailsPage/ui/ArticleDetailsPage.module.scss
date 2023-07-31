@@ -1,11 +1,18 @@
 .ArticleDetailsPage {
-    opacity: 1;
+  opacity: 1;
 }
 
 .commentsList {
-    margin-top: 16px;
+  margin-top: 16px;
 }
 
 .title {
-    margin-top: 24px;
+  margin-top: 24px;
+}
+
+.recomendations {
+  margin-top: 20px;
+  flex-wrap: nowrap;
+  overflow-y: hidden;
+  overflow-x: auto;
 }

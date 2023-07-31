@@ -1,33 +1,30 @@
-import { ArticleBlockType, ArticleView, type TextArticleBlock, type Article } from '../../model/types/article'
-import { classNames } from 'shared/lib/classNames/classNames'
-import cls from './ArticleListItem.module.scss'
 import { useTranslation } from 'react-i18next'
+import { classNames } from 'shared/lib/classNames/classNames'
 import { Text } from 'shared/ui/Text/Text'
 import { Icon } from 'shared/ui/Icon/Icon'
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg'
 import { Card } from 'shared/ui/Card/Card'
 import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { ButtonTheme, CustomButton } from 'shared/ui/CustomButton'
-import { TextBlockComponent } from '../TextBlockComponent/TextBlockComponent'
-import { useCallback } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { RoutePaths } from 'shared/config/routerConfig/routeConfig'
+import { AppLink } from 'shared/ui/AppLink'
+import { TextBlockComponent } from '../TextBlockComponent/TextBlockComponent'
+import { ArticleBlockType, ArticleView, type TextArticleBlock, type Article } from '../../model/types/article'
+
+import cls from './ArticleListItem.module.scss'
+import { type HTMLAttributeAnchorTarget } from 'react'
 
 interface ArticleListItemProps {
-    className?: string
     article: Article
+    target?: HTMLAttributeAnchorTarget
+    className?: string
     view?: ArticleView
 }
 
 export const ArticleListItem = (props: ArticleListItemProps) => {
-    const { className, article, view = ArticleView.TILE } = props
+    const { article, className, target, view = ArticleView.TILE } = props
 
     const { t } = useTranslation()
-    const navigate = useNavigate()
-
-    const onOpenArticle = useCallback(() => {
-        navigate(`${RoutePaths.article_details}${article.id}`)
-    }, [navigate, article.id])
 
     const types = <Text className={cls.types} text={article.type.join(', ')} />
 
@@ -55,17 +52,20 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
                         <TextBlockComponent className={cls.textBlock} block={textBlock} />
                     )}
                     <div className={cls.footer}>
-                        <CustomButton onClick={onOpenArticle} theme={ButtonTheme.OUTLINE}>
-                            {t('Читать далее...')}
-                        </CustomButton>
+                        <AppLink target={target} to={`${RoutePaths.article_details}${article.id}`}>
+                            <CustomButton theme={ButtonTheme.OUTLINE}>
+                                {t('Читать далее...')}
+                            </CustomButton>
+                        </AppLink>
                     </div>
                 </Card>
             </div>
         )
     } else {
         return (
-            <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
-                <Card onClick={onOpenArticle} >
+
+            <AppLink target={target} to={`${RoutePaths.article_details}${article.id}`} className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
+                <Card >
                     <div className={cls.imageWrapper}>
                         <img className={cls.image} alt={article.title} src={article.img} />
                         <Text className={cls.date} text={article.createdAt} />
@@ -76,7 +76,7 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
                     </div>
                     <Text className={cls.title} text={article.title} />
                 </Card>
-            </div>
+            </AppLink>
         )
     }
 }
