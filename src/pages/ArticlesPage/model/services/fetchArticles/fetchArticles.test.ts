@@ -102,7 +102,6 @@ describe('fetchProfileData', () => {
         }))
 
         const result = await thunk.callThunk({ })
-        console.log('result', result)
         expect(result.meta.requestStatus).toBe('fulfilled')
         expect(result.payload).toEqual(articlesPageData)
     })
