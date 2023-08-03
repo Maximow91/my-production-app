@@ -1,11 +1,14 @@
 import { ArticleView, type Article } from '../../model/types/article'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
-import { type HTMLAttributeAnchorTarget, useCallback } from 'react'
+import { type HTMLAttributeAnchorTarget, useCallback, useState, useEffect, useRef } from 'react'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
 import { Text } from 'shared/ui/Text/Text'
 import cls from './ArticleList.module.scss'
+import { Virtuoso, VirtuosoGrid, type VirtuosoHandle } from 'react-virtuoso'
+import { ArticlesPageFilters } from 'pages/ArticlesPage/ui/ArticlePageFilters/ArticlesPageFilters'
+import { ARTICLE_LIST_ITEM_INDEX } from 'shared/const/sessionStorage'
 
 interface ArticleListProps {
     articles: Article[]
@@ -13,14 +16,37 @@ interface ArticleListProps {
     className?: string
     isLoading?: boolean
     view?: ArticleView
+    onEndReached?: () => void
 }
 
 export const ArticleList = (props: ArticleListProps) => {
-    const { articles, target, isLoading, view = ArticleView.TILE, className } = props
+    const { articles, onEndReached, target, isLoading, view = ArticleView.TILE, className } = props
 
-    const renderArticles = useCallback((article: Article) => {
-        return <ArticleListItem className={cls.card} key={article.id} article={article} view={view} target={target} />
-    }, [view, target])
+    const [initialIndex, setInitialIndex] = useState(1)
+
+    const listRef = useRef<VirtuosoHandle>(null)
+
+    useEffect(() => {
+        const index = Number(sessionStorage.getItem(ARTICLE_LIST_ITEM_INDEX))
+        if (index && articles.length >= index) {
+            setInitialIndex(index)
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
+    useEffect(() => {
+        if (view === ArticleView.TILE) {
+            const index = Number(sessionStorage.getItem(ARTICLE_LIST_ITEM_INDEX))
+            if (index && articles.length >= index) {
+                listRef.current?.scrollToIndex(index)
+            }
+        }
+    }, [view, articles.length])
+
+    const renderArticles = useCallback((index: number) => {
+        const article = articles[index]
+        return <ArticleListItem index={index} className={cls.card} key={article.id} article={article} view={view} target={target} />
+    }, [articles, view, target])
 
     const { t } = useTranslation()
     if (!isLoading && !articles.length) {
@@ -30,16 +56,54 @@ export const ArticleList = (props: ArticleListProps) => {
             </div>
         )
     }
-
     return (
         <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-            {articles?.length > 0
-                ? articles.map(renderArticles)
-                : null
-            }
-            {isLoading && (<div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-                {new Array(view === ArticleView.TILE ? 9 : 3).fill(0).map((item, index) => <ArticleListItemSkeleton className={cls.card} key={index} view={view} />)}
-            </div>)}
+            {view === ArticleView.LIST
+                ? (<Virtuoso
+                    style={{ height: '100%', flexGrow: 1 }}
+                    totalCount={articles.length}
+                    itemContent={renderArticles}
+                    initialTopMostItemIndex={initialIndex}
+                    endReached={onEndReached}
+                    components={{
+                        Header: () => <ArticlesPageFilters className={cls.filters} />,
+                        Footer: () => {
+                            if (isLoading) {
+                                return (
+                                    <div className={classNames(cls.footerContainer, {}, [className, cls[view]])}>
+                                        {new Array(4).fill(0).map((item, index) => <ArticleListItemSkeleton className={cls.card} key={index} view={view} />)}
+                                    </div>
+                                )
+                            } else {
+                                return <div className={cls.footer}/>
+                            }
+                        }
+                    }}
+                >
+                </Virtuoso>)
+                : (<VirtuosoGrid
+                    ref={listRef}
+                    endReached={onEndReached}
+                    data={articles}
+                    listClassName={cls.itemsWrapper}
+                    components={{
+                        Header: () => <ArticlesPageFilters className={cls.filters} />,
+                        // eslint-disable-next-line react/prop-types
+                        ScrollSeekPlaceholder: ({ index }) => {
+                            return <div className={cls.ItemContainer}>
+                                <ArticleListItemSkeleton key={index} view={view} className={cls.card} />
+                            </div>
+                        }
+                    }}
+                    scrollSeekConfiguration={{
+                        enter: velocity => Math.abs(velocity) > 200,
+                        exit: velocity => Math.abs(velocity) < 1
+
+                    }}
+                    totalCount={articles.length}
+                    style={{ height: '100%', flexGrow: 1 }}
+                    itemContent={renderArticles} />)}
         </div>
+
     )
 }

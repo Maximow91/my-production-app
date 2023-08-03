@@ -13,16 +13,18 @@ import { ArticleBlockType, ArticleView, type TextArticleBlock, type Article } fr
 
 import cls from './ArticleListItem.module.scss'
 import { type HTMLAttributeAnchorTarget } from 'react'
+import { ARTICLE_LIST_ITEM_INDEX } from 'shared/const/sessionStorage'
 
 interface ArticleListItemProps {
     article: Article
     target?: HTMLAttributeAnchorTarget
     className?: string
     view?: ArticleView
+    index?: number
 }
 
 export const ArticleListItem = (props: ArticleListItemProps) => {
-    const { article, className, target, view = ArticleView.TILE } = props
+    const { index, article, className, target, view = ArticleView.TILE } = props
 
     const { t } = useTranslation()
 
@@ -34,6 +36,10 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
             <Icon Svg={EyeIcon} />
         </>
     )
+
+    const handleButtonClick = () => {
+        sessionStorage.setItem(ARTICLE_LIST_ITEM_INDEX, JSON.stringify(index))
+    }
 
     if (view === ArticleView.LIST) {
         const textBlock = article.blocks.find(block => block.type === ArticleBlockType.TEXT) as TextArticleBlock
@@ -53,7 +59,7 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
                     )}
                     <div className={cls.footer}>
                         <AppLink target={target} to={`${RoutePaths.article_details}${article.id}`}>
-                            <CustomButton theme={ButtonTheme.OUTLINE}>
+                            <CustomButton onClick={handleButtonClick} theme={ButtonTheme.OUTLINE}>
                                 {t('Читать далее...')}
                             </CustomButton>
                         </AppLink>
@@ -64,7 +70,7 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
     } else {
         return (
 
-            <AppLink target={target} to={`${RoutePaths.article_details}${article.id}`} className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
+            <AppLink onClick={handleButtonClick} target={target} to={`${RoutePaths.article_details}${article.id}`} className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
                 <Card >
                     <div className={cls.imageWrapper}>
                         <img className={cls.image} alt={article.title} src={article.img} />
