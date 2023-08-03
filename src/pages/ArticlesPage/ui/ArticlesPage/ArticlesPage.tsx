@@ -18,6 +18,7 @@ const reducers: ReducerList = {
 
 const ArticlesPage = () => {
     const dispatch = useAppDispatch()
+    const article = '1'
 
     const [searchParams] = useSearchParams()
 
