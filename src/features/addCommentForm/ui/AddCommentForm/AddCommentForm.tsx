@@ -13,6 +13,7 @@ import { getAddCommentFormText } from '../../model/selectors/getAddCommentFormTe
 import { addCommentFormActions, addCommentFormReducer } from '../../model/slice/addCommentFormSlice'
 
 import cls from './AddCommentForm.module.scss'
+import { HStack } from 'shared/ui/Stack'
 
 export interface AddCommentFormProps {
     className?: string
@@ -46,10 +47,10 @@ const AddCommentForm = ({ onSendCommentSendPress, className }: AddCommentFormPro
     return (
 
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames(cls.AddCommentForm, {}, [])}>
+            <HStack justify='between' max className={classNames(cls.AddCommentForm, {}, [])}>
                 <Input onChange={onChangeInputText} value={text} className={cls.input} placeholder={t('Введите текст комментария')} />
                 <CustomButton onClick={onSend} className={cls.sendBtn}>{t('Отправить')}</CustomButton>
-            </div>
+            </HStack>
         </DynamicModuleLoader>
     )
 }

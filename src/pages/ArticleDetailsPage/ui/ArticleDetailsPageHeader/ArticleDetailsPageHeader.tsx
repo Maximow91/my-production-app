@@ -9,7 +9,7 @@ import { RoutePaths } from 'shared/config/routerConfig/routeConfig'
 import { ButtonTheme, CustomButton } from 'shared/ui/CustomButton'
 import { getCanUserEditArticle } from '../../model/selectors/article'
 
-import cls from './ArticleDetailsPageHeader.module.scss'
+import { HStack } from 'shared/ui/Stack'
 
 interface ArticleDetailsPageHeaderProps {
     className?: string
@@ -35,10 +35,10 @@ export const ArticleDetailsPageHeader = ({ className }: ArticleDetailsPageHeader
 
     return (
 
-        <div className={classNames(cls.ArticleDetailsPageHeader, {}, [className])}>
-            {canEdit && <CustomButton className={cls.editBtn} theme={ButtonTheme.OUTLINE} onClick={onEditClick}>{t('Редактировать')}</CustomButton>}
-            <CustomButton className={cls.backBtn} theme={ButtonTheme.OUTLINE} onClick={onBackToList}>{t('Назад к списку')}</CustomButton>
-        </div>
+        <HStack justify='between' className={classNames('', {}, [className])}>
+            {canEdit && <CustomButton theme={ButtonTheme.OUTLINE} onClick={onEditClick}>{t('Редактировать')}</CustomButton>}
+            <CustomButton theme={ButtonTheme.OUTLINE} onClick={onBackToList}>{t('Назад к списку')}</CustomButton>
+        </HStack>
 
     )
 }

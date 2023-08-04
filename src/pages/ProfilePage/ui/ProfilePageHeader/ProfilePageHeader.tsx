@@ -6,8 +6,8 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { ButtonTheme, CustomButton } from 'shared/ui/CustomButton'
 import { getProfileData, getProfileReadOnly, profileActions, updateProfileData } from 'entities/Profile'
 import { Text } from 'shared/ui/Text/Text'
-import cls from './ProfilePageHeader.module.scss'
 import { getUserAuthData } from 'entities/User'
+import { HStack } from 'shared/ui/Stack'
 
 interface ProfilePageHeaderProps {
     className?: string
@@ -38,24 +38,24 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
     }, [dispatch])
 
     return (
-        <div className={classNames(cls.ProfilePageHeader, {}, [props.className])}>
+        <HStack max justify={'between'} className={classNames('', {}, [props.className])}>
             <Text title={t('Профиль')}/>
             {canEdit && (
-                <div className={cls.btnWrapper}>
+                <div >
                     {readonly
                         ? (
-                            <CustomButton onClick={onEdit} className={cls.editBtn} theme={ButtonTheme.OUTLINE}>{t('Редактировать')}</CustomButton>
+                            <CustomButton onClick={onEdit} theme={ButtonTheme.OUTLINE}>{t('Редактировать')}</CustomButton>
                         )
                         : (
-                            <div className={cls.btnsBlock}>
-                                <CustomButton onClick={onSave} className={cls.editBtn} theme={ButtonTheme.OUTLINE}>{t('Сохранить')}</CustomButton>
-                                <CustomButton onClick={onCanselEdit} className={cls.editBtn} theme={ButtonTheme.OUTLINE_RED}>{t('Oтменить')}</CustomButton>
-                            </div>
+                            <HStack gap='8' >
+                                <CustomButton onClick={onSave} theme={ButtonTheme.OUTLINE}>{t('Сохранить')}</CustomButton>
+                                <CustomButton onClick={onCanselEdit} theme={ButtonTheme.OUTLINE_RED}>{t('Oтменить')}</CustomButton>
+                            </HStack>
                         )}
 
                 </div>
             )}
 
-        </div>
+        </HStack>
     )
 }

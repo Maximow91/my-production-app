@@ -11,6 +11,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { type Profile } from '../../model/types/profile'
 
 import cls from './ProfileCard.module.scss'
+import { HStack, VStack } from 'shared/ui/Stack'
 
 interface ProfileCardProps {
     onChangeFirstname?: (value?: string) => void
@@ -39,42 +40,40 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     if (isLoading) {
         return (
-            <div className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
+            <HStack justify='center' max className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
                 <Loader />
-            </div>
+            </HStack>
         )
     }
 
     if (error) {
         return (
-            <div className={classNames(cls.ProfileCard, mods, [className, cls.error])}>
+            <HStack justify='center' className={classNames(cls.ProfileCard, mods, [className, cls.error])}>
                 <Text
                     theme={TextTheme.ERROR}
                     title={t('Произошла ошибка при загрузке пользователя')}
                     text={t('Попробуйте обновить страницу')}
                     align={TextAlign.CENTER}
                 />
-            </div>
+            </HStack>
         )
     }
 
     return (
-        <div className={classNames(cls.ProfileCard, mods, [className])}>
-            <div className={cls.data}>
-                {data?.avatar && (
-                    <div className={cls.avatarWrapper}>
-                        <Avatar src={data.avatar}/>
-                    </div>
-                )}
-                <Input onChange={onChangeFirstname} readonly={readonly} className={cls.input} label={t('Имя')} value={data?.firstname}/>
-                <Input onChange={onChangeLastname} readonly={readonly} className={cls.input} label={t('Фамилия')} value={data?.lastname}/>
-                <Input onChange={onChangeAge} readonly={readonly} className={cls.input} label={t('Возраст')}value={data?.age} />
-                <Input onChange={onChangeCity} readonly={readonly} className={cls.input} label={t('Город')}value={data?.city} />
-                <Input onChange={onChangeUsername} readonly={readonly} className={cls.input} label={t('Username')}value={data?.username} />
-                <CurrencySelect className={cls.input} readonly={readonly} value={data?.currency} onChange={onChangeCurrency}/>
-                <CountrySelect className={cls.input} readonly={readonly} value={data?.country} onChange={onChangeCountry}/>
-                {!readonly && <Input onChange={onChangeAvatar} readonly={readonly} className={cls.input} label={t('Введите ссылку на аватар')}value={data?.avatar} />}
-            </div>
-        </div>
+        <VStack gap='8' max className={classNames(cls.ProfileCard, mods, [className])}>
+            {data?.avatar && (
+                <HStack justify='center' max className={cls.avatarWrapper}>
+                    <Avatar src={data.avatar}/>
+                </HStack>
+            )}
+            <Input onChange={onChangeFirstname} readonly={readonly} className={cls.input} label={t('Имя')} value={data?.firstname}/>
+            <Input onChange={onChangeLastname} readonly={readonly} className={cls.input} label={t('Фамилия')} value={data?.lastname}/>
+            <Input onChange={onChangeAge} readonly={readonly} className={cls.input} label={t('Возраст')}value={data?.age} />
+            <Input onChange={onChangeCity} readonly={readonly} className={cls.input} label={t('Город')}value={data?.city} />
+            <Input onChange={onChangeUsername} readonly={readonly} className={cls.input} label={t('Username')}value={data?.username} />
+            <CurrencySelect className={cls.input} readonly={readonly} value={data?.currency} onChange={onChangeCurrency}/>
+            <CountrySelect className={cls.input} readonly={readonly} value={data?.country} onChange={onChangeCountry}/>
+            {!readonly && <Input onChange={onChangeAvatar} readonly={readonly} className={cls.input} label={t('Введите ссылку на аватар')}value={data?.avatar} />}
+        </VStack>
     )
 }

@@ -121,6 +121,30 @@
       "userId": "5",
       "text": "11112",
       "id": "CbDs_NS"
+    },
+    {
+      "articleId": "5",
+      "userId": "2",
+      "text": "sdsdfdfd",
+      "id": "5VFeDyp"
+    },
+    {
+      "articleId": "5",
+      "userId": "2",
+      "text": "sfdfdfdf",
+      "id": "SvszoVW"
+    },
+    {
+      "articleId": "5",
+      "userId": "2",
+      "text": "dfdfdfd",
+      "id": "KCg77ts"
+    },
+    {
+      "articleId": "8",
+      "userId": "2",
+      "text": "dfdfdfdf",
+      "id": "9wouHXI"
     }
   ],
   "articles": [
@@ -685,7 +709,8 @@
       "views": 18,
       "createdAt": "23.07.2023",
       "type": [
-        "IT","SCIENCE"
+        "IT",
+        "SCIENCE"
       ],
       "blocks": [
         {
