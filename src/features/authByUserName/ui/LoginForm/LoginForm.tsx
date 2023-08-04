@@ -1,18 +1,21 @@
-import { getLoginError } from 'features/authByUserName/model/selectors/getLoginError/getLoginError'
-import { getLoginIsLoading } from 'features/authByUserName/model/selectors/getLoginIsLoading/getLoginIsLoading'
-import { getLoginPassword } from 'features/authByUserName/model/selectors/getLoginPassword/getLoginPassword'
-import { getLoginUsername } from 'features/authByUserName/model/selectors/getLoginUsername/getLoginUsername'
-import { loginByUsername } from 'features/authByUserName/model/services/loginByUsername/loginByUsername'
-import { loginActions, loginReducer } from 'features/authByUserName/model/slice/loginSlice'
 import { memo, useCallback } from 'react'
-import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
+import { useTranslation } from 'react-i18next'
+
 import { classNames } from 'shared/lib/classNames/classNames'
 import { DynamicModuleLoader, type ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { ButtonTheme, CustomButton } from 'shared/ui/CustomButton'
 import { Input } from 'shared/ui/Input/Input'
 import { Text, TextTheme } from 'shared/ui/Text/Text'
+
+import { getLoginError } from '../../model/selectors/getLoginError/getLoginError'
+import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading'
+import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword'
+import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername'
+import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername'
+import { loginActions, loginReducer } from '../../model/slice/loginSlice'
+
 import cls from './LoginForm.module.scss'
 
 const initialReducers: ReducerList = {

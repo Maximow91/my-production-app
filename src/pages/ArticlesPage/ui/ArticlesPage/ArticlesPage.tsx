@@ -1,5 +1,7 @@
+import { useSearchParams } from 'react-router-dom'
 import { useCallback } from 'react'
 import { useSelector } from 'react-redux'
+import { articlePageReducer, getArticles } from '../../model/slice/articlePageSlice'
 import { ArticleList } from 'entities/Article'
 import { DynamicModuleLoader, type ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
@@ -8,9 +10,8 @@ import { getArticlesListView } from '../../model/selectors/getArticlesLIstView/g
 import { getArticlesPageIsLoading } from '../../model/selectors/getArticlesPageIsLoading/getArticlesPageIsLoading'
 import { fetchMoreArticles } from '../../model/services/fetchMoreArticles/fetchMoreArticles'
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
-import { articlePageReducer, getArticles } from 'pages/ArticlesPage/model/slice/articlePageSlice'
+
 import cls from './ArticlesPage.module.scss'
-import { useSearchParams } from 'react-router-dom'
 
 const reducers: ReducerList = {
     articlesPage: articlePageReducer
@@ -18,7 +19,6 @@ const reducers: ReducerList = {
 
 const ArticlesPage = () => {
     const dispatch = useAppDispatch()
-    const article = '1'
 
     const [searchParams] = useSearchParams()
 

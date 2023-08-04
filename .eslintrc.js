@@ -14,7 +14,7 @@ module.exports = {
     sourceType: 'module',
     project: ['./tsconfig.json'],
   },
-  plugins: ['react','react-hooks'],
+  plugins: ['react','react-hooks','prod-app-plugin'],
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
     "@typescript-eslint/prefer-nullish-coalescing": 'off',
@@ -36,6 +36,7 @@ module.exports = {
     "no-unused-expressions": "off",
     "@typescript-eslint/no-unused-expressions": "off",
     "@typescript-eslint/no-dynamic-delete":"off",
-    "@typescript-eslint/no-non-null-assertion": "off"
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "prod-app-plugin/path-checker":"error"
   },
 };

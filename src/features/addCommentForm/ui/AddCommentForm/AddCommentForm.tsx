@@ -1,13 +1,17 @@
-import { getAddCommentFormText } from 'features/addCommentForm/model/selectors/getAddCommentFormText/getAddCommentFormText'
-import { addCommentFormActions, addCommentFormReducer } from 'features/addCommentForm/model/slice/addCommentFormSlice'
+
 import { useCallback } from 'react'
-import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
+import { useTranslation } from 'react-i18next'
+
 import { classNames } from 'shared/lib/classNames/classNames'
 import { DynamicModuleLoader, type ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { CustomButton } from 'shared/ui/CustomButton'
 import { Input } from 'shared/ui/Input/Input'
+
+import { getAddCommentFormText } from '../../model/selectors/getAddCommentFormText/getAddCommentFormText'
+import { addCommentFormActions, addCommentFormReducer } from '../../model/slice/addCommentFormSlice'
+
 import cls from './AddCommentForm.module.scss'
 
 export interface AddCommentFormProps {

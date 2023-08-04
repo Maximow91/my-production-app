@@ -1,15 +1,16 @@
-
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames/classNames'
 
-import cls from './ProfileCard.module.scss'
+import { type Currency, CurrencySelect } from 'entities/Currency'
+import { CountrySelect, type Country } from 'entities/Country'
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text'
 import { Input } from 'shared/ui/Input/Input'
 import { Loader } from 'shared/ui/Loader'
-import { type Profile } from 'entities/Profile/model/types/profile'
 import { Avatar } from 'shared/ui/Avatar/Avatar'
-import { type Currency, CurrencySelect } from 'entities/Currency'
-import { CountrySelect, type Country } from 'entities/Country'
+
+import { type Profile } from '../../model/types/profile'
+
+import cls from './ProfileCard.module.scss'
 
 interface ProfileCardProps {
     onChangeFirstname?: (value?: string) => void
