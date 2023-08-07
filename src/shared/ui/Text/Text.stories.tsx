@@ -49,6 +49,10 @@ export const SizeL: Story = {
     render: () => <Text size={TextSize.L} title='Title' text='test text' />
 }
 
+export const SizeS: Story = {
+    render: () => <Text size={TextSize.S} title='Title' text='test text' />
+}
+
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)]
 OnlyTitleDark.decorators = [ThemeDecorator(Theme.DARK)]
 OnlyTextDark.decorators = [ThemeDecorator(Theme.DARK)]
