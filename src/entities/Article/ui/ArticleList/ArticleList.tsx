@@ -56,6 +56,7 @@ export const ArticleList = (props: ArticleListProps) => {
             </div>
         )
     }
+
     return (
         <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
             {view === ArticleView.LIST
