@@ -26,7 +26,7 @@ export const CurrencySelect = memo(({ className, value, onChange, readonly }: Cu
 
     return (
         <ListBox
-            direction='top'
+            direction='top right'
             readonly={readonly}
             label={t('Валюта')}
             className={classNames('', {}, [className])}

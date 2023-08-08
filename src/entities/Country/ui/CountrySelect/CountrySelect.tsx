@@ -29,7 +29,7 @@ export const CountrySelect = memo(({ className, value, onChange, readonly }: Cou
 
     return (
         <ListBox
-            direction='top'
+            direction='top right'
             readonly={readonly}
             value={value}
             onChange={onChangeHandler}
