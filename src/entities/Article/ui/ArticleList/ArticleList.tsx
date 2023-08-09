@@ -17,10 +17,11 @@ interface ArticleListProps {
     isLoading?: boolean
     view?: ArticleView
     onEndReached?: () => void
+    withHeader?: boolean
 }
 
 export const ArticleList = (props: ArticleListProps) => {
-    const { articles, onEndReached, target, isLoading, view = ArticleView.TILE, className } = props
+    const { articles, onEndReached, target, isLoading, view = ArticleView.TILE, className, withHeader = true } = props
 
     const [initialIndex, setInitialIndex] = useState(1)
 
@@ -67,7 +68,7 @@ export const ArticleList = (props: ArticleListProps) => {
                     initialTopMostItemIndex={initialIndex}
                     endReached={onEndReached}
                     components={{
-                        Header: () => <ArticlesPageFilters className={cls.filters} />,
+                        Header: () => withHeader ? <ArticlesPageFilters className={cls.filters} /> : null,
                         Footer: () => {
                             if (isLoading) {
                                 return (
@@ -88,7 +89,7 @@ export const ArticleList = (props: ArticleListProps) => {
                     data={articles}
                     listClassName={cls.itemsWrapper}
                     components={{
-                        Header: () => <ArticlesPageFilters className={cls.filters} />,
+                        Header: () => withHeader ? <ArticlesPageFilters className={cls.filters} /> : null,
                         // eslint-disable-next-line react/prop-types
                         ScrollSeekPlaceholder: ({ index }) => {
                             return <div className={cls.ItemContainer}>
@@ -102,7 +103,7 @@ export const ArticleList = (props: ArticleListProps) => {
 
                     }}
                     totalCount={articles.length}
-                    style={{ height: '100%', flexGrow: 1 }}
+                    style={{ width: '100%', height: '100%' }}
                     itemContent={renderArticles} />)}
         </div>
 

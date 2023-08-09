@@ -74,7 +74,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id}/>
                     <Text className={cls.title} title={t('Рекомендуем')} />
-                    <ArticleList className={cls.recomendations} articles={recomendations} isLoading={recomendationsIsLoading} target='_blank' />
+                    <ArticleList className={cls.recomendations} articles={recomendations} isLoading={recomendationsIsLoading} target='_blank' withHeader={false} />
                     <Text className={cls.title} title={t('Комментарии')} />
                     <AddCommentForm onSendCommentSendPress={sendComment} />
                     <CommentList className={cls.commentList} comments ={comments} isLoading={isLoading}/>
