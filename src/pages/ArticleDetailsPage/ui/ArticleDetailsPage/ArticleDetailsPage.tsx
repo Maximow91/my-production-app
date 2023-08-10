@@ -24,6 +24,7 @@ import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDet
 
 import cls from './ArticleDetailsPage.module.scss'
 import { VStack } from 'shared/ui/Stack'
+import { ArticlesRecommendationsList } from 'features/articlesRecommendationsList'
 
 interface ArticleDetailsPageProps {
     className?: string
@@ -43,14 +44,10 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const comments = useSelector(getArticleComments.selectAll)
     const isLoading = useSelector(getArticleCommentsIsLoading)
 
-    const recomendationsIsLoading = useSelector(getArticlesPageRecomandationsIsLoading)
-    const recomendations = useSelector(getArticleRecomendations.selectAll)
-
     useInitialEffect(() => {
         if (__PROJECT__ !== 'storybook') {
             if (id) {
                 void dispatch(fetchCommentsByArticleId(id))
-                void dispatch(fetchRecomendations())
             }
         }
     })
@@ -73,8 +70,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                 <VStack gap='16' max >
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id}/>
-                    <Text className={cls.title} title={t('Рекомендуем')} />
-                    <ArticleList className={cls.recomendations} articles={recomendations} isLoading={recomendationsIsLoading} target='_blank' withHeader={false} />
+                    <ArticlesRecommendationsList className={cls.recommendations}/>
                     <Text className={cls.title} title={t('Комментарии')} />
                     <AddCommentForm onSendCommentSendPress={sendComment} />
                     <CommentList className={cls.commentList} comments ={comments} isLoading={isLoading}/>

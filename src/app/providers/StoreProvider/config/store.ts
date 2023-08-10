@@ -4,12 +4,14 @@ import { userReducer } from 'entities/User'
 import { UIReducer } from 'features/UI'
 import { type NavigateOptions, type To } from 'react-router-dom'
 import { $api } from 'shared/api/api'
+import { rtkApi } from 'shared/api/rtkApi'
 import { createReducerManager } from './reducerManager'
 import { type StateSchema } from './StateSchema'
 
 export const returnReduxStore = (initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>, navigate?: (to: To, options?: NavigateOptions) => void) => {
     const rootReducers: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
+        [rtkApi.reducerPath]: rtkApi.reducer,
         counter: counterReducer,
         user: userReducer,
         ui: UIReducer
@@ -29,7 +31,7 @@ export const returnReduxStore = (initialState?: StateSchema, asyncReducers?: Red
                         navigate
                     }
                 }
-            })
+            }).concat(rtkApi.middleware)
     })
     // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
     // @ts-ignore

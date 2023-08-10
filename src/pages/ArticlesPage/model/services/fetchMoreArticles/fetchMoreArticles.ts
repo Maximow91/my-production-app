@@ -19,7 +19,6 @@ ThunkConfig<string>
         const isLoading = getArticlesPageIsLoading(getState())
         const page = getArticlesPageNumber(getState())
         try {
-            console.log('get more articles', hasMore)
             if (hasMore && !isLoading) {
                 dispatch(articlePageActions.setPage(page + 1))
                 void dispatch(fetchArticles({}))
