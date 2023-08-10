@@ -1,14 +1,14 @@
-import { ArticleView, type Article } from '../../model/types/article'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { useTranslation } from 'react-i18next'
 import { type HTMLAttributeAnchorTarget, useCallback, useState, useEffect, useRef } from 'react'
-import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
-import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
-import { Text } from 'shared/ui/Text/Text'
-import cls from './ArticleList.module.scss'
 import { Virtuoso, VirtuosoGrid, type VirtuosoHandle } from 'react-virtuoso'
 import { ArticlesPageFilters } from 'pages/ArticlesPage/ui/ArticlePageFilters/ArticlesPageFilters'
 import { ARTICLE_LIST_ITEM_INDEX } from 'shared/const/sessionStorage'
+import { classNames } from 'shared/lib/classNames/classNames'
+import { Text } from 'shared/ui/Text/Text'
+import { ArticleView, type Article } from '../../model/types/article'
+import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
+import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
+
+import cls from './ArticleList.module.scss'
 
 interface ArticleListProps {
     articles: Article[]
@@ -49,7 +49,6 @@ export const ArticleList = (props: ArticleListProps) => {
         return <ArticleListItem index={index} className={cls.card} key={article.id} article={article} view={view} target={target} />
     }, [articles, view, target])
 
-    const { t } = useTranslation()
     if (!isLoading && !articles.length) {
         return (
             <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
