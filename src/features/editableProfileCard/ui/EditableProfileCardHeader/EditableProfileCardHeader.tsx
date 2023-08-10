@@ -48,12 +48,12 @@ export const EditableProfileCardHeader = (props: EditableProfileCardHeaderProps)
                 <div >
                     {readonly
                         ? (
-                            <CustomButton onClick={onEdit} theme={ButtonTheme.OUTLINE}>{t('Редактировать')}</CustomButton>
+                            <CustomButton data-testid='EditableProfileCardHeader.EditBtn' onClick={onEdit} theme={ButtonTheme.OUTLINE}>{t('Редактировать')}</CustomButton>
                         )
                         : (
                             <HStack gap='8' >
-                                <CustomButton onClick={onSave} theme={ButtonTheme.OUTLINE}>{t('Сохранить')}</CustomButton>
-                                <CustomButton onClick={onCanselEdit} theme={ButtonTheme.OUTLINE_RED}>{t('Oтменить')}</CustomButton>
+                                <CustomButton data-testid='EditableProfileCardHeader.SaveBtn' onClick={onSave} theme={ButtonTheme.OUTLINE}>{t('Сохранить')}</CustomButton>
+                                <CustomButton data-testid='EditableProfileCardHeader.CanselBtn' onClick={onCanselEdit} theme={ButtonTheme.OUTLINE_RED}>{t('Oтменить')}</CustomButton>
                             </HStack>
                         )}
 

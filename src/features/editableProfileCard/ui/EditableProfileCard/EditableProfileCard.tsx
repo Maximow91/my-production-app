@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { Currency } from 'entities/Currency'
 import { Country } from 'entities/Country'
 import { ProfileCard } from 'entities/Profile'
-import { Text } from 'shared/ui/Text/Text'
+import { Text, TextTheme } from 'shared/ui/Text/Text'
 import { VStack } from 'shared/ui/Stack'
 
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
@@ -20,9 +20,9 @@ import { getProfileReadOnly } from '../../model/selectors/getProfileReadOnly/get
 import { getValidateProfileErrors } from '../../model/selectors/getValidateProfileErrors/getValidateProfileErrors'
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData'
 import { profileActions, profileReducer } from '../../model/slice/profileSlice'
+import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader'
 
 import cls from './EditableProfileCard.module.scss'
-import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader'
 
 interface EditableProfileCardProps {
     id?: string
@@ -97,7 +97,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
                 <EditableProfileCardHeader />
                 {validateErrors?.length && validateErrors.map((err: any) => (
                 // @ts-expect-error
-                    <Text theme={TextTheme.ERROR} key={validateErrors[err]} text={validateErrorsTranslate[err]} />
+                    <Text data-testid="EditableProfileCard.Error" theme={TextTheme.ERROR} key={validateErrors[err]} text={validateErrorsTranslate[err]} />
                 ))}
                 <ProfileCard
                     data={formData}
