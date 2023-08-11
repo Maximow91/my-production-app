@@ -68,8 +68,8 @@ const articlePageSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(fetchArticles.pending, (state, action) => {
-                state.error = undefined
                 state.isLoading = true
+                state.error = undefined
                 if (action.meta.arg.replace) {
                     articlesAdapter.removeAll(state)
                 }
