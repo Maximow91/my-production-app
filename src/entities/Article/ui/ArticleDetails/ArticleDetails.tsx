@@ -28,7 +28,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect'
 import { HStack, VStack } from 'shared/ui/Stack'
 
 interface ArticleDetailsProps {
-    id: string
+    id?: string
     className?: string
 }
 

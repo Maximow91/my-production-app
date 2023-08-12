@@ -1,4 +1,4 @@
-import { type MutableRefObject, useRef, type ReactNode, type UIEvent } from 'react'
+import { type MutableRefObject, useRef, type ReactNode, type UIEvent, Suspense } from 'react'
 import { useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
 import { type StateSchema } from 'app/providers/StoreProvider'
@@ -38,8 +38,10 @@ export const Page = ({ children, className, onScrollEnd }: PageProps) => {
 
     return (
         <main onScroll={onScroll} ref={wrapperRef} className={classNames(cls.Page, {}, [className])}>
-            {children}
-            {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
+            <Suspense fallback=''>
+                {children}
+                {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
+            </Suspense>
         </main>
     )
 }

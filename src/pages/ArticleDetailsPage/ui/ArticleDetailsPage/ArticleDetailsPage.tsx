@@ -13,6 +13,7 @@ import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDet
 import { ArticlesDetailsComments } from '../ArticlesDetailsComments/ArticlesDetailsComments'
 
 import cls from './ArticleDetailsPage.module.scss'
+import { Suspense } from 'react'
 
 interface ArticleDetailsPageProps {
     className?: string
@@ -26,14 +27,6 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const { t } = useTranslation('article-details')
 
     const { id } = useParams<{ id: string }>()
-
-    if (!id) {
-        return (
-            <div>{t('Статья не найдена')}
-            </div>
-
-        )
-    }
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>

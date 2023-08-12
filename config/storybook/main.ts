@@ -5,6 +5,7 @@ const config: StorybookConfig = {
         '@storybook/addon-links',
         '@storybook/addon-essentials',
         '@storybook/addon-interactions',
+        'storybook-addon-mock',
         'storybook-css-modules',
         'storybook-addon-react-router-v6'
     ],

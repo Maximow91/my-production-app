@@ -1,14 +1,37 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import { type Article } from 'entities/Article'
 import { ArticlesRecommendationsList } from './ArticlesRecommendationsList'
 
-const meta: Meta<typeof ArticlesRecommendationsList> = {
-    title: 'features/ArticlesRecommendationsListm',
-    component: ArticlesRecommendationsList
+const article: Article = {
+    id: '1',
+    img: '',
+    createdAt: '',
+    views: 123,
+    user: { id: '1', username: '123' },
+    blocks: [],
+    type: [],
+    title: '123',
+    subtitle: 'sdsdsd'
 }
 
-export default meta
-  type Story = StoryObj<typeof ArticlesRecommendationsList>
-
-export const Normal: Story = {
-    render: () => <ArticlesRecommendationsList />
+export default {
+    title: 'features/ArticlesRecommendationsList',
+    component: <ArticlesRecommendationsList />,
+    parameters: {
+        mockData: [
+            {
+                url: `${__API__}/articles?_limit=3`,
+                method: 'GET',
+                status: 200,
+                response: [
+                    { ...article, id: '1' },
+                    { ...article, id: '2' },
+                    { ...article, id: '3' }
+                ]
+            }
+        ]
+    }
 }
+
+const Template = () => <ArticlesRecommendationsList />
+
+export const Normal = Template.bind({})

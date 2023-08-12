@@ -6,6 +6,7 @@ import { Theme } from 'app/providers/ThemeProvider'
 import 'loki/configure-react'
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
 import { withRouter } from 'storybook-addon-react-router-v6'
+import { SuspenseDecorator } from 'shared/config/storybook/SuspenceDecorator/SuspenceDecorator'
 
 const preview: Preview = {
     decorators: [StyleDecorator, ThemeDecorator(Theme.LIGHT), StoreDecorator({
@@ -14,7 +15,7 @@ const preview: Preview = {
             password: '123',
             isLoading: false
         }
-    }), withRouter],
+    }), withRouter, SuspenseDecorator],
     parameters: {
         actions: { argTypesRegex: '^on[A-Z].*' },
         controls: {

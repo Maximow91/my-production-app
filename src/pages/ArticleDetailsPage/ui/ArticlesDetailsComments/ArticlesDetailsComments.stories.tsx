@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { type Article } from 'entities/Article'
 import { ArticleType, ArticleBlockType } from 'entities/Article'
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
-import ArticleDetailsPage from './ArticleDetailsPage'
 import image from 'shared/assets/test/image.jpg'
+import { ArticlesDetailsComments } from './ArticlesDetailsComments'
 
 const article: Article = {
     id: '1',
@@ -79,25 +79,16 @@ const article: Article = {
     ]
 }
 
-const meta: Meta<typeof ArticleDetailsPage> = {
-    title: 'pages/ArticleDetailsPage',
-    component: ArticleDetailsPage
+const meta: Meta<typeof ArticlesDetailsComments> = {
+    title: 'pages/ArticleDetailsPage/ArticlesDetailsComments',
+    component: ArticlesDetailsComments
 }
 
 export default meta
-  type Story = StoryObj<typeof ArticleDetailsPage>
+  type Story = StoryObj<typeof ArticlesDetailsComments>
 
 export const Normal: Story = {
-    render: () => <ArticleDetailsPage />
-}
-
-Normal.story = {
-    parameters: {
-        reactRouter: {
-            routePath: '/articles/:id',
-            routeParams: { id: '1' }
-        }
-    }
+    render: () => <ArticlesDetailsComments />
 }
 
 Normal.decorators = [StoreDecorator({

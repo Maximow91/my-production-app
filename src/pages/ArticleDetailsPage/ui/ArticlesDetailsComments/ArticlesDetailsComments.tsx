@@ -1,4 +1,4 @@
-import { useCallback } from 'react'
+import { Suspense, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import { AddCommentForm } from 'features/addCommentForm'
@@ -13,9 +13,10 @@ import { getArticleComments } from '../../model/slice/articleDetailsCommentsSlic
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle'
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 import { VStack } from 'shared/ui/Stack'
+import { Loader } from 'shared/ui/Loader'
 
 interface ArticlesDetailsCommentsProps {
-    id: string
+    id?: string
     className?: string
 }
 
@@ -44,7 +45,9 @@ export const ArticlesDetailsComments = (props: ArticlesDetailsCommentsProps) => 
     return (
         <VStack gap='16' className={classNames('', {}, [className])}>
             <Text title={t('Комментарии')} />
-            <AddCommentForm onSendCommentSendPress={sendComment} />
+            <Suspense fallback={<Loader />}>
+                <AddCommentForm onSendCommentSendPress={sendComment} />
+            </Suspense>
             <CommentList comments ={comments} isLoading={isLoading}/>
         </VStack>
     )

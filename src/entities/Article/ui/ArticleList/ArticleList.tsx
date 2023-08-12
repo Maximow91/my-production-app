@@ -20,6 +20,8 @@ interface ArticleListProps {
     withHeader?: boolean
 }
 
+const storybookStyles = { width: window.innerWidth, height: innerHeight }
+
 export const ArticleList = (props: ArticleListProps) => {
     const { articles, onEndReached, target, isLoading, view = ArticleView.TILE, className, withHeader = true } = props
 
@@ -61,7 +63,7 @@ export const ArticleList = (props: ArticleListProps) => {
         <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
             {view === ArticleView.LIST
                 ? (<Virtuoso
-                    style={{ height: '100%', flexGrow: 1 }}
+                    style={__PROJECT__ === 'storybook' ? storybookStyles : { height: '100%', flexGrow: 1 }}
                     totalCount={articles.length}
                     itemContent={renderArticles}
                     initialTopMostItemIndex={initialIndex}
@@ -102,7 +104,7 @@ export const ArticleList = (props: ArticleListProps) => {
 
                     }}
                     totalCount={articles.length}
-                    style={{ width: '100%', height: '100%' }}
+                    style={__PROJECT__ === 'storybook' ? storybookStyles : { width: '100%', height: '100%' }}
                     itemContent={renderArticles} />)}
         </div>
 
