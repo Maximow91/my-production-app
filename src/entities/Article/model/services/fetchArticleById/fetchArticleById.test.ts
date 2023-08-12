@@ -3,7 +3,8 @@ import { type Dispatch } from '@reduxjs/toolkit'
 import { type StateSchema } from 'app/providers/StoreProvider'
 
 import { TestAsyncThunk } from 'shared/lib/test/TestAsyncThunk/TestAsyncThunk'
-import { type Article, ArticleBlockType, ArticleType } from '../../types/article'
+import { ArticleBlockType, ArticleType } from '../../const/const'
+import { type Article } from '../../types/article'
 import { fetchArticleById } from './fetchArticleById'
 
 describe('fetchArticleById', () => {

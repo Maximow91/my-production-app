@@ -4,9 +4,10 @@ import { ArticlesPageFilters } from 'pages/ArticlesPage/ui/ArticlePageFilters/Ar
 import { ARTICLE_LIST_ITEM_INDEX } from 'shared/const/sessionStorage'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Text } from 'shared/ui/Text/Text'
-import { ArticleView, type Article } from '../../model/types/article'
+import { type Article } from '../../model/types/article'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
+import { ArticleView } from '../../model/const/const'
 
 import cls from './ArticleList.module.scss'
 

@@ -11,6 +11,7 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "sourceMap": true,
+    "isolatedModules": true,
     "strict": true,
     "strictNullChecks": true,
     "moduleResolution": "node",

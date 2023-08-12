@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { type Article, ArticleBlockType, ArticleType } from '../../model/types/article'
+import { type Article } from '../../model/types/article'
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
 import { ArticleDetails } from './ArticleDetails'
+import { ArticleBlockType, ArticleType } from '../../model/const/const'
 
 const meta: Meta<typeof ArticleDetails> = {
     title: 'entities/ArticleDetails',

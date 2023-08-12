@@ -1,5 +1,6 @@
+import { ValidateProfileError } from '../const/const'
 import { updateProfileData } from '../services/updateProfileData/updateProfileData'
-import { type ProfileSchema, ValidateProfileError } from '../types/editableProfileCardSchema'
+import { type ProfileSchema } from '../types/editableProfileCardSchema'
 import { profileActions, profileReducer } from './profileSlice'
 
 describe('Slice test', () => {

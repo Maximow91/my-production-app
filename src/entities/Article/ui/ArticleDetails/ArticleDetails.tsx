@@ -2,7 +2,7 @@ import { memo, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 
-import { ArticleBlockType, type ArticleBlock } from '../../model/types/article'
+import { type ArticleBlock } from '../../model/types/article'
 import { getArticleDetailsIsLoading } from '../../model/selectors/getArticleDetailsIsLoading/getArticleDetailsIsLoading'
 import { getArticleDetailsError } from '../../model/selectors/getArticleDetailsError/getArticleDetailsError'
 import { getArticleDetailsData } from '../../model/selectors/getArticleDetailsData/getArticleDetailsData'
@@ -20,12 +20,12 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import { DynamicModuleLoader, type ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text'
-
-import cls from './ArticleDetails.module.scss'
-
-import { TextBlockComponent } from '../TextBlockComponent/TextBlockComponent'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect'
 import { HStack, VStack } from 'shared/ui/Stack'
+import { ArticleBlockType } from '../../model/const/const'
+import { TextBlockComponent } from '../TextBlockComponent/TextBlockComponent'
+
+import cls from './ArticleDetails.module.scss'
 
 interface ArticleDetailsProps {
     id?: string

@@ -3,7 +3,7 @@ import { type StateSchema } from 'app/providers/StoreProvider'
 import { Country } from 'entities/Country'
 import { Currency } from 'entities/Currency'
 import { TestAsyncThunk } from 'shared/lib/test/TestAsyncThunk/TestAsyncThunk'
-import { ValidateProfileError } from '../../types/editableProfileCardSchema'
+import { ValidateProfileError } from '../../const/const'
 import { updateProfileData } from './updateProfileData'
 
 describe('fetchProfileData', () => {
