@@ -1,6 +1,5 @@
 import { type HTMLAttributeAnchorTarget, useCallback, useState, useEffect, useRef } from 'react'
 import { Virtuoso, VirtuosoGrid, type VirtuosoHandle } from 'react-virtuoso'
-import { ArticlesPageFilters } from 'pages/ArticlesPage/ui/ArticlePageFilters/ArticlesPageFilters'
 import { ARTICLE_LIST_ITEM_INDEX } from 'shared/const/sessionStorage'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Text } from 'shared/ui/Text/Text'
@@ -70,7 +69,6 @@ export const ArticleList = (props: ArticleListProps) => {
                     initialTopMostItemIndex={initialIndex}
                     endReached={onEndReached}
                     components={{
-                        Header: () => withHeader ? <ArticlesPageFilters className={cls.filters} /> : null,
                         Footer: () => {
                             if (isLoading) {
                                 return (
@@ -91,7 +89,6 @@ export const ArticleList = (props: ArticleListProps) => {
                     data={articles}
                     listClassName={cls.itemsWrapper}
                     components={{
-                        Header: () => withHeader ? <ArticlesPageFilters className={cls.filters} /> : null,
                         // eslint-disable-next-line react/prop-types
                         ScrollSeekPlaceholder: ({ index }) => {
                             return <div className={cls.ItemContainer}>

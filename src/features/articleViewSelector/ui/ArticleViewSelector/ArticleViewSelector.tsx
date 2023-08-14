@@ -1,11 +1,11 @@
-import { ArticleView } from 'entities/Article'
-import { classNames } from 'shared/lib/classNames/classNames'
-import cls from './ArticleViewSelector.module.scss'
+import { memo } from 'react'
+import { Icon } from 'shared/ui/Icon/Icon'
 import ListIcon from 'shared/assets/icons/bi_list.svg'
 import TileIcon from 'shared/assets/icons/fe_tiled.svg'
-import { memo } from 'react'
 import { ButtonTheme, CustomButton } from 'shared/ui/CustomButton'
-import { Icon } from 'shared/ui/Icon/Icon'
+import { classNames } from 'shared/lib/classNames/classNames'
+import cls from './ArticleViewSelector.module.scss'
+import { ArticleView } from 'entities/Article'
 
 interface ArticleViewSelectorProps {
     currentView?: ArticleView
