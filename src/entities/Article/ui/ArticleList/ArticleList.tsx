@@ -13,6 +13,7 @@ import cls from './ArticleList.module.scss'
 interface ArticleListProps {
     articles: Article[]
     target?: HTMLAttributeAnchorTarget
+
     className?: string
     isLoading?: boolean
     view?: ArticleView
