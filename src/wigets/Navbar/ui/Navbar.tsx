@@ -14,6 +14,8 @@ import { Text, TextSize, TextTheme } from 'shared/ui/Text/Text'
 import { HStack } from 'shared/ui/Stack'
 
 import cls from './Navbar.module.scss'
+import { Drawer } from 'shared/ui/Drawer/Drawer'
+import { NotificationList } from 'entities/Notification'
 
 interface NavbarProps {
     className?: string
@@ -33,6 +35,16 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     const onOpenModal = useCallback(() => {
         setIsAuthModal((prev) => !prev)
     }, [])
+
+    const [isOpen, setIsOpen] = useState(false)
+
+    const onOpenPress = () => {
+        setIsOpen(true)
+    }
+
+    const onClosePress = () => {
+        setIsOpen(false)
+    }
 
     if (authData) {
         return (
