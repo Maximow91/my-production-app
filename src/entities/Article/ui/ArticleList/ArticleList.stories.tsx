@@ -102,7 +102,7 @@ export const NormalList: Story = {
 }
 
 export const LoadingTile: Story = {
-    render: () => <ArticleList articles={[]} isLoading />
+    render: () => <ArticleList view={ArticleView.TILE} articles={[]} isLoading />
 }
 
 export const LoadingList: Story = {
