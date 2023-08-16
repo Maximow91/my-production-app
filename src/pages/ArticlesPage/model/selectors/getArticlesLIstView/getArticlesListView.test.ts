@@ -1,5 +1,5 @@
-import { type StateSchema } from 'app/providers/StoreProvider/config/StateSchema'
-import { ArticleView } from 'entities/Article'
+import { type StateSchema } from '@/app/providers/StoreProvider/config/StateSchema'
+import { ArticleView } from '@/entities/Article'
 import { getArticlesListView } from './getArticlesListView'
 
 describe('getArticlesList view', () => {

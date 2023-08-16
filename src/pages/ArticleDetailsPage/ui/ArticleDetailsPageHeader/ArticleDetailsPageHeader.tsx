@@ -3,13 +3,13 @@ import { useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
-import { getArticleDetailsData } from 'entities/Article'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { RoutePaths } from 'shared/config/routerConfig/routeConfig'
-import { ButtonTheme, CustomButton } from 'shared/ui/CustomButton'
+import { getArticleDetailsData } from '@/entities/Article'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { RoutePaths } from '@/shared/config/routerConfig/routeConfig'
+import { ButtonTheme, CustomButton } from '@/shared/ui/CustomButton'
 import { getCanUserEditArticle } from '../../model/selectors/article'
 
-import { HStack } from 'shared/ui/Stack'
+import { HStack } from '@/shared/ui/Stack'
 
 interface ArticleDetailsPageHeaderProps {
     className?: string

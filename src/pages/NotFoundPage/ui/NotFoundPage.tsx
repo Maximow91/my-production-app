@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { Page } from 'wigets/Page'
+import { Page } from '@/wigets/Page'
 import cls from './NotFoundPage.module.scss'
 
 export const NotFoundPage = () => {

@@ -1,12 +1,12 @@
 import type { Preview } from '@storybook/react'
-import { StyleDecorator } from 'shared/config/storybook/StyleDecorator/StyleDecorator'
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorators'
-import { Theme } from 'app/providers/ThemeProvider'
+import { StyleDecorator } from '@/shared/config/storybook/StyleDecorator/StyleDecorator'
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorators'
+import { Theme } from '@/app/providers/ThemeProvider'
 
 import 'loki/configure-react'
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 import { withRouter } from 'storybook-addon-react-router-v6'
-import { SuspenseDecorator } from 'shared/config/storybook/SuspenceDecorator/SuspenceDecorator'
+import { SuspenseDecorator } from '@/shared/config/storybook/SuspenceDecorator/SuspenceDecorator'
 
 const preview: Preview = {
     decorators: [StyleDecorator, ThemeDecorator(Theme.LIGHT), StoreDecorator({

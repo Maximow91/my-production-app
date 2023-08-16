@@ -2,11 +2,11 @@ import { useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 
-import { getUserAuthData, isUserAdmin, isUserManager, userActions } from 'entities/User'
-import { RoutePaths } from 'shared/config/routerConfig/routeConfig'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { Avatar } from 'shared/ui/Avatar/Avatar'
-import { Dropdown } from 'shared/ui/Popups'
+import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/entities/User'
+import { RoutePaths } from '@/shared/config/routerConfig/routeConfig'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { Avatar } from '@/shared/ui/Avatar/Avatar'
+import { Dropdown } from '@/shared/ui/Popups'
 
 import cls from './AvatarDropdown.module.scss'
 

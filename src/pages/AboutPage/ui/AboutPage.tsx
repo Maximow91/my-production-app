@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { Page } from 'wigets/Page'
+import { Page } from '@/wigets/Page'
 
 const AboutPage = () => {
     const { t } = useTranslation('about')

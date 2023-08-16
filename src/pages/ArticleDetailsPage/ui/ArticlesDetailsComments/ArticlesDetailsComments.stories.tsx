@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { type Article } from 'entities/Article'
-import { ArticleType, ArticleBlockType } from 'entities/Article'
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
-import image from 'shared/assets/test/image.jpg'
+import { type Article } from '@/entities/Article'
+import { ArticleType, ArticleBlockType } from '@/entities/Article'
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
+import image from '@/shared/assets/test/image.jpg'
 import { ArticlesDetailsComments } from './ArticlesDetailsComments'
 
 const article: Article = {

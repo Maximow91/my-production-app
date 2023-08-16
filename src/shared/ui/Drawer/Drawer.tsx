@@ -1,12 +1,12 @@
 import { Portal } from '@headlessui/react'
-import { useTheme } from 'app/providers/ThemeProvider'
+import { useTheme } from '@/app/providers/ThemeProvider'
 import { useCallback, type ReactNode } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { Overlay } from '../Overlay/Overlay'
 import cls from './Drawer.module.scss'
 import { useEffect } from 'react'
 
-import { useAnimationLibs } from 'shared/lib/components/AnimationProvider'
+import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider'
 
 interface DrawerProps {
     children: ReactNode

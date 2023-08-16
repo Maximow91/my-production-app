@@ -1,8 +1,8 @@
 import { type Dispatch } from '@reduxjs/toolkit'
-import { type StateSchema } from 'app/providers/StoreProvider'
-import { Country } from 'entities/Country'
-import { Currency } from 'entities/Currency'
-import { TestAsyncThunk } from 'shared/lib/test/TestAsyncThunk/TestAsyncThunk'
+import { type StateSchema } from '@/app/providers/StoreProvider'
+import { Country } from '@/entities/Country'
+import { Currency } from '@/entities/Currency'
+import { TestAsyncThunk } from '@/shared/lib/test/TestAsyncThunk/TestAsyncThunk'
 import { fetchProfileData } from './fetchProfileData'
 
 describe('fetchProfileData', () => {

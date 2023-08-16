@@ -1,7 +1,7 @@
 
 import type { Meta, StoryObj } from '@storybook/react'
 import { CommentList } from './CommentList'
-import userImg from 'shared/assets/test/image.jpg'
+import userImg from '@/shared/assets/test/image.jpg'
 
 const meta: Meta<typeof CommentList> = {
     title: 'entities/Comment/CommentList',

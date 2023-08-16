@@ -3,7 +3,7 @@
     "outDir": "./build/",
     "baseUrl": ".",
     "paths": {
-      "*": ["./src/*"]
+      "@/*": ["./src/*"]
     },
     "noImplicitAny": true,
     "module": "ESNext",
@@ -29,6 +29,7 @@
     "./src/**/*.ts",
     "./src/**/*.tsx",
     "./config",
-    "webpack.config.ts"
+    "webpack.config.ts",
+   "./.eslintrc.js"
   ]
 }

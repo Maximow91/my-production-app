@@ -1,6 +1,6 @@
 
 import type { Meta, StoryObj } from '@storybook/react'
-import userImg from 'shared/assets/test/image.jpg'
+import userImg from '@/shared/assets/test/image.jpg'
 import { CommentCard } from './CommentCard'
 
 const meta: Meta<typeof CommentCard> = {

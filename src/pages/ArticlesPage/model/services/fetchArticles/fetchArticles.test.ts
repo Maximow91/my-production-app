@@ -1,8 +1,8 @@
 import { type Dispatch } from '@reduxjs/toolkit'
-import { type StateSchema } from 'app/providers/StoreProvider'
-import { type Article, ArticleBlockType, ArticleType } from 'entities/Article'
+import { type StateSchema } from '@/app/providers/StoreProvider'
+import { type Article, ArticleBlockType, ArticleType } from '@/entities/Article'
 
-import { TestAsyncThunk } from 'shared/lib/test/TestAsyncThunk/TestAsyncThunk'
+import { TestAsyncThunk } from '@/shared/lib/test/TestAsyncThunk/TestAsyncThunk'
 import { fetchArticles } from './fetchArticles'
 
 describe('fetchProfileData', () => {

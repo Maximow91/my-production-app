@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { type Dispatch } from '@reduxjs/toolkit'
-import { type StateSchema } from 'app/providers/StoreProvider'
+import { type StateSchema } from '@/app/providers/StoreProvider'
 
-import { TestAsyncThunk } from 'shared/lib/test/TestAsyncThunk/TestAsyncThunk'
+import { TestAsyncThunk } from '@/shared/lib/test/TestAsyncThunk/TestAsyncThunk'
 import { ArticleBlockType, ArticleType } from '../../const/const'
 import { type Article } from '../../types/article'
 import { fetchArticleById } from './fetchArticleById'

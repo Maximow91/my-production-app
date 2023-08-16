@@ -3,17 +3,17 @@ import { useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 
-import { classNames } from 'shared/lib/classNames/classNames'
-import { DynamicModuleLoader, type ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
-import { CustomButton } from 'shared/ui/CustomButton'
-import { Input } from 'shared/ui/Input/Input'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { DynamicModuleLoader, type ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
+import { CustomButton } from '@/shared/ui/CustomButton'
+import { Input } from '@/shared/ui/Input/Input'
 
 import { getAddCommentFormText } from '../../model/selectors/getAddCommentFormText/getAddCommentFormText'
 import { addCommentFormActions, addCommentFormReducer } from '../../model/slice/addCommentFormSlice'
 
 import cls from './AddCommentForm.module.scss'
-import { HStack } from 'shared/ui/Stack'
+import { HStack } from '@/shared/ui/Stack'
 
 export interface AddCommentFormProps {
     className?: string

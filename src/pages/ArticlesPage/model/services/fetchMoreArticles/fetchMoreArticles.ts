@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-invalid-void-type */
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { type ThunkConfig } from 'app/providers/StoreProvider'
+import { type ThunkConfig } from '@/app/providers/StoreProvider'
 import { getArticlesHasMore } from '../../selectors/getArticlesHasMore/getArticlesHasMore'
 import { getArticlesPageIsLoading } from '../../selectors/getArticlesPageIsLoading/getArticlesPageIsLoading'
 import { getArticlesPageNumber } from '../../selectors/getArticlesPageNumber/getArticlesPageNumber'

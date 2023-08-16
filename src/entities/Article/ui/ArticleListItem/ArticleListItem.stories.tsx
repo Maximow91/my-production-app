@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { ArticleListItem } from './ArticleListItem'
-import avatar from 'shared/assets/test/image.jpg'
+import avatar from '@/shared/assets/test/image.jpg'
 import { type Article } from '../../model/types/article'
 import { ArticleView } from '../../model/const/const'
 

@@ -1,12 +1,12 @@
 
 import { useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { Page } from 'wigets/Page'
-import { ArticlesRecommendationsList } from 'features/articlesRecommendationsList'
-import { ArticleDetails } from 'entities/Article'
-import { VStack } from 'shared/ui/Stack'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { DynamicModuleLoader, type ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { Page } from '@/wigets/Page'
+import { ArticlesRecommendationsList } from '@/features/articlesRecommendationsList'
+import { ArticleDetails } from '@/entities/Article'
+import { VStack } from '@/shared/ui/Stack'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { DynamicModuleLoader, type ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 
 import { articleDetailsPageReducer } from '../../model/slice'
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
