@@ -8,6 +8,7 @@ import cls from './NotificationButton.module.scss'
 import { useDevice } from 'shared/lib/hooks/useDevice'
 import { Drawer } from 'shared/ui/Drawer/Drawer'
 import { useCallback, useState } from 'react'
+import { AnimationProvider } from 'shared/lib/components/AnimationProvider'
 
 interface NotificationButtonProps {
     className?: string
@@ -34,15 +35,16 @@ export const NotificationButton = (props: NotificationButtonProps) => {
         </CustomButton>
     )
 
-    console.log('ismob', isMobile)
     if (isMobile) {
         return (
-            <div>
-                {trigger}
-                <Drawer isOpen={isOpenDrawer} onClose={onCloseDrawer} >
-                    <NotificationList className={cls.notifications} />
-                </Drawer>
-            </div>
+            <AnimationProvider>
+                <div>
+                    {trigger}
+                    <Drawer isOpen={isOpenDrawer} onClose={onCloseDrawer} >
+                        <NotificationList className={cls.notifications} />
+                    </Drawer>
+                </div>
+            </AnimationProvider>
         )
     }
 
