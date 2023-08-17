@@ -15,6 +15,7 @@ module.exports = {
     project: ['./tsconfig.json'],
   },
   plugins: ['react','react-hooks','prod-app-plugin'],
+  ignorePatterns: [".eslintrc.cjs", "vite.config.ts"],
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
     "@typescript-eslint/prefer-nullish-coalescing": 'off',
