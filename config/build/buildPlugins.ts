@@ -48,6 +48,5 @@ export function buildPlugins (
     if (options.isDev) {
         plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }))
     }
-    // @ts-expect-error
     return plugins
 }
