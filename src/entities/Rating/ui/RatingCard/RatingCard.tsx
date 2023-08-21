@@ -9,6 +9,8 @@ import { Modal } from '@/shared/ui/Modal'
 import { ButtonTheme, CustomButton } from '@/shared/ui/CustomButton'
 import { Input } from '@/shared/ui/Input/Input'
 import { useTranslation } from 'react-i18next'
+import { useDevice } from '@/shared/lib/hooks/useDevice'
+import { Drawer } from '@/shared/ui/Drawer/Drawer'
 
 interface RatingCardProps {
     className?: string
@@ -28,6 +30,10 @@ export const RatingCard = (props: RatingCardProps) => {
     const [starsCount, setStarsCount] = useState(0)
     const [feedback, setFeedback] = useState('')
 
+    const isMobile = useDevice()
+
+    console.log('isMobile', isMobile)
+
     const onSelectStars = useCallback((selectedStarsCount: number) => {
         setStarsCount(selectedStarsCount)
         if (hasFeedback) {
@@ -46,22 +52,37 @@ export const RatingCard = (props: RatingCardProps) => {
         setIsModalOpen(false)
         onAccept?.(starsCount)
     }, [onAccept, starsCount])
+
+    const modalContent = (
+        <VStack max gap='32'>
+            <Text title={feedbackTitle} />
+            <Input placeholder={t('Ваш отзыв')} value={feedback} onChange={setFeedback}/>
+            <HStack max gap='16' justify='end'>
+                <CustomButton onClick={cancelHandler} theme={ButtonTheme.OUTLINE_RED}>{t('Закрыть')}</CustomButton>
+                <CustomButton onClick={acceptHandler}>{t('Отправить')}</CustomButton>
+            </HStack>
+        </VStack>
+    )
+
+    const modal = (
+        <Modal lazy isOpen={isModalOpen}>
+            {modalContent}
+        </Modal>
+    )
+
+    const drawer = (
+        <Drawer isOpen={isModalOpen} onClose={cancelHandler} >
+            {modalContent}
+        </Drawer>
+    )
+
     return (
         <Card className={classNames(cls.RatingCard, {}, [className])}>
             <VStack align='center' gap='8' >
                 <Text title={title}/>
                 <StarRating size={40} onSelect={onSelectStars}/>
             </VStack>
-            <Modal lazy isOpen={isModalOpen}>
-                <VStack max gap='32'>
-                    <Text title={feedbackTitle} />
-                    <Input placeholder={t('Ваш отзыв')} />
-                    <HStack max gap='16' justify='end'>
-                        <CustomButton onClick={cancelHandler} theme={ButtonTheme.OUTLINE_RED}>{t('Закрыть')}</CustomButton>
-                        <CustomButton onClick={acceptHandler}>{t('Отправить')}</CustomButton>
-                    </HStack>
-                </VStack>
-            </Modal>
+            {isMobile ? drawer : modal}
         </Card>
     )
 }
