@@ -74,7 +74,7 @@ const article =
   }
 
 const meta: Meta<typeof ArticleListItem> = {
-    title: 'entities/ArticleListItem',
+    title: 'entities/Article/ArticleListItem',
     component: ArticleListItem
 }
 

@@ -5,7 +5,7 @@ import { ArticleDetails } from './ArticleDetails'
 import { ArticleBlockType, ArticleType } from '../../model/const/const'
 
 const meta: Meta<typeof ArticleDetails> = {
-    title: 'entities/ArticleDetails',
+    title: 'entities/Article/ArticleDetails',
     component: ArticleDetails
 }
 

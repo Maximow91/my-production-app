@@ -20,7 +20,7 @@ export const Code = ({ className, text }: CodeProps) => {
             <CustomButton onClick={onCopy} theme={ButtonTheme.CLEAR} className={cls.copyBtn}>
                 <CopyIcon className={cls.copyImg} />
             </CustomButton>
-            <code >
+            <code className={cls.code} >
                 {text}
             </code>
         </pre>

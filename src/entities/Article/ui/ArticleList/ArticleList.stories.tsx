@@ -86,7 +86,7 @@ const article =
     }
 
 const meta: Meta<typeof ArticleList> = {
-    title: 'entities/ArticleList',
+    title: 'entities/Article/ArticleList',
     component: ArticleList
 }
 

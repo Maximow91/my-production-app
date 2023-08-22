@@ -16,7 +16,8 @@ export default {
                 url: `${__API__}/notifications`,
                 method: 'GET',
                 status: 200,
-                response: notifications
+                response: notifications,
+                delay: 5000
             }
         ]
     }

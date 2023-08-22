@@ -1,3 +1,4 @@
+import { CenteredContainerDecorator } from '@/shared/config/storybook/CenteredContainerDecorator/CenteredContainerDecorator'
 import type { Meta, StoryObj } from '@storybook/react'
 import { CustomButton } from '../../../CustomButton'
 import { Popover } from './Popover'
@@ -57,3 +58,13 @@ export const NormalBottomRight: Story = {
         trigger={<CustomButton>Open</CustomButton>}
     >{content}</Popover>
 }
+
+Normal.decorators = [CenteredContainerDecorator]
+
+NormalTopLeft.decorators = [CenteredContainerDecorator]
+
+NormalTopRight.decorators = [CenteredContainerDecorator]
+
+NormalBottomLeft.decorators = [CenteredContainerDecorator]
+
+NormalBottomRight.decorators = [CenteredContainerDecorator]
