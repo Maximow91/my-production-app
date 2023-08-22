@@ -40,7 +40,6 @@ export const ProfileRating = memo((props: ProfileRatingProps) => {
         }
     }, [rateProfileMutation, id, authData])
 
-    console.log(data && canRate)
     if (isLoading) {
         return <Skeleton width={'100%'} height={140} />
     }
