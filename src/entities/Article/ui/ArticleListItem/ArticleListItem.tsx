@@ -16,6 +16,7 @@ import { type TextArticleBlock, type Article } from '../../model/types/article'
 import { ArticleBlockType, ArticleView } from '../../model/const/const'
 
 import cls from './ArticleListItem.module.scss'
+import { HStack } from '@/shared/ui/Stack'
 
 interface ArticleListItemProps {
     article: Article
@@ -49,8 +50,12 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
             <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
                 <Card>
                     <div className={cls.header}>
-                        <Avatar size={30} src={article.user.avatar} />
-                        <Text className={cls.username} text={article.user.username} />
+                        <AppLink to={`${RoutePaths.profile}${article.user.id}`}>
+                            <HStack>
+                                <Avatar size={30} src={article.user.avatar} />
+                                <Text className={cls.username} text={article.user.username} />
+                            </HStack>
+                        </AppLink>
                         <Text className={cls.date} text={article.createdAt}/>
                     </div>
                     <Text className={cls.title} text={article.title} />

@@ -191,7 +191,7 @@
     {
       "id": "1",
       "title": "Javascript news",
-      "userId": "5",
+      "userId": "2",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 107,
@@ -503,7 +503,7 @@
     {
       "id": "6",
       "title": "React native news",
-      "userId": "2",
+      "userId": "5",
       "subtitle": "Что нового в React-native за 2022 год?",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhln4-ygosRcYC8XLmLPuh_bxZXFH8xpD48w&usqp=CAU",
       "views": 220,
@@ -931,20 +931,18 @@
       "userId": "5",
       "rate": 4,
       "id": "Dq1VoMt"
+    },
+    {
+      "articleId": "8",
+      "userId": "5",
+      "rate": 3,
+      "id": "4uYtbF9"
     }
   ],
   "profile-ratings": [
     {
       "id": "1",
       "rate": 4,
-      "feedback": "Хорошая статья",
-      "userId": "2",
-      "profileId": "1"
-    },
-    {
-      "id": "2",
-      "rate": 5,
-      "feedback": "Ну такое",
       "userId": "5",
       "profileId": "2"
     }
