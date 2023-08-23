@@ -1,6 +1,5 @@
 import { CenteredContainerDecorator } from '@/shared/config/storybook/CenteredContainerDecorator/CenteredContainerDecorator'
 import type { Meta, StoryObj } from '@storybook/react'
-import { type ReactNode } from 'react'
 import { CustomButton } from '../../../CustomButton'
 import { Dropdown } from './Dropdown'
 

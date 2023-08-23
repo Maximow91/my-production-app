@@ -14,8 +14,6 @@ import { Text, TextSize, TextTheme } from '@/shared/ui/Text/Text'
 import { HStack } from '@/shared/ui/Stack'
 
 import cls from './Navbar.module.scss'
-import { Drawer } from '@/shared/ui/Drawer/Drawer'
-import { NotificationList } from '@/entities/Notification'
 
 interface NavbarProps {
     className?: string

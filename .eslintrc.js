@@ -15,7 +15,7 @@ module.exports = {
     project: ['./tsconfig.json'],
   },
   plugins: ['react','react-hooks','prod-app-plugin'],
-  ignorePatterns: [".eslintrc.cjs", "vite.config.ts"],
+  ignorePatterns: [".eslintrc.cjs", "vite.config.ts",'updateImports.ts'],
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
     "@typescript-eslint/prefer-nullish-coalescing": 'off',
@@ -38,6 +38,6 @@ module.exports = {
     "@typescript-eslint/no-unused-expressions": "off",
     "@typescript-eslint/no-dynamic-delete":"off",
     "@typescript-eslint/no-non-null-assertion": "off",
-    "prod-app-plugin/path-checker":"error"
+    "prod-app-plugin/path-checker":["error",{alias:'@'}]
   },
 };

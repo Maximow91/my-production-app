@@ -11,12 +11,11 @@ interface PopoverProps {
     trigger: ReactNode
     children: ReactNode
     className?: string
-    href?: string
     direction?: DropdownDirection
 }
 
 export const Popover = (props: PopoverProps) => {
-    const { trigger, children, className, href, direction = 'bottom right' } = props
+    const { trigger, children, className, direction = 'bottom right' } = props
 
     const menuClasses = [mapDirectionClass[direction]]
 

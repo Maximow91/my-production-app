@@ -19,7 +19,7 @@ interface DrawerProps {
 const height = window.innerHeight - 100
 
 const DrawerContent = (props: DrawerProps) => {
-    const { children, className, isOpen, onClose, lazy } = props
+    const { children, className, isOpen, onClose } = props
 
     const { Spring, Gesture } = useAnimationLibs()
 
