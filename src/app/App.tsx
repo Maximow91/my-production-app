@@ -1,8 +1,8 @@
 import { Suspense, useEffect } from 'react'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { AppRouter } from './providers/router'
-import { Navbar } from '@/wigets/Navbar'
-import { Sidebar } from '@/wigets/Sidebar'
+import { Navbar } from '@/widgets/Navbar'
+import { Sidebar } from '@/widgets/Sidebar'
 import { useDispatch, useSelector } from 'react-redux'
 import { getInitedAuthData, userActions } from '@/entities/User'
 

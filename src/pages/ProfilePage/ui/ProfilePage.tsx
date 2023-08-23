@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom'
-import { Page } from '@/wigets/Page'
+import { Page } from '@/widgets/Page'
 import { EditableProfileCard } from '@/features/editableProfileCard'
 import { ProfileRating } from '@/features/profileRating'
 import { VStack } from '@/shared/ui/Stack'

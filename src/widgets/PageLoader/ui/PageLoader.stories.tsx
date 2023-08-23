@@ -1,23 +1,24 @@
+
 import type { Meta, StoryObj } from '@storybook/react'
 import { Theme } from '@/app/providers/ThemeProvider'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorators'
 
-import { ThemeSwitcher } from './ThemeSwitcher'
+import { PageLoader } from './PageLoader'
 
-const meta: Meta<typeof ThemeSwitcher> = {
-    title: 'wigets/ThemeSwither',
-    component: ThemeSwitcher
+const meta: Meta<typeof PageLoader> = {
+    title: 'widgets/PageLoader',
+    component: PageLoader
 }
 
 export default meta
-  type Story = StoryObj<typeof ThemeSwitcher>
+  type Story = StoryObj<typeof PageLoader>
 
 export const Light: Story = {
-    render: () => <ThemeSwitcher />
+    render: () => <PageLoader />
 }
 
 export const Dark: Story = {
-    render: () => <ThemeSwitcher />
+    render: () => <PageLoader />
 }
 
 Dark.decorators = [ThemeDecorator(Theme.DARK)]

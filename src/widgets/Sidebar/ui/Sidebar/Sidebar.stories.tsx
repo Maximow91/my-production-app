@@ -6,7 +6,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Sidebar } from './Sidebar'
 
 const meta: Meta<typeof Sidebar> = {
-    title: 'wigets/Sidebar',
+    title: 'widgets/Sidebar',
     component: Sidebar
 }
 

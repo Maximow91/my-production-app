@@ -1,6 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react'
 import { componentRender } from '@/shared/lib/test/componentRender/componentRender'
-import { Sidebar } from '@/wigets/Sidebar'
+import { Sidebar } from './Sidebar'
 
 describe('CustomButton', () => {
     test('render test', () => {

@@ -1,7 +1,7 @@
 
 import { useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { Page } from '@/wigets/Page'
+import { Page } from '@/widgets/Page'
 import { ArticlesRecommendationsList } from '@/features/articlesRecommendationsList'
 import { ArticleRating } from '@/features/articleRating'
 import { ArticleDetails } from '@/entities/Article'
