@@ -1,5 +1,4 @@
-
-import { type StateSchema } from '@/app/providers/StoreProvider/config/StateSchema'
+import { type StateSchema } from '@/app/providers/StoreProvider'
 import { getArticlesPageIsInited } from './getArticlesPageIsInited'
 
 describe('getArticlesPageisInited', () => {

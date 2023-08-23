@@ -42,7 +42,12 @@ module.exports = {
     "prod-app-plugin/public-api-imports":["error",
     {
       alias:'@',
-      testFilesPatterns:['**/*.test.ts', '**/*.story.*','**/StoreDecorator.tsx']
+      testFilesPatterns:['**/*.test.ts', '**/*.story.*','**/StoreDecorator.tsx'],
+    }],
+    "prod-app-plugin/layer-imports":["error",
+    {
+      alias:'@',
+      ignoreImportPatterns:['**/StoreProvider', '**/testing']
     }]
   },
 };
