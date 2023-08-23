@@ -4,9 +4,9 @@ import { type StateSchema } from '@/app/providers/StoreProvider/config/StateSche
 import { addCommentFormReducer } from '@/features/addCommentForm'
 import { profileReducer } from '@/features/editableProfileCard'
 import { type ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage'
-import { loginReducer } from '@/features/authByUserName'
-import { articleDetailsReduser } from '@/entities/Article'
+import { loginReducer } from '@/features/authByUserName/testing'
+import { articleDetailsReduser } from '@/entities/Article/testing'
+import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/testing'
 
 const defaultReducers: ReducerList = {
     loginForm: loginReducer,

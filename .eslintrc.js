@@ -39,6 +39,10 @@ module.exports = {
     "@typescript-eslint/no-dynamic-delete":"off",
     "@typescript-eslint/no-non-null-assertion": "off",
     "prod-app-plugin/path-checker":["error",{alias:'@'}],
-    "prod-app-plugin/public-api-imports":["error",{alias:'@'}]
+    "prod-app-plugin/public-api-imports":["error",
+    {
+      alias:'@',
+      testFilesPatterns:['**/*.test.ts', '**/*.story.*','**/StoreDecorator.tsx']
+    }]
   },
 };
