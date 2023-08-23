@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { getArticleDetailsData } from '@/entities/Article'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { RoutePaths } from '@/shared/config/routerConfig/routeConfig'
+import { RoutePaths } from '@/shared/const/router'
 import { ButtonTheme, CustomButton } from '@/shared/ui/CustomButton'
 import { getCanUserEditArticle } from '../../model/selectors/article'
 
