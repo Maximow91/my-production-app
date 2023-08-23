@@ -6141,10 +6141,10 @@ eslint-plugin-n@^15.6.1, eslint-plugin-n@^15.7.0:
     resolve "^1.22.1"
     semver "^7.3.8"
 
-eslint-plugin-prod-app-plugin@0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-prod-app-plugin/-/eslint-plugin-prod-app-plugin-0.0.6.tgz#c1e0a8ecf2b8ad3bc5052738fb7f6850c0e77ed4"
-  integrity sha512-wZ1eSMyekKyC0RmYs78qMYIn13l97kXeO3n12OCYsHwbNhRaDbUxhCRkbmBBIPoCc1/tOWsR+eJqSffTNU6CHQ==
+eslint-plugin-prod-app-plugin@0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-prod-app-plugin/-/eslint-plugin-prod-app-plugin-0.0.7.tgz#b1c4f035ae28f9396b55fe0667c54ffd5a5df3a1"
+  integrity sha512-CNDKg0SWFBvfZJdBkVc0hgsLqv9GWyuGtNLcSwVojpc29ohPf0Gz3zN+lcIvwGrndpIWExetbFeZOrl7h/xwKg==
   dependencies:
     requireindex "^1.2.0"
 

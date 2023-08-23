@@ -1,3 +1,4 @@
+export { articleDetailsReduser } from './model/slice/articleDetailsSlice'
 export { ArticleView } from './model/const/const'
 export { ArticleType } from './model/const/const'
 export { ArticleBlockType } from './model/const/const'
