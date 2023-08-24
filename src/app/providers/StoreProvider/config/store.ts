@@ -1,5 +1,4 @@
 import { type CombinedState, configureStore, type Reducer, type ReducersMapObject } from '@reduxjs/toolkit'
-import { counterReducer } from '@/entities/Counter'
 import { userReducer } from '@/entities/User'
 import { UIReducer } from '@/features/UI'
 import { type NavigateOptions, type To } from 'react-router-dom'
@@ -12,7 +11,6 @@ export const returnReduxStore = (initialState?: StateSchema, asyncReducers?: Red
     const rootReducers: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
         [rtkApi.reducerPath]: rtkApi.reducer,
-        counter: counterReducer,
         user: userReducer,
         ui: UIReducer
     }

@@ -7,13 +7,11 @@ import { type LoginSchema } from '@/features/authByUserName'
 import { type UISchema } from '@/features/UI'
 import { type AddCommentFormSchema } from '@/features/addCommentForm'
 import { type ArticleDetailsSchema } from '@/entities/Article'
-import { type CounterSchema } from '@/entities/Counter'
 import { type UserSchema } from '@/entities/User'
 import { type rtkApi } from '@/shared/api/rtkApi'
 import { type ProfileSchema } from '@/features/editableProfileCard'
 
 export interface StateSchema {
-    counter: CounterSchema
     user: UserSchema
     ui: UISchema
     [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
