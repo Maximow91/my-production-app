@@ -91,13 +91,31 @@ export const Normal: Story = {
     render: () => <ArticleDetailsPage />
 }
 
-Normal.story = {
-    parameters: {
-        reactRouter: {
-            routePath: '/articles/:id',
-            routeParams: { id: '1' }
+Normal.parameters = {
+    reactRouter: {
+        routePath: '/articles/:id',
+        routeParams: { id: '1' }
+    },
+    mockData: [
+        {
+            url: `${__API__}/article-ratings?userId=1&articleId=1`,
+            method: 'GET',
+            status: 200,
+            response: [
+                {
+                    rate: 4
+                }
+            ]
+        },
+        {
+            url: `${__API__}/articles?_limit=3`,
+            method: 'GET',
+            status: 200,
+            response: [
+                article
+            ]
         }
-    }
+    ]
 }
 
 Normal.decorators = [StoreDecorator({

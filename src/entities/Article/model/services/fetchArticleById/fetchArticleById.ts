@@ -6,6 +6,7 @@ import { type Article } from '../../types/article'
 export const fetchArticleById = createAsyncThunk<Article, string | undefined, ThunkConfig<string>>(
     'articleDetails/fetchArticleById',
     async (articleId, thunkAPI) => {
+        console.log('fetch')
         try {
             if (!articleId) {
                 throw new Error('')
@@ -16,6 +17,8 @@ export const fetchArticleById = createAsyncThunk<Article, string | undefined, Th
                         _expand: 'user'
                     }
                 })
+
+            console.log(response)
             if (!response.data) {
                 throw new Error()
             }

@@ -43,6 +43,7 @@ export default {
     moduleNameMapper: {
         '\\.s?css$': 'identity-obj-proxy',
         '\\.svg': path.resolve(__dirname, 'emptyTestCmp.tsx'),
+        '^@/(.*)$': '<rootDir>/src/$1',
         'entities/(.*)': '<rootDir>src/entities/$1'
     },
     globals: {

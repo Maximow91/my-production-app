@@ -3,13 +3,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 
 import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/entities/User'
-
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Avatar } from '@/shared/ui/Avatar'
 import { Dropdown } from '@/shared/ui/Popups'
 import { RoutePaths } from '@/shared/const/router'
-
-import cls from './AvatarDropdown.module.scss'
 
 interface AvatarDropdownProps {
     className?: string
@@ -39,7 +36,7 @@ export const AvatarDropdown = (props: AvatarDropdownProps) => {
     return (
         <Dropdown
             direction='bottom left'
-            className={classNames(cls.AvatarDropdown, {}, [className])}
+            className={classNames('', {}, [className])}
             items={[
                 ...(isAdminPanelAvailable
                     ? [{

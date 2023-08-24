@@ -38,26 +38,3 @@ Normal.decorators = [
         }
     })
 ]
-
-export const WithoutRate: Story = {
-    render: () => <ProfileRating id={'2'} />
-}
-
-WithoutRate.decorators = [
-    StoreDecorator({
-        user: {
-            authData: { id: '1' }
-        }
-    })
-]
-
-WithoutRate.parameters = {
-    mockData: [
-        {
-            url: `${__API__}/article-ratings?userId=1&articleId=1`,
-            method: 'GET',
-            status: 200,
-            response: []
-        }
-    ]
-}

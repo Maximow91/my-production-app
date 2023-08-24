@@ -7,7 +7,6 @@ import { Country } from '@/entities/Country'
 import { ProfileCard } from '@/entities/Profile'
 import { Text, TextTheme } from '@/shared/ui/Text'
 import { VStack } from '@/shared/ui/Stack'
-
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect'
 import { classNames } from '@/shared/lib/classNames/classNames'
@@ -20,8 +19,6 @@ import { getValidateProfileErrors } from '../../model/selectors/getValidateProfi
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData'
 import { profileActions, profileReducer } from '../../model/slice/profileSlice'
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader'
-
-import cls from './EditableProfileCard.module.scss'
 import { ValidateProfileError } from '../../model/const/const'
 
 interface EditableProfileCardProps {
@@ -93,7 +90,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     return (
 
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <VStack gap='16' max className={classNames(cls.EditableProfileCard, {}, [className])}>
+            <VStack gap='16' max className={classNames('', {}, [className])}>
                 <EditableProfileCardHeader />
                 {validateErrors?.length && validateErrors.map((err: any) => (
                 // @ts-expect-error

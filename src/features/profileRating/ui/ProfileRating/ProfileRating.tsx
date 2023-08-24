@@ -22,8 +22,6 @@ export const ProfileRating = memo((props: ProfileRatingProps) => {
 
     const { data, isLoading } = useGetProfileRating({ userId: authData?.id ?? '', profileId: id })
 
-    console.log(authData?.id)
-
     const [rateProfileMutation] = useRateProfile()
 
     const rating = data?.[0]
