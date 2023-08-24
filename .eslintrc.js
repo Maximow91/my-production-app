@@ -14,7 +14,7 @@ module.exports = {
     sourceType: 'module',
     project: ['./tsconfig.json'],
   },
-  plugins: ['react','react-hooks','prod-app-plugin'],
+  plugins: ['react','react-hooks','prod-app-plugin',"unused-imports"],
   ignorePatterns: [".eslintrc.cjs", "vite.config.ts",'updateImports.ts','createPublicApiForSharedUi.ts'],
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
@@ -35,6 +35,7 @@ module.exports = {
     "react-hooks/exhaustive-deps":"error", // Checks effect dependencies
     'react/display-name': 'off',
     "no-unused-expressions": "off",
+    "unused-imports/no-unused-imports": "error",
     "@typescript-eslint/no-unused-expressions": "off",
     "@typescript-eslint/no-dynamic-delete":"off",
     "@typescript-eslint/no-non-null-assertion": "off",
