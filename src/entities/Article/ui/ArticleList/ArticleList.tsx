@@ -2,7 +2,7 @@ import { type HTMLAttributeAnchorTarget, useCallback, useState, useEffect, useRe
 import { Virtuoso, VirtuosoGrid, type VirtuosoHandle } from 'react-virtuoso'
 import { ARTICLE_LIST_ITEM_INDEX } from '@/shared/const/sessionStorage'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { Text } from '@/shared/ui/Text/Text'
+import { Text } from '@/shared/ui/Text'
 import { type Article } from '../../model/types/article'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'

@@ -3,10 +3,10 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 
 import { type Currency, CurrencySelect } from '@/entities/Currency'
 import { CountrySelect, type Country } from '@/entities/Country'
-import { Text, TextAlign, TextTheme } from '@/shared/ui/Text/Text'
-import { Input } from '@/shared/ui/Input/Input'
+import { Text, TextAlign, TextTheme } from '@/shared/ui/Text'
+import { Input } from '@/shared/ui/Input'
 import { Loader } from '@/shared/ui/Loader'
-import { Avatar } from '@/shared/ui/Avatar/Avatar'
+import { Avatar } from '@/shared/ui/Avatar'
 
 import { type Profile } from '../../model/types/profile'
 

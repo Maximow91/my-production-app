@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { AddCommentForm } from '@/features/addCommentForm'
 import { CommentList } from '@/entities/Comment'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { Text } from '@/shared/ui/Text/Text'
+import { Text } from '@/shared/ui/Text'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect'
 

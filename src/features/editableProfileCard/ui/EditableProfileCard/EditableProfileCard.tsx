@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { Currency } from '@/entities/Currency'
 import { Country } from '@/entities/Country'
 import { ProfileCard } from '@/entities/Profile'
-import { Text, TextTheme } from '@/shared/ui/Text/Text'
+import { Text, TextTheme } from '@/shared/ui/Text'
 import { VStack } from '@/shared/ui/Stack'
 
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'

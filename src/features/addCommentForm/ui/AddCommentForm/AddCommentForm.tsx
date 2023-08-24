@@ -7,7 +7,7 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import { DynamicModuleLoader, type ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
 import { CustomButton } from '@/shared/ui/CustomButton'
-import { Input } from '@/shared/ui/Input/Input'
+import { Input } from '@/shared/ui/Input'
 
 import { getAddCommentFormText } from '../../model/selectors/getAddCommentFormText/getAddCommentFormText'
 import { addCommentFormActions, addCommentFormReducer } from '../../model/slice/addCommentFormSlice'

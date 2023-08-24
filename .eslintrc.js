@@ -15,7 +15,7 @@ module.exports = {
     project: ['./tsconfig.json'],
   },
   plugins: ['react','react-hooks','prod-app-plugin'],
-  ignorePatterns: [".eslintrc.cjs", "vite.config.ts",'updateImports.ts'],
+  ignorePatterns: [".eslintrc.cjs", "vite.config.ts",'updateImports.ts','createPublicApiForSharedUi.ts'],
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
     "@typescript-eslint/prefer-nullish-coalescing": 'off',

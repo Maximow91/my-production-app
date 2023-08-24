@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { Icon } from '@/shared/ui/Icon/Icon'
+import { Icon } from '@/shared/ui/Icon'
 import ListIcon from '@/shared/assets/icons/bi_list.svg'
 import TileIcon from '@/shared/assets/icons/fe_tiled.svg'
 import { ButtonTheme, CustomButton } from '@/shared/ui/CustomButton'

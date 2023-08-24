@@ -9,7 +9,7 @@ import { getUserAuthData } from '@/entities/User'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink'
 import { ButtonTheme, CustomButton } from '@/shared/ui/CustomButton'
-import { Text, TextSize, TextTheme } from '@/shared/ui/Text/Text'
+import { Text, TextSize, TextTheme } from '@/shared/ui/Text'
 import { HStack } from '@/shared/ui/Stack'
 import { RoutePaths } from '@/shared/const/router'
 
