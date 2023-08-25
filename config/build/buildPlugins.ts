@@ -1,12 +1,12 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import webpack from 'webpack'
 import { type BuildOptions } from './types/types'
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 import CopyPlugin from 'copy-webpack-plugin'
 import CircularDependencyPlugin from 'circular-dependency-plugin'
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
 export function buildPlugins (
     options: BuildOptions
@@ -15,10 +15,6 @@ export function buildPlugins (
         new webpack.ProgressPlugin(),
         new HtmlWebpackPlugin({
             template: options.paths.html
-        }),
-        new MiniCssExtractPlugin({
-            filename: 'css/[name].[contenthash:8].css',
-            chunkFilename: 'css/[name].[contenthash:8].css'
         }),
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(options.isDev),
@@ -29,11 +25,6 @@ export function buildPlugins (
         new CircularDependencyPlugin({
             exclude: /node_modules/,
             failOnError: true
-        }),
-        new CopyPlugin({
-            patterns: [
-                { from: options.paths.locales, to: options.paths.buildLocales }
-            ]
         }),
         new ForkTsCheckerWebpackPlugin({
             typescript: {
@@ -47,6 +38,23 @@ export function buildPlugins (
     ]
     if (options.isDev) {
         plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }))
+    }
+    if (!options.isDev) {
+        plugins.push(
+            new MiniCssExtractPlugin({
+                filename: 'css/[name].[contenthash:8].css',
+                chunkFilename: 'css/[name].[contenthash:8].css'
+            })
+        )
+        plugins.push(
+            new CopyPlugin(
+                {
+                    patterns: [
+                        { from: options.paths.locales, to: options.paths.buildLocales }
+                    ]
+                }
+            )
+        )
     }
     return plugins
 }
