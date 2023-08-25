@@ -1,10 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { ArticleSortField } from '../../model/const/const'
-
+import { ArticleSortField } from '@/entities/Article'
 import { ArticleSortSelector } from './ArticleSortSelector'
 
 const meta: Meta<typeof ArticleSortSelector> = {
-    title: 'entities/Article/ArticleSortSelector',
+    title: 'features/ArticleSortSelector',
     component: ArticleSortSelector
 }
 

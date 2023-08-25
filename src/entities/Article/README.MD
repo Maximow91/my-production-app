@@ -10,13 +10,9 @@ _____
 
 - Components
 
- `ArticleTypeTabs ` - компонент выбора типа статьи
-
  `ArticleDetails` - компонент c информацией о статье
 
  `ArticleList` - компонент со списком статей
-
- `ArticleSortSelector` - компонент с выбором сортировки списка статей
  
 - Types 
 

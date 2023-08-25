@@ -3,7 +3,7 @@ import { useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import { ArticleViewSelector } from '@/features/articleViewSelector'
-import { type ArticleSortField, ArticleSortSelector, type ArticleView, type ArticleType, ArticleTypeTabs } from '@/entities/Article'
+import { type ArticleSortField, type ArticleView, type ArticleType } from '@/entities/Article'
 import { type SortOrder } from '@/shared/types'
 import { Card } from '@/shared/ui/Card'
 import { Input } from '@/shared/ui/Input'
@@ -19,6 +19,8 @@ import { fetchArticles } from '../../model/services/fetchArticles/fetchArticles'
 import { getArticlesPageType } from '../../model/selectors/getArticlesPageType/getArticlesPageType'
 
 import cls from './ArticlesPageFilters.module.scss'
+import { ArticleSortSelector } from '@/features/articleSortSelector'
+import { ArticleTypeTabs } from '@/features/articleTypeTabs'
 
 interface ArticlesPageFiltersProps {
     className?: string

@@ -1,7 +1,6 @@
 export { ArticleView } from './model/const/const'
 export { ArticleType } from './model/const/const'
 export { ArticleBlockType } from './model/const/const'
-export { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs'
 export type { ArticleDetailsSchema } from './model/types/ArticleDetailsSchema'
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails'
 export type { Article } from './model/types/article'
@@ -10,4 +9,3 @@ export { getArticleDetailsError } from './model/selectors/getArticleDetailsError
 export { getArticleDetailsIsLoading } from './model/selectors/getArticleDetailsIsLoading/getArticleDetailsIsLoading'
 export { ArticleList } from './ui/ArticleList/ArticleList'
 export { ArticleSortField } from './model/const/const'
-export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector'

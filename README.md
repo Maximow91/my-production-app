@@ -183,7 +183,9 @@ Clear.args = {
 ## Фичи (features)
 
 - [addCommentForm](/src/features/addCommentForm)
+- [articleSortSelector](/src/features/articleSortSelector)
 - [articleEditForm](/src/features/articlesRecommendationsList)
+- [articleTypeTabs](/src/features/articleTypeTabs)
 - [articleRating](/src/features/articleRating)
 - [articleRecommendationsList](/src/features/articleViewSelector)
 - [AuthByUsername](/src/features/AuthByUsername)
