@@ -10,7 +10,7 @@ import { Card } from '@/shared/ui/Card'
 import { Avatar } from '@/shared/ui/Avatar'
 import { ButtonTheme, CustomButton } from '@/shared/ui/CustomButton'
 import { AppLink } from '@/shared/ui/AppLink'
-import { RoutePaths } from '@/shared/const/router'
+import { getRouteArticleDetails, getRouteProfile } from '@/shared/const/router'
 import { TextBlockComponent } from '../TextBlockComponent/TextBlockComponent'
 import { type TextArticleBlock, type Article } from '../../model/types/article'
 import { ArticleBlockType, ArticleView } from '../../model/const/const'
@@ -50,7 +50,7 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
             <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
                 <Card>
                     <div className={cls.header}>
-                        <AppLink to={`${RoutePaths.profile}${article.user.id}`}>
+                        <AppLink to={getRouteProfile(article.user.id)}>
                             <HStack>
                                 <Avatar size={30} src={article.user.avatar} />
                                 <Text className={cls.username} text={article.user.username} />
@@ -65,7 +65,7 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
                         <TextBlockComponent className={cls.textBlock} block={textBlock} />
                     )}
                     <div className={cls.footer}>
-                        <AppLink target={target} to={`${RoutePaths.article_details}${article.id}`}>
+                        <AppLink target={target} to={getRouteArticleDetails(article.id)}>
                             <CustomButton onClick={handleButtonClick} theme={ButtonTheme.OUTLINE}>
                                 {t('Читать далее...')}
                             </CustomButton>
@@ -77,7 +77,7 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
     } else {
         return (
 
-            <AppLink onClick={handleButtonClick} target={target} to={`${RoutePaths.article_details}${article.id}`} className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
+            <AppLink onClick={handleButtonClick} target={target} to={getRouteArticleDetails(article.id)} className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
                 <Card >
                     <div className={cls.imageWrapper}>
                         <img className={cls.image} alt={article.title} src={article.img} />

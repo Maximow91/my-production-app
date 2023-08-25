@@ -11,7 +11,7 @@ import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink'
 import { ButtonTheme, CustomButton } from '@/shared/ui/CustomButton'
 import { Text, TextSize, TextTheme } from '@/shared/ui/Text'
 import { HStack } from '@/shared/ui/Stack'
-import { RoutePaths } from '@/shared/const/router'
+import { getRouteArticleCreate } from '@/shared/const/router'
 
 import cls from './Navbar.module.scss'
 
@@ -48,7 +48,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         return (
             <header className={classNames(cls.navbar, {}, [className as string])}>
                 <Text size={TextSize.L} theme={TextTheme.INVERTED} className={cls.appTitle} title={'AppTitle'} />
-                <AppLink className={cls.createLink} to={RoutePaths.article_create} theme={AppLinkTheme.SECONDARY} >
+                <AppLink className={cls.createLink} to={getRouteArticleCreate()} theme={AppLinkTheme.SECONDARY} >
                     {t('Создать статью')}
                 </AppLink>
                 <HStack
