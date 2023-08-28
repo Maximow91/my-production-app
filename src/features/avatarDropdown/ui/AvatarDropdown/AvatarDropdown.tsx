@@ -53,7 +53,7 @@ export const AvatarDropdown = (props: AvatarDropdownProps) => {
                     onClick: onLogout
                 }
             ]}
-            trigger={<Avatar size={30}
+            trigger={<Avatar fallbackInverted={true} size={30}
                 src={authData?.avatar}/>}
         />
     )
