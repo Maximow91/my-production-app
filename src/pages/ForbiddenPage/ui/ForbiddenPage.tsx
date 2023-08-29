@@ -10,7 +10,7 @@ export const ForbiddenPage = (props: ForbiddenPageProps) => {
     const { className } = props
     const { t } = useTranslation()
     return (
-        <Page className={classNames('', {}, [className])}>
+        <Page data-testid='ForbiddenPage' className={classNames('', {}, [className])}>
             {t('ForbiddenPage')}
         </Page>
     )
