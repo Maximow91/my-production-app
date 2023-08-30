@@ -14,11 +14,16 @@ module.exports = {
     sourceType: 'module',
     project: ['./tsconfig.json'],
   },
-  plugins: ['react','react-hooks','prod-app-plugin',"unused-imports"],
-  ignorePatterns: [".eslintrc.cjs", "vite.config.ts",'updateImports.ts','createPublicApiForSharedUi.ts'],
+  plugins: ['react', 'react-hooks', 'prod-app-plugin', 'unused-imports'],
+  ignorePatterns: [
+    '.eslintrc.cjs',
+    'vite.config.ts',
+    'updateImports.ts',
+    'createPublicApiForSharedUi.ts',
+  ],
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
-    "@typescript-eslint/prefer-nullish-coalescing": 'off',
+    '@typescript-eslint/prefer-nullish-coalescing': 'off',
     'react/react-in-jsx-scope': 'off',
     'no-tabs': 'off',
     'no-mixed-spaces-and-tabs': 'off',
@@ -31,24 +36,32 @@ module.exports = {
     '@typescript-eslint/indent': [2, 4],
     '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/no-misused-promises': 'warn',
-    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
-    "react-hooks/exhaustive-deps":"error", // Checks effect dependencies
+    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+    'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
     'react/display-name': 'off',
-    "no-unused-expressions": "off",
-    "unused-imports/no-unused-imports": "error",
-    "@typescript-eslint/no-unused-expressions": "off",
-    "@typescript-eslint/no-dynamic-delete":"off",
-    "@typescript-eslint/no-non-null-assertion": "off",
-    "prod-app-plugin/path-checker":["error",{alias:'@'}],
-    "prod-app-plugin/public-api-imports":["error",
-    {
-      alias:'@',
-      testFilesPatterns:['**/*.test.ts', '**/*.story.*','**/StoreDecorator.tsx'],
-    }],
-    "prod-app-plugin/layer-imports":["error",
-    {
-      alias:'@',
-      ignoreImportPatterns:['**/StoreProvider', '**/testing']
-    }]
+    'no-unused-expressions': 'off',
+    'unused-imports/no-unused-imports': 'error',
+    '@typescript-eslint/no-unused-expressions': 'off',
+    '@typescript-eslint/no-dynamic-delete': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    'prod-app-plugin/path-checker': ['error', {alias: '@'}],
+    'prod-app-plugin/public-api-imports': [
+      'error',
+      {
+        alias: '@',
+        testFilesPatterns: [
+          '**/*.test.ts',
+          '**/*.story.*',
+          '**/StoreDecorator.tsx',
+        ],
+      },
+    ],
+    'prod-app-plugin/layer-imports': [
+      'error',
+      {
+        alias: '@',
+        ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+      },
+    ],
   },
-};
+}
