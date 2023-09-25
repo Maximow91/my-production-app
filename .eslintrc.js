@@ -20,6 +20,8 @@ module.exports = {
     'vite.config.ts',
     'updateImports.ts',
     'createPublicApiForSharedUi.ts',
+    "cypress/**/*.ts",
+    'cypress.config.ts'
   ],
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',

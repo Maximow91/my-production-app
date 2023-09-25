@@ -14,7 +14,7 @@ const ArticlesPage = () => {
     return (
         <DynamicModuleLoader reducers={reducers} >
             <VStack max>
-                <ArticlesPageFilters className={cls.filters} />
+                <ArticlesPageFilters testId='ArticlesPage' className={cls.filters} />
                 <ArticleInfiniteList className={cls.list} />
             </VStack>
         </DynamicModuleLoader>

@@ -24,10 +24,11 @@ import { ArticleTypeTabs } from '@/features/articleTypeTabs'
 
 interface ArticlesPageFiltersProps {
     className?: string
+    testId?: string
 }
 
 export const ArticlesPageFilters = (props: ArticlesPageFiltersProps) => {
-    const { className } = props
+    const { className, testId = '' } = props
     const view = useSelector(getArticlesListView)
     const order = useSelector(getArticlesPageOrder)
     const sort = useSelector(getArticlesPageSort)
@@ -75,7 +76,7 @@ export const ArticlesPageFilters = (props: ArticlesPageFiltersProps) => {
     }, [dispatch, fetchData])
 
     return (
-        <div className={classNames(cls.ArticlesPageFilters, {}, [className])}>
+        <div data-testid={testId} className={classNames(cls.ArticlesPageFilters, {}, [className])}>
             <div className={cls.sortWrapper}>
                 <ArticleSortSelector order={order} sort={sort} onChangeOrder={onOrderChange} onChangeSortFiels={onSortChange}/>
                 <ArticleViewSelector currentView={view} onViewClick={handleListViewChange} />
