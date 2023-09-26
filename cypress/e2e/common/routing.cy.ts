@@ -17,10 +17,10 @@ describe('Роутинг', () => {
   }) 
   describe('Пользователь авторизован',()=>{
     beforeEach(()=>{
-      cy.login('admin','123')
+      cy.login()
     })
     it('Переход на страницу профиля', () => {
-      cy.visit('/profile/5')
+      cy.visit('/profile/10')
       cy.get(selectByTestId('ProfilePage')).should('exist')
     })
     it('Переход на страницу списка статей', () => {

@@ -47,9 +47,9 @@ const AddCommentForm = ({ onSendCommentSendPress, className }: AddCommentFormPro
     return (
 
         <DynamicModuleLoader reducers={reducers}>
-            <HStack justify='between' max className={classNames(cls.AddCommentForm, {}, [])}>
-                <Input onChange={onChangeInputText} value={text} className={cls.input} placeholder={t('Введите текст комментария')} />
-                <CustomButton onClick={onSend} className={cls.sendBtn}>{t('Отправить')}</CustomButton>
+            <HStack data-testid='AddCommentForm' justify='between' max className={classNames(cls.AddCommentForm, {}, [])}>
+                <Input data-testid='AddCommentForm.Input' onChange={onChangeInputText} value={text} className={cls.input} placeholder={t('Введите текст комментария')} />
+                <CustomButton data-testid='AddCommentForm.Button' onClick={onSend} className={cls.sendBtn}>{t('Отправить')}</CustomButton>
             </HStack>
         </DynamicModuleLoader>
     )

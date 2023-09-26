@@ -61,7 +61,7 @@ export const ArticleList = (props: ArticleListProps) => {
     }
 
     return (
-        <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+        <div data-testid="ArticlesList" className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
             {view === ArticleView.LIST
                 ? (<Virtuoso
                     style={__PROJECT__ === 'storybook' ? storybookStyles : { height: '100%', flexGrow: 1 }}

@@ -51,12 +51,12 @@ export const RatingCard = (props: RatingCardProps) => {
     }, [onCancel, starsCount])
 
     const modalContent = (
-        <VStack max gap='32'>
+        <VStack data-testid='RatingCard' max gap='32'>
             <Text title={feedbackTitle} />
-            <Input placeholder={t('Ваш отзыв')} value={feedback} onChange={setFeedback}/>
+            <Input data-testid={'RatingCard.Input'} placeholder={t('Ваш отзыв')} value={feedback} onChange={setFeedback}/>
             <HStack max gap='16' justify='end'>
-                <CustomButton onClick={cancelHandler} theme={ButtonTheme.OUTLINE_RED}>{t('Закрыть')}</CustomButton>
-                <CustomButton onClick={acceptHandler}>{t('Отправить')}</CustomButton>
+                <CustomButton data-testid='RatingCard.Close' onClick={cancelHandler} theme={ButtonTheme.OUTLINE_RED}>{t('Закрыть')}</CustomButton>
+                <CustomButton data-testid='RatingCard.Send' onClick={acceptHandler}>{t('Отправить')}</CustomButton>
             </HStack>
         </VStack>
     )

@@ -49,7 +49,7 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
     if (view === ArticleView.LIST) {
         const textBlock = article.blocks.find(block => block.type === ArticleBlockType.TEXT) as TextArticleBlock
         return (
-            <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
+            <div data-testid='ArticleListItem' className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
                 <Card>
                     <div className={cls.header}>
                         <AppLink to={getRouteProfile(article.user.id)}>
@@ -83,7 +83,7 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
     } else {
         return (
 
-            <AppLink onClick={handleButtonClick} target={target} to={getRouteArticleDetails(article.id)} className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
+            <AppLink data-testid='ArticleListItem' onClick={handleButtonClick} target={target} to={getRouteArticleDetails(article.id)} className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
                 <Card >
                     <div className={cls.imageWrapper}>
                         <AppImage

@@ -1,32 +1,6 @@
 {
   "notifications": [
     {
-      "id": "1",
-      "title": "Уведомление 1",
-      "description": "Произошло какое-то событие",
-      "userId": "1"
-    },
-    {
-      "id": "2",
-      "title": "Уведомление 2",
-      "description": "Произошло какое-то событие",
-      "userId": "1",
-      "href": "http://localhost:3000/admin"
-    },
-    {
-      "id": "3",
-      "title": "Уведомление 3",
-      "description": "Произошло какое-то событие",
-      "userId": "1",
-      "href": "http://localhost:3000/admin"
-    },
-    {
-      "id": "4",
-      "title": "Уведомление 4",
-      "description": "Произошло какое-то событие",
-      "userId": "1"
-    },
-    {
       "id": "5",
       "title": "Уведомление 1",
       "description": "Произошло какое-то событие",
@@ -34,11 +8,6 @@
     }
   ],
   "posts": [
-    {
-      "id": "2",
-      "title": "json-server",
-      "userId": 1
-    },
     {
       "id": "3",
       "title": "json-server",
@@ -865,6 +834,15 @@
         "MANAGER"
       ],
       "avatar": "https://w0.peakpx.com/wallpaper/210/583/HD-wallpaper-haker-fun-skull-gothic-super.jpg"
+    },
+    {
+      "id": "10",
+      "username": "test_user",
+      "password": "test_password",
+      "roles": [
+        "ADMIN"
+      ],
+      "avatar": "https://images.techinsider.ru/upload/img_cache/028/028272720043b07b91b0a7a1f77361a5_ce_1000x664x0x0.jpg"
     }
   ],
   "profile": [
@@ -889,6 +867,17 @@
       "city": "Moscow",
       "username": "user",
       "avatar": "https://w0.peakpx.com/wallpaper/210/583/HD-wallpaper-haker-fun-skull-gothic-super.jpg"
+    },
+    {
+      "id": "10",
+      "firstname": "Тест",
+      "lastname": "Тестович",
+      "age": 32,
+      "currency": "EUR",
+      "country": "Kazahstan",
+      "city": "Madrid",
+      "username": "admin",
+      "avatar": "https://thumbs.dreamstime.com/b/haker-guy-hoodie-crypto-currency-concept-dark-background-d-rendering-mixed-media-161555772.jpg"
     }
   ],
   "article-ratings": [
