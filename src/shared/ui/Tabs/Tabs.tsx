@@ -27,7 +27,7 @@ export const Tabs = (props: TabsProps) => {
     return (
         <div className={classNames(cls.Tabs, {}, [className])}>
             {tabs.map(tab => (
-                <Card onClick={clickHandle(tab)} theme={tab.value === value ? CardTheme.NORMAL : CardTheme.OUTLINE} className={cls.tab} key={tab.value}>
+                <Card data-testid={`Tab.${tab.value}`} onClick={clickHandle(tab)} theme={tab.value === value ? CardTheme.NORMAL : CardTheme.OUTLINE} className={cls.tab} key={tab.value}>
                     {tab.content}
                 </Card>
             ))}

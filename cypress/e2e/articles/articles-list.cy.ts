@@ -1,4 +1,5 @@
 describe('Пользователь заходит на страницу со списком статей', () => {
+
   beforeEach(()=>{
     cy.login().then(()=>{
       cy.visit('articles')
@@ -7,5 +8,15 @@ describe('Пользователь заходит на страницу со с�
   it('и статьи успешно подгружаются', () => {
     cy.getByTestId('ArticlesList').should('exist')
     cy.getByTestId('ArticleListItem').should('have.length.greaterThan',3)
+  })
+  it('в поиске ищет статью', () => {
+    cy.createArticle()
+    cy.getByTestId('ArticlePage.Input').type("TEST")
+    cy.getByTestId('ArticleListItem').should('have.length',1)
+    cy.removeArticle('1000')
+  })
+  it('фильтрует список по тегу "Наука"', () => {
+    cy.getByTestId('Tab.SCIENCE').click()
+    cy.getByTestId('ArticleListItem').should('have.length',1)
   })
 })

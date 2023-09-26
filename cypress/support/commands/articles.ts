@@ -25,13 +25,13 @@ export const createArticle = (article?: Article ) => {
       })
   }
 
-export const removeArticle = (articleId: string) => {
-    return  cy.request({
+  export const removeArticle = (articleId: string) => {
+    return cy.request({
         method: 'DELETE',
         url: `http://localhost:8000/articles/${articleId}`,
-        headers: {Authorization: 'dfdfdfdfdf'},
-      })
-}
+        headers: { Authorization: 'asasf' },
+    });
+};
 
 declare global {
     namespace Cypress {
