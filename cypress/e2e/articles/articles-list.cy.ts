@@ -6,6 +6,7 @@ describe('Пользователь заходит на страницу со с�
     })
   })
   it('и статьи успешно подгружаются', () => {
+   // cy.intercept('GET','**/articles?*',{fixture: 'articles.json'})
     cy.getByTestId('ArticlesList').should('exist')
     cy.getByTestId('ArticleListItem').should('have.length.greaterThan',3)
   })
