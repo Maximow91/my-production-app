@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const emptyTestCmp = function () {
-    return <div />
-}
+  return <div />;
+};
 
-export default emptyTestCmp
+export default emptyTestCmp;

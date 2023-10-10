@@ -1,41 +1,51 @@
-import { type ImgHTMLAttributes, useState, type ReactElement, useLayoutEffect } from 'react'
+import {
+  type ImgHTMLAttributes,
+  useState,
+  type ReactElement,
+  useLayoutEffect,
+} from "react";
 
 interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
-    className?: string
-    fallback?: ReactElement
-    errorFallback?: ReactElement
+  className?: string;
+  fallback?: ReactElement;
+  errorFallback?: ReactElement;
 }
 
 export const AppImage = (props: AppImageProps) => {
-    const { className, src, alt = 'image', fallback, errorFallback, ...otherProps } = props
+  const {
+    className,
+    src,
+    alt = "image",
+    fallback,
+    errorFallback,
+    ...otherProps
+  } = props;
 
-    const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true);
 
-    const [hasError, setHasError] = useState(true)
+  const [hasError, setHasError] = useState(true);
 
-    useLayoutEffect(() => {
-        const img = new Image()
-        img.src = src || ''
-        img.onload = () => {
-            setIsLoading(false)
-            setHasError(false)
-        }
-        img.onerror = () => {
-            setIsLoading(false)
-            setHasError(true)
-        }
+  useLayoutEffect(() => {
+    const img = new Image();
+    img.src = src || "";
+    img.onload = () => {
+      setIsLoading(false);
+      setHasError(false);
+    };
+    img.onerror = () => {
+      setIsLoading(false);
+      setHasError(true);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+  }, []);
 
-    if (isLoading && fallback) {
-        return fallback
-    }
+  if (isLoading && fallback) {
+    return fallback;
+  }
 
-    if (hasError && errorFallback) {
-        return errorFallback
-    }
+  if (hasError && errorFallback) {
+    return errorFallback;
+  }
 
-    return (
-        <img className={className} src={src} alt ={alt} {...otherProps}/>
-    )
-}
+  return <img className={className} src={src} alt={alt} {...otherProps} />;
+};

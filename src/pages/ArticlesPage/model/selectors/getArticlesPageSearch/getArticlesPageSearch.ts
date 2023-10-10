@@ -1,3 +1,4 @@
-import { type StateSchema } from '@/app/providers/StoreProvider'
+import { type StateSchema } from "@/app/providers/StoreProvider";
 
-export const getArticlesPageSearch = (state: StateSchema) => state.articlesPage?.search ?? ''
+export const getArticlesPageSearch = (state: StateSchema) =>
+  state.articlesPage?.search ?? "";

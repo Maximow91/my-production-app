@@ -1,3 +1,4 @@
-import { type StateSchema } from '@/app/providers/StoreProvider'
+import { type StateSchema } from "@/app/providers/StoreProvider";
 
-export const getArticlesPageIsLoading = (state: StateSchema) => state.articlesPage?.isLoading
+export const getArticlesPageIsLoading = (state: StateSchema) =>
+  state.articlesPage?.isLoading;

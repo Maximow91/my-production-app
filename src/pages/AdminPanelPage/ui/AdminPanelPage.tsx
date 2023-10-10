@@ -1,19 +1,22 @@
-import { useTranslation } from 'react-i18next'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import { Page } from '@/widgets/Page'
+import { useTranslation } from "react-i18next";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Page } from "@/widgets/Page";
 
 interface AdminPanelPageProps {
-    className?: string
+  className?: string;
 }
 
 export const AdminPanelPage = (props: AdminPanelPageProps) => {
-    const { className } = props
+  const { className } = props;
 
-    const { t } = useTranslation()
+  const { t } = useTranslation();
 
-    return (
-        <Page data-testid='AdminPanelPage' className={classNames('', {}, [className])}>
-            {t('AdminPanel')}
-        </Page>
-    )
-}
+  return (
+    <Page
+      data-testid="AdminPanelPage"
+      className={classNames("", {}, [className])}
+    >
+      {t("AdminPanel")}
+    </Page>
+  );
+};

@@ -1,60 +1,60 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useState } from "react";
 
-import { classNames } from '@/shared/lib/classNames/classNames'
-import { ButtonTheme, CustomButton } from '@/shared/ui/CustomButton'
-import { Icon } from '@/shared/ui/Icon'
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { ButtonTheme, CustomButton } from "@/shared/ui/CustomButton";
+import { Icon } from "@/shared/ui/Icon";
 
-import NotificationIcon from '@/shared/assets/icons/bell.svg'
-import { NotificationList } from '@/entities/Notification'
-import { useDevice } from '@/shared/lib/hooks/useDevice'
-import { Drawer } from '@/shared/ui/Drawer'
+import NotificationIcon from "@/shared/assets/icons/bell.svg";
+import { NotificationList } from "@/entities/Notification";
+import { useDevice } from "@/shared/lib/hooks/useDevice";
+import { Drawer } from "@/shared/ui/Drawer";
 
-import cls from './NotificationButton.module.scss'
-import { Popover } from '@/shared/ui/Popups'
+import cls from "./NotificationButton.module.scss";
+import { Popover } from "@/shared/ui/Popups";
 
 interface NotificationButtonProps {
-    className?: string
+  className?: string;
 }
 
 export const NotificationButton = (props: NotificationButtonProps) => {
-    const { className } = props
+  const { className } = props;
 
-    const [isOpenDrawer, setIsOpenDrawer] = useState(false)
+  const [isOpenDrawer, setIsOpenDrawer] = useState(false);
 
-    const isMobile = useDevice()
+  const isMobile = useDevice();
 
-    const onOpenDrawer = useCallback(() => {
-        setIsOpenDrawer(true)
-    }, [])
+  const onOpenDrawer = useCallback(() => {
+    setIsOpenDrawer(true);
+  }, []);
 
-    const onCloseDrawer = useCallback(() => {
-        setIsOpenDrawer(false)
-    }, [])
+  const onCloseDrawer = useCallback(() => {
+    setIsOpenDrawer(false);
+  }, []);
 
-    const trigger = (
-        <CustomButton theme={ButtonTheme.CLEAR} onClick={onOpenDrawer}>
-            <Icon Svg={NotificationIcon} inverted />
-        </CustomButton>
-    )
+  const trigger = (
+    <CustomButton theme={ButtonTheme.CLEAR} onClick={onOpenDrawer}>
+      <Icon Svg={NotificationIcon} inverted />
+    </CustomButton>
+  );
 
-    if (isMobile) {
-        return (
-            <div>
-                {trigger}
-                <Drawer isOpen={isOpenDrawer} onClose={onCloseDrawer} >
-                    <NotificationList className={cls.notifications} />
-                </Drawer>
-            </div>
-        )
-    }
-
+  if (isMobile) {
     return (
-        <Popover
-            className={classNames(cls.NotificationButton, {}, [className])}
-            direction='bottom left'
-            trigger={trigger}
-        >
-            <NotificationList className={cls.notifications} />
-        </Popover>
-    )
-}
+      <div>
+        {trigger}
+        <Drawer isOpen={isOpenDrawer} onClose={onCloseDrawer}>
+          <NotificationList className={cls.notifications} />
+        </Drawer>
+      </div>
+    );
+  }
+
+  return (
+    <Popover
+      className={classNames(cls.NotificationButton, {}, [className])}
+      direction="bottom left"
+      trigger={trigger}
+    >
+      <NotificationList className={cls.notifications} />
+    </Popover>
+  );
+};

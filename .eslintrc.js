@@ -4,9 +4,11 @@ module.exports = {
     es2021: true,
   },
   extends: [
+    'prettier',
     'plugin:react/recommended',
     'standard-with-typescript',
     'plugin:storybook/recommended',
+    "plugin:prettier/recommended",
   ],
   overrides: [],
   parserOptions: {
@@ -14,7 +16,7 @@ module.exports = {
     sourceType: 'module',
     project: ['./tsconfig.json'],
   },
-  plugins: ['react', 'react-hooks', 'prod-app-plugin', 'unused-imports'],
+  plugins: ['react', 'react-hooks', 'prod-app-plugin', 'unused-imports', "prettier"],
   ignorePatterns: [
     '.eslintrc.cjs',
     'vite.config.ts',
@@ -24,6 +26,7 @@ module.exports = {
     'cypress.config.ts'
   ],
   rules: {
+    'prettier/prettier': 'error',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
     'react/react-in-jsx-scope': 'off',
@@ -34,8 +37,8 @@ module.exports = {
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/no-floating-promises': 'warn',
-    indent: 'off',
-    '@typescript-eslint/indent': [2, 4],
+    "indent": "off",
+    "@typescript-eslint/indent": "off",
     '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/no-misused-promises': 'warn',
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
@@ -47,6 +50,16 @@ module.exports = {
     '@typescript-eslint/no-dynamic-delete': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
     'prod-app-plugin/path-checker': ['error', {alias: '@'}],
+    '@typescript-eslint/quotes': 'off',
+    'quotes': 'off',
+    'semi': 'off',
+    "indent": "off",
+    '@typescript-eslint/indent': "off",
+    '@typescript-eslint/semi': "off",
+    "@typescript-eslint/member-delimiter-style": "off",
+    "@typescript-eslint/space-before-function-paren": "off",
+    "comma-dangle": "off",
+    "@typescript-eslint/comma-dangle": "off",
     'prod-app-plugin/public-api-imports': [
       'error',
       {

@@ -1,27 +1,28 @@
+import type { Meta, StoryObj } from "@storybook/react";
+import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 
-import type { Meta, StoryObj } from '@storybook/react'
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
-
-import { EditableProfileCardHeader } from './EditableProfileCardHeader'
+import { EditableProfileCardHeader } from "./EditableProfileCardHeader";
 
 const meta: Meta<typeof EditableProfileCardHeader> = {
-    title: 'features/EditableProfileCard/EditableProfileCardHeader',
-    component: EditableProfileCardHeader
-}
+  title: "features/EditableProfileCard/EditableProfileCardHeader",
+  component: EditableProfileCardHeader,
+};
 
-export default meta
-  type Story = StoryObj<typeof EditableProfileCardHeader>
+export default meta;
+type Story = StoryObj<typeof EditableProfileCardHeader>;
 
 export const Normal: Story = {
-    render: () => <EditableProfileCardHeader />
-}
+  render: () => <EditableProfileCardHeader />,
+};
 
 export const Editting: Story = {
-    render: () => <EditableProfileCardHeader />
-}
+  render: () => <EditableProfileCardHeader />,
+};
 
-Editting.decorators = [StoreDecorator({
+Editting.decorators = [
+  StoreDecorator({
     profile: {
-        readonly: false
-    }
-})]
+      readonly: false,
+    },
+  }),
+];

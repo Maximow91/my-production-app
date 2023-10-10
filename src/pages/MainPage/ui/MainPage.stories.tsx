@@ -1,23 +1,23 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { Theme } from '@/shared/const/theme'
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorators'
+import type { Meta, StoryObj } from "@storybook/react";
+import { Theme } from "@/shared/const/theme";
+import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorators";
 
-import MainPage from './MainPage'
+import MainPage from "./MainPage";
 
 const meta: Meta<typeof MainPage> = {
-    title: 'pages/MainPage',
-    component: MainPage
-}
+  title: "pages/MainPage",
+  component: MainPage,
+};
 
-export default meta
-  type Story = StoryObj<typeof MainPage>
+export default meta;
+type Story = StoryObj<typeof MainPage>;
 
 export const Normal: Story = {
-    render: () => <MainPage />
-}
+  render: () => <MainPage />,
+};
 
 export const Dark: Story = {
-    render: () => <MainPage />
-}
+  render: () => <MainPage />,
+};
 
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
+Dark.decorators = [ThemeDecorator(Theme.DARK)];

@@ -1,4 +1,8 @@
-import { type Decorator } from '@storybook/react'
-import { BrowserRouter } from 'react-router-dom'
+import { type Decorator } from "@storybook/react";
+import { BrowserRouter } from "react-router-dom";
 
-export const RouteDecorator: Decorator = (Story) => (<BrowserRouter><Story /></BrowserRouter>)
+export const RouteDecorator: Decorator = (Story) => (
+  <BrowserRouter>
+    <Story />
+  </BrowserRouter>
+);

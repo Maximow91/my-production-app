@@ -1,58 +1,86 @@
+import { useCallback } from "react";
+import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
-import { useCallback } from 'react'
-import { useSelector } from 'react-redux'
-import { useTranslation } from 'react-i18next'
+import { classNames } from "@/shared/lib/classNames/classNames";
+import {
+  DynamicModuleLoader,
+  type ReducerList,
+} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
+import { CustomButton } from "@/shared/ui/CustomButton";
+import { Input } from "@/shared/ui/Input";
 
-import { classNames } from '@/shared/lib/classNames/classNames'
-import { DynamicModuleLoader, type ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
-import { CustomButton } from '@/shared/ui/CustomButton'
-import { Input } from '@/shared/ui/Input'
+import { getAddCommentFormText } from "../../model/selectors/getAddCommentFormText/getAddCommentFormText";
+import {
+  addCommentFormActions,
+  addCommentFormReducer,
+} from "../../model/slice/addCommentFormSlice";
 
-import { getAddCommentFormText } from '../../model/selectors/getAddCommentFormText/getAddCommentFormText'
-import { addCommentFormActions, addCommentFormReducer } from '../../model/slice/addCommentFormSlice'
-
-import cls from './AddCommentForm.module.scss'
-import { HStack } from '@/shared/ui/Stack'
+import cls from "./AddCommentForm.module.scss";
+import { HStack } from "@/shared/ui/Stack";
 
 export interface AddCommentFormProps {
-    className?: string
-    onSendCommentSendPress?: (value: string) => void
+  className?: string;
+  onSendCommentSendPress?: (value: string) => void;
 }
 
 const reducers: ReducerList = {
-    addCommentForm: addCommentFormReducer
-}
+  addCommentForm: addCommentFormReducer,
+};
 
-const AddCommentForm = ({ onSendCommentSendPress, className }: AddCommentFormProps) => {
-    const { t } = useTranslation()
+const AddCommentForm = ({
+  onSendCommentSendPress,
+  className,
+}: AddCommentFormProps) => {
+  const { t } = useTranslation();
 
-    const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
 
-    const text = useSelector(getAddCommentFormText)
+  const text = useSelector(getAddCommentFormText);
 
-    const onChangeInputText = useCallback((value: string) => {
-        dispatch(addCommentFormActions.setText(value))
-    }, [dispatch])
+  const onChangeInputText = useCallback(
+    (value: string) => {
+      dispatch(addCommentFormActions.setText(value));
+    },
+    [dispatch],
+  );
 
-    const onSend = useCallback(() => {
-        if (onSendCommentSendPress) {
-            if (text) {
-                onSendCommentSendPress(text)
-                dispatch(addCommentFormActions.setText(''))
-            }
-        }
-    }, [onSendCommentSendPress, text, dispatch])
+  const onSend = useCallback(() => {
+    if (onSendCommentSendPress) {
+      if (text) {
+        onSendCommentSendPress(text);
+        dispatch(addCommentFormActions.setText(""));
+      }
+    }
+  }, [onSendCommentSendPress, text, dispatch]);
 
-    return (
+  return (
+    <DynamicModuleLoader reducers={reducers}>
+      <HStack
+        d
+        ata-testid="AddCommentForm"
+        justify="between"
+        max
+        className={classNames(cls.AddCommentForm, {}, [])}
+      >
+        <Input
+          data-testid="AddCommentForm.Input"
+          onChange={onChangeInputText}
+          value={text}
+          className={cls.input}
+          placeholder={t("Введите текст комментария")}
+        />
+        <CustomButton
+          data-testid="AddCommentForm.Button"
+          onClick={onSend}
+          className={cls.sendBtn}
+        >
+          {t("Отправить")}
+        </CustomButton>
+      </HStack>
+    </DynamicModuleLoader>
+  );
+};
 
-        <DynamicModuleLoader reducers={reducers}>
-            <HStack data-testid='AddCommentForm' justify='between' max className={classNames(cls.AddCommentForm, {}, [])}>
-                <Input data-testid='AddCommentForm.Input' onChange={onChangeInputText} value={text} className={cls.input} placeholder={t('Введите текст комментария')} />
-                <CustomButton data-testid='AddCommentForm.Button' onClick={onSend} className={cls.sendBtn}>{t('Отправить')}</CustomButton>
-            </HStack>
-        </DynamicModuleLoader>
-    )
-}
-
-export default AddCommentForm
+export default AddCommentForm;

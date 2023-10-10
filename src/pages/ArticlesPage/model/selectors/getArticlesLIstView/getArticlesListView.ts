@@ -1,3 +1,4 @@
-import { type StateSchema } from '@/app/providers/StoreProvider'
+import { type StateSchema } from "@/app/providers/StoreProvider";
 
-export const getArticlesListView = (state: StateSchema) => state.articlesPage?.view
+export const getArticlesListView = (state: StateSchema) =>
+  state.articlesPage?.view;

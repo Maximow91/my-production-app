@@ -1,32 +1,32 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorators'
-import { Skeleton } from './Skeleton'
-import { Theme } from '@/shared/const/theme'
+import type { Meta, StoryObj } from "@storybook/react";
+import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorators";
+import { Skeleton } from "./Skeleton";
+import { Theme } from "@/shared/const/theme";
 
 const meta: Meta<typeof Skeleton> = {
-    title: 'shared/Skeleton',
-    component: Skeleton
-}
+  title: "shared/Skeleton",
+  component: Skeleton,
+};
 
-export default meta
-  type Story = StoryObj<typeof Skeleton>
+export default meta;
+type Story = StoryObj<typeof Skeleton>;
 
 export const Normal: Story = {
-    render: () => <Skeleton width='100%' height={200} />
-}
+  render: () => <Skeleton width="100%" height={200} />,
+};
 
 export const Circle: Story = {
-    render: () => <Skeleton border='50%' width={100} height={100} />
-}
+  render: () => <Skeleton border="50%" width={100} height={100} />,
+};
 
 export const NormalDark: Story = {
-    render: () => <Skeleton width='100%' height={200} />
-}
+  render: () => <Skeleton width="100%" height={200} />,
+};
 
 export const CircleDark: Story = {
-    render: () => <Skeleton border='50%' width={100} height={100} />
-}
+  render: () => <Skeleton border="50%" width={100} height={100} />,
+};
 
-NormalDark.decorators = [ThemeDecorator(Theme.DARK)]
+NormalDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-CircleDark.decorators = [ThemeDecorator(Theme.DARK)]
+CircleDark.decorators = [ThemeDecorator(Theme.DARK)];

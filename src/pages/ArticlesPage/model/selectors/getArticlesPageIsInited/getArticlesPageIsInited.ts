@@ -1,3 +1,4 @@
-import { type StateSchema } from '@/app/providers/StoreProvider'
+import { type StateSchema } from "@/app/providers/StoreProvider";
 
-export const getArticlesPageIsInited = (state: StateSchema) => state.articlesPage?._inited
+export const getArticlesPageIsInited = (state: StateSchema) =>
+  state.articlesPage?._inited;

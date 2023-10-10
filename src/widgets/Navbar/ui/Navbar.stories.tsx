@@ -1,34 +1,36 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorators'
+import type { Meta, StoryObj } from "@storybook/react";
+import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
+import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorators";
 
-import { Navbar } from './Navbar'
-import { Theme } from '@/shared/const/theme'
+import { Navbar } from "./Navbar";
+import { Theme } from "@/shared/const/theme";
 
 const meta: Meta<typeof Navbar> = {
-    title: 'widgets/Navbar',
-    component: Navbar
-}
+  title: "widgets/Navbar",
+  component: Navbar,
+};
 
-export default meta
-  type Story = StoryObj<typeof Navbar>
+export default meta;
+type Story = StoryObj<typeof Navbar>;
 
 export const Light: Story = {
-    render: () => <Navbar />
-}
+  render: () => <Navbar />,
+};
 
 export const Dark: Story = {
-    render: () => <Navbar />
-}
+  render: () => <Navbar />,
+};
 
 export const UserLogined: Story = {
-    render: () => <Navbar />
-}
+  render: () => <Navbar />,
+};
 
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
 
-UserLogined.decorators = [StoreDecorator({
+UserLogined.decorators = [
+  StoreDecorator({
     user: {
-        authData: { id: '1', username: 'sdsf' }
-    }
-})]
+      authData: { id: "1", username: "sdsf" },
+    },
+  }),
+];

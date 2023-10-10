@@ -1,1 +1,1 @@
-export { AdminPanelPage } from './ui/AdminPanelPage'
+export { AdminPanelPage } from "./ui/AdminPanelPage";
