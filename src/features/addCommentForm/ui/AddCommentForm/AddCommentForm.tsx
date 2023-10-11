@@ -58,8 +58,7 @@ const AddCommentForm = ({
   return (
     <DynamicModuleLoader reducers={reducers}>
       <HStack
-        d
-        ata-testid="AddCommentForm"
+        data-testid="AddCommentForm"
         justify="between"
         max
         className={classNames(cls.AddCommentForm, {}, [])}
@@ -84,3 +83,4 @@ const AddCommentForm = ({
 };
 
 export default AddCommentForm;
+np;

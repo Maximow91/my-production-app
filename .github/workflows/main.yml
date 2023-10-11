@@ -21,6 +21,8 @@ jobs:
         run: yarn install
       - name: build production project
         run: npm run build:prod
+      - name: linting ts
+        run: npm run lint:ts
       - name: unit testing
         run: npm run test:unit
       - name: build storybook
