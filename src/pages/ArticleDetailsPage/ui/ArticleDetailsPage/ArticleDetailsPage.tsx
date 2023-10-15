@@ -16,6 +16,7 @@ import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDet
 import { ArticlesDetailsComments } from "../ArticlesDetailsComments/ArticlesDetailsComments";
 
 import cls from "./ArticleDetailsPage.module.scss";
+import { getFeatureFlags } from "@/shared/lib/features";
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -30,6 +31,8 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
   const { id } = useParams<{ id: string }>();
 
+  const isArticleRatingEnabled = getFeatureFlags("isArticleRatingEnabled");
+
   if (!id) {
     return null;
   }
@@ -40,7 +43,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         <VStack gap="16" max>
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
-          <ArticleRating articleId={id} />
+          {isArticleRatingEnabled && <ArticleRating articleId={id} />}
           <ArticlesRecommendationsList className={cls.recommendations} />
           <ArticlesDetailsComments id={id} />
         </VStack>
