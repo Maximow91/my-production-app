@@ -16,7 +16,8 @@ import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDet
 import { ArticlesDetailsComments } from "../ArticlesDetailsComments/ArticlesDetailsComments";
 
 import cls from "./ArticleDetailsPage.module.scss";
-import { getFeatureFlags } from "@/shared/lib/features";
+import { getFeatureFlags, toggleFeatures } from "@/shared/lib/features";
+import { Card } from "@/shared/ui/Card";
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -33,6 +34,12 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
   const isArticleRatingEnabled = getFeatureFlags("isArticleRatingEnabled");
 
+  const rating = toggleFeatures({
+    name: "isArticleRatingEnabled",
+    on: () => <ArticleRating articleId={id || ""} />,
+    off: () => <Card>{t("Карточка рейтинга скоро появится")}</Card>,
+  });
+
   if (!id) {
     return null;
   }
@@ -43,7 +50,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         <VStack gap="16" max>
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
-          {isArticleRatingEnabled && <ArticleRating articleId={id} />}
+          {rating}
           <ArticlesRecommendationsList className={cls.recommendations} />
           <ArticlesDetailsComments id={id} />
         </VStack>
