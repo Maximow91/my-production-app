@@ -165,7 +165,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 107,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -235,7 +237,9 @@
       "img": "https://developer.okta.com/assets-jekyll/blog/tutorial-kotlin-beginners-guide/kotlin-logo-social-21c8518b19eb96d96f35e0057bb92b7e1281a24820e0fa09e39c42f184bd7faa.png",
       "views": 10,
       "createdAt": "25.07.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -305,7 +309,9 @@
       "img": "https://andreyex.ru/wp-content/uploads/2021/06/CHemu-programmisty-na-Java-dolzhny-nauchitsya-v-2021-godu.png",
       "views": 128,
       "createdAt": "05.10.2021",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -375,7 +381,9 @@
       "img": "https://miro.medium.com/v2/resize:fit:1400/1*m0H6-tUbW6grMlezlb52yw.png",
       "views": 1228,
       "createdAt": "01.05.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -445,7 +453,9 @@
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhln4-ygosRcYC8XLmLPuh_bxZXFH8xpD48w&usqp=CAU",
       "views": 1,
       "createdAt": "01.01.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -467,7 +477,9 @@
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhln4-ygosRcYC8XLmLPuh_bxZXFH8xpD48w&usqp=CAU",
       "views": 220,
       "createdAt": "31.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -489,7 +501,9 @@
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQfQmr9HuV2zwe4z76xWrHIYN9FJXWgsX8xAqI_HwLmMQVZZ7OlTihT6kyuPHFb1nBM5I&usqp=CAU",
       "views": 345,
       "createdAt": "01.05.2021",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -511,7 +525,9 @@
       "img": "https://www.searchenginejournal.com/wp-content/uploads/2019/04/the-seo-guide-to-angular.png",
       "views": 16,
       "createdAt": "01.02.2020",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -533,7 +549,9 @@
       "img": "https://www.searchenginejournal.com/wp-content/uploads/2019/04/the-seo-guide-to-angular.png",
       "views": 99,
       "createdAt": "06.02.2020",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -555,7 +573,9 @@
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS-4UiS4edUBxG9tR0KJ1iKsEDN3xY1yxsHtGCOiAamCzSXzyxA8SqmRX3m-vgXGiu3tA&usqp=CAU",
       "views": 124,
       "createdAt": "01.05.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -577,7 +597,9 @@
       "img": "https://static.ebayinc.com/static/assets/Uploads/Stories/Articles/node.js.jpg",
       "views": 300,
       "createdAt": "01.01.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "12",
@@ -599,7 +621,9 @@
       "img": "https://miro.medium.com/v2/resize:fit:1200/1*RAPSFZoRKs_gKRcBkdyB1A.jpeg",
       "views": 159,
       "createdAt": "12.12.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -621,7 +645,9 @@
       "img": "https://media.tproger.ru/uploads/2015/11/sharp-things.jpg",
       "views": 109,
       "createdAt": "08.06.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -643,7 +669,9 @@
       "img": "https://media.tproger.ru/uploads/2015/11/sharp-things.jpg",
       "views": 139,
       "createdAt": "21.02.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -665,7 +693,9 @@
       "img": "https://media.tproger.ru/uploads/2015/11/sharp-things.jpg",
       "views": 263,
       "createdAt": "21.01.2021",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -687,7 +717,10 @@
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS-4UiS4edUBxG9tR0KJ1iKsEDN3xY1yxsHtGCOiAamCzSXzyxA8SqmRX3m-vgXGiu3tA&usqp=CAU",
       "views": 18,
       "createdAt": "23.07.2023",
-      "type": ["IT", "SCIENCE"],
+      "type": [
+        "IT",
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -709,7 +742,9 @@
       "img": "https://media.tproger.ru/uploads/2015/11/sharp-things.jpg",
       "views": 11238,
       "createdAt": "01.05.2020",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -731,7 +766,9 @@
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS-4UiS4edUBxG9tR0KJ1iKsEDN3xY1yxsHtGCOiAamCzSXzyxA8SqmRX3m-vgXGiu3tA&usqp=CAU",
       "views": 11,
       "createdAt": "01.11.2023",
-      "type": ["SCIENCE"],
+      "type": [
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -753,7 +790,9 @@
       "img": "https://static.ebayinc.com/static/assets/Uploads/Stories/Articles/node.js.jpg",
       "views": 1118,
       "createdAt": "01.02.2020",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "12",
@@ -773,9 +812,15 @@
       "id": "5",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "features": {
         "isArticleRatingEnabled": false
+      },
+      "jsonSettings": {
+        "theme": "app_orange_theme",
+        "isFirstVisit": true
       },
       "avatar": "https://images.techinsider.ru/upload/img_cache/028/028272720043b07b91b0a7a1f77361a5_ce_1000x664x0x0.jpg"
     },
@@ -783,9 +828,15 @@
       "id": "2",
       "username": "user",
       "password": "1234",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "features": {
         "isArticleRatingEnabled": true
+      },
+      "jsonSettings": {
+        "theme": "app_dark_theme",
+        "isFirstVisit": true
       },
       "avatar": "https://w0.peakpx.com/wallpaper/210/583/HD-wallpaper-haker-fun-skull-gothic-super.jpg"
     },
@@ -793,9 +844,15 @@
       "id": "3",
       "username": "manager",
       "password": "1111",
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "features": {
         "isArticleRatingEnabled": true
+      },
+      "jsonSettings": {
+        "theme": "app_dark_theme",
+        "isFirstVisit": true
       },
       "avatar": "https://w0.peakpx.com/wallpaper/210/583/HD-wallpaper-haker-fun-skull-gothic-super.jpg"
     },
@@ -803,9 +860,15 @@
       "id": "10",
       "username": "test_user",
       "password": "test_password",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "features": {
         "isArticleRatingEnabled": false
+      },
+      "jsonSettings": {
+        "theme": "app_dark_theme",
+        "isFirstVisit": true
       },
       "avatar": "https://images.techinsider.ru/upload/img_cache/028/028272720043b07b91b0a7a1f77361a5_ce_1000x664x0x0.jpg"
     }
