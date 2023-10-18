@@ -8,6 +8,7 @@ import { articlePageReducer } from "../../model/slice/articlePageSlice";
 import cls from "./ArticlesPage.module.scss";
 import { ArticlesPageFilters } from "../ArticlePageFilters/ArticlesPageFilters";
 import { VStack } from "@/shared/ui/Stack";
+import { ArticlePageGreeting } from "@/features/articlePageGreeting";
 
 const reducers: ReducerList = {
   articlesPage: articlePageReducer,
@@ -19,6 +20,7 @@ const ArticlesPage = () => {
       <VStack max>
         <ArticlesPageFilters testId="ArticlesPage" className={cls.filters} />
         <ArticleInfiniteList className={cls.list} />
+        <ArticlePageGreeting />
       </VStack>
     </DynamicModuleLoader>
   );

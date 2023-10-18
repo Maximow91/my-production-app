@@ -820,7 +820,8 @@
       },
       "jsonSettings": {
         "theme": "app_orange_theme",
-        "isFirstVisit": true
+        "isFirstVisit": true,
+        "isArticlePageWasOpened": true
       },
       "avatar": "https://images.techinsider.ru/upload/img_cache/028/028272720043b07b91b0a7a1f77361a5_ce_1000x664x0x0.jpg"
     },
@@ -836,7 +837,8 @@
       },
       "jsonSettings": {
         "theme": "app_dark_theme",
-        "isFirstVisit": true
+        "isFirstVisit": true,
+        "isArticlePageWasOpened": true
       },
       "avatar": "https://w0.peakpx.com/wallpaper/210/583/HD-wallpaper-haker-fun-skull-gothic-super.jpg"
     },
@@ -852,7 +854,8 @@
       },
       "jsonSettings": {
         "theme": "app_dark_theme",
-        "isFirstVisit": true
+        "isFirstVisit": true,
+        "isArticlePageWasOpened": true
       },
       "avatar": "https://w0.peakpx.com/wallpaper/210/583/HD-wallpaper-haker-fun-skull-gothic-super.jpg"
     },
@@ -868,7 +871,8 @@
       },
       "jsonSettings": {
         "theme": "app_dark_theme",
-        "isFirstVisit": true
+        "isFirstVisit": true,
+        "isArticlePageWasOpened": true
       },
       "avatar": "https://images.techinsider.ru/upload/img_cache/028/028272720043b07b91b0a7a1f77361a5_ce_1000x664x0x0.jpg"
     }
