@@ -3,16 +3,22 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import { AppRouter } from "./providers/router";
 import { Navbar } from "@/widgets/Navbar";
 import { Sidebar } from "@/widgets/Sidebar";
-import { useDispatch, useSelector } from "react-redux";
-import { getInitedAuthData, userActions } from "@/entities/User";
+import { useSelector } from "react-redux";
+import { getInitedAuthData, initAuthData } from "@/entities/User";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
+import { PageLoader } from "@/widgets/PageLoader";
 
 export const App = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const isInited = useSelector(getInitedAuthData);
 
   useEffect(() => {
-    dispatch(userActions.initAuthData());
+    void dispatch(initAuthData());
   }, [dispatch]);
+
+  if (!isInited) {
+    return <PageLoader />;
+  }
 
   return (
     <div className={classNames("app", {}, [])}>
